@@ -12,10 +12,10 @@
   }
  },
  "audioFile": "current/episode.wav",
- "durationSec": 93.491,
+ "durationSec": 82.082,
  "leadIn": 4,
- "stingStart": 15.512,
- "stingEnd": 19.362000000000002,
+ "stingStart": 10.139,
+ "stingEnd": 12.439,
  "storyCount": 3,
  "segments": [
   {
@@ -31,8 +31,8 @@
     "Used for: national stories"
    ],
    "storyNumber": 1,
-   "start": 1.4500000000000002,
-   "end": 6.649
+   "start": 0.55,
+   "end": 3.879
   },
   {
    "type": "cold",
@@ -48,8 +48,8 @@
     "Zoom: state highlighted in gold"
    ],
    "storyNumber": 2,
-   "start": 6.649,
-   "end": 11.315999999999999
+   "start": 3.529,
+   "end": 7.6739999999999995
   },
   {
    "type": "cold",
@@ -65,8 +65,8 @@
     "Flag: shown top left"
    ],
    "storyNumber": 3,
-   "start": 11.316,
-   "end": 15.512
+   "start": 7.324000000000001,
+   "end": 10.139
   },
   {
    "type": "intro",
@@ -78,8 +78,8 @@
    "location": "",
    "keyFacts": [],
    "storyNumber": 0,
-   "start": 19.162000000000003,
-   "end": 32.335
+   "start": 12.238999999999999,
+   "end": 21.325999999999997
   },
   {
    "type": "story",
@@ -94,8 +94,8 @@
     "Used for: national stories"
    ],
    "storyNumber": 1,
-   "start": 32.435,
-   "end": 38.994
+   "start": 21.026,
+   "end": 27.584
   },
   {
    "type": "story",
@@ -111,8 +111,8 @@
     "Zoom: state highlighted in gold"
    ],
    "storyNumber": 2,
-   "start": 39.094,
-   "end": 56.497
+   "start": 27.684,
+   "end": 45.088
   },
   {
    "type": "story",
@@ -128,8 +128,8 @@
     "Flag: shown top left"
    ],
    "storyNumber": 3,
-   "start": 56.597,
-   "end": 83.66900000000001
+   "start": 45.188,
+   "end": 72.26
   },
   {
    "type": "outro",
@@ -141,167 +141,97 @@
    "location": "",
    "keyFacts": [],
    "storyNumber": 0,
-   "start": 83.76899999999999,
-   "end": 90.891
+   "start": 72.36,
+   "end": 79.482
   }
  ],
  "lines": [
   {
    "id": "l001",
    "speaker": "B",
-   "text": "Our national map shows all fifty states for stories that affect the whole country.",
-   "start": 1.8,
-   "end": 6.299,
+   "text": "Our national map now covers all fifty states.",
+   "start": 0.9,
+   "end": 3.529,
    "segmentIndex": 0,
    "cues": [
     {
-     "start": 1.8,
-     "end": 1.83,
+     "start": 0.9,
+     "end": 0.93,
      "value": "X"
     },
     {
-     "start": 1.83,
-     "end": 1.87,
-     "value": "D"
-    },
-    {
-     "start": 1.87,
-     "end": 1.91,
+     "start": 0.93,
+     "end": 1,
      "value": "B"
     },
     {
-     "start": 1.91,
-     "end": 2.12,
+     "start": 1,
+     "end": 1.2,
      "value": "C"
     },
     {
-     "start": 2.12,
-     "end": 2.33,
+     "start": 1.2,
+     "end": 1.34,
      "value": "B"
     },
     {
-     "start": 2.33,
-     "end": 2.41,
+     "start": 1.34,
+     "end": 1.42,
      "value": "A"
+    },
+    {
+     "start": 1.42,
+     "end": 1.51,
+     "value": "C"
+    },
+    {
+     "start": 1.51,
+     "end": 1.85,
+     "value": "A"
+    },
+    {
+     "start": 1.85,
+     "end": 2.27,
+     "value": "C"
+    },
+    {
+     "start": 2.27,
+     "end": 2.41,
+     "value": "E"
     },
     {
      "start": 2.41,
-     "end": 2.51,
-     "value": "C"
-    },
-    {
-     "start": 2.51,
-     "end": 2.93,
-     "value": "A"
-    },
-    {
-     "start": 2.93,
-     "end": 3.02,
+     "end": 2.48,
      "value": "B"
     },
     {
-     "start": 3.02,
-     "end": 3.09,
+     "start": 2.48,
+     "end": 2.69,
      "value": "E"
     },
     {
-     "start": 3.09,
-     "end": 3.16,
-     "value": "F"
-    },
-    {
-     "start": 3.16,
-     "end": 3.3,
-     "value": "B"
-    },
-    {
-     "start": 3.3,
-     "end": 3.51,
-     "value": "E"
-    },
-    {
-     "start": 3.51,
-     "end": 3.58,
+     "start": 2.69,
+     "end": 2.76,
      "value": "G"
     },
     {
-     "start": 3.58,
-     "end": 3.86,
+     "start": 2.76,
+     "end": 3.11,
      "value": "B"
     },
     {
-     "start": 3.86,
-     "end": 4,
+     "start": 3.11,
+     "end": 3.25,
      "value": "C"
     },
     {
-     "start": 4,
-     "end": 4.21,
+     "start": 3.25,
+     "end": 3.46,
      "value": "B"
     },
     {
-     "start": 4.21,
-     "end": 4.28,
-     "value": "G"
-    },
-    {
-     "start": 4.28,
-     "end": 4.42,
-     "value": "B"
-    },
-    {
-     "start": 4.42,
-     "end": 4.56,
-     "value": "E"
-    },
-    {
-     "start": 4.56,
-     "end": 5.05,
-     "value": "B"
-    },
-    {
-     "start": 5.05,
-     "end": 5.12,
-     "value": "C"
-    },
-    {
-     "start": 5.12,
-     "end": 5.19,
-     "value": "G"
-    },
-    {
-     "start": 5.19,
-     "end": 5.33,
-     "value": "C"
-    },
-    {
-     "start": 5.33,
-     "end": 5.47,
-     "value": "B"
-    },
-    {
-     "start": 5.47,
-     "end": 5.61,
-     "value": "E"
-    },
-    {
-     "start": 5.61,
-     "end": 5.68,
-     "value": "H"
-    },
-    {
-     "start": 5.68,
-     "end": 5.89,
-     "value": "C"
-    },
-    {
-     "start": 5.89,
-     "end": 6.24,
-     "value": "B"
-    },
-    {
-     "start": 6.24,
-     "end": 6.29,
+     "start": 3.46,
+     "end": 3.52,
      "value": "X"
     }
    ]
@@ -309,139 +239,134 @@
   {
    "id": "l002",
    "speaker": "A",
-   "text": "State stories zoom right in, starting today with Pennsylvania.",
-   "start": 6.999,
-   "end": 10.966,
+   "text": "State stories zoom right in, starting with Pennsylvania.",
+   "start": 3.879,
+   "end": 7.324,
    "segmentIndex": 1,
    "cues": [
     {
-     "start": 6.999,
-     "end": 7.029,
+     "start": 3.879,
+     "end": 3.909,
      "value": "X"
     },
     {
-     "start": 7.029,
-     "end": 7.089,
+     "start": 3.909,
+     "end": 3.959,
      "value": "B"
     },
     {
-     "start": 7.089,
-     "end": 7.219,
+     "start": 3.959,
+     "end": 4.079,
      "value": "C"
     },
     {
-     "start": 7.219,
-     "end": 7.429,
+     "start": 4.079,
+     "end": 4.289,
      "value": "B"
     },
     {
-     "start": 7.429,
-     "end": 7.639,
+     "start": 4.289,
+     "end": 4.499,
      "value": "E"
     },
     {
-     "start": 7.639,
-     "end": 7.779,
+     "start": 4.499,
+     "end": 4.639,
      "value": "B"
     },
     {
-     "start": 7.779,
-     "end": 8.129,
+     "start": 4.639,
+     "end": 4.989,
      "value": "F"
     },
     {
-     "start": 8.129,
-     "end": 8.259,
+     "start": 4.989,
+     "end": 5.109,
      "value": "A"
     },
     {
-     "start": 8.259,
-     "end": 8.309,
+     "start": 5.109,
+     "end": 5.209,
      "value": "B"
     },
     {
-     "start": 8.309,
-     "end": 8.359,
+     "start": 5.209,
+     "end": 5.279,
      "value": "C"
     },
     {
-     "start": 8.359,
-     "end": 8.709,
+     "start": 5.279,
+     "end": 5.559,
      "value": "B"
     },
     {
-     "start": 8.709,
-     "end": 9.089,
+     "start": 5.559,
+     "end": 5.889,
      "value": "X"
     },
     {
-     "start": 9.089,
-     "end": 9.169,
+     "start": 5.889,
+     "end": 5.969,
      "value": "B"
     },
     {
-     "start": 9.169,
-     "end": 9.309,
+     "start": 5.969,
+     "end": 6.179,
      "value": "D"
     },
     {
-     "start": 9.309,
-     "end": 9.659,
+     "start": 6.179,
+     "end": 6.319,
      "value": "B"
     },
     {
-     "start": 9.659,
-     "end": 9.799,
-     "value": "C"
-    },
-    {
-     "start": 9.799,
-     "end": 9.939,
-     "value": "B"
-    },
-    {
-     "start": 9.939,
-     "end": 10.009,
+     "start": 6.319,
+     "end": 6.389,
      "value": "F"
     },
     {
-     "start": 10.009,
-     "end": 10.089,
+     "start": 6.389,
+     "end": 6.469,
      "value": "A"
     },
     {
-     "start": 10.089,
-     "end": 10.359,
+     "start": 6.469,
+     "end": 6.639,
      "value": "C"
     },
     {
-     "start": 10.359,
-     "end": 10.429,
-     "value": "H"
-    },
-    {
-     "start": 10.429,
-     "end": 10.499,
-     "value": "G"
-    },
-    {
-     "start": 10.499,
-     "end": 10.569,
-     "value": "C"
-    },
-    {
-     "start": 10.569,
-     "end": 10.639,
+     "start": 6.639,
+     "end": 6.709,
      "value": "B"
     },
     {
-     "start": 10.639,
-     "end": 10.919,
+     "start": 6.709,
+     "end": 6.779,
      "value": "C"
     },
     {
-     "start": 10.919,
-     "end": 10.959,
+     "start": 6.779,
+     "end": 6.919,
+     "value": "G"
+    },
+    {
+     "start": 6.919,
+     "end": 6.989,
+     "value": "C"
+    },
+    {
+     "start": 6.989,
+     "end": 7.059,
+     "value": "B"
+    },
+    {
+     "start": 7.059,
+     "end": 7.269,
+     "value": "C"
+    },
+    {
+     "start": 7.269,
+     "end": 7.319,
      "value": "X"
     }
    ]
@@ -449,149 +374,99 @@
   {
    "id": "l003",
    "speaker": "B",
-   "text": "And our world roundup flies to Japan to test the world map.",
-   "start": 11.666,
-   "end": 15.162,
+   "text": "And the world roundup flies to Japan.",
+   "start": 7.674,
+   "end": 9.789,
    "segmentIndex": 2,
    "cues": [
     {
-     "start": 11.666,
-     "end": 11.696,
+     "start": 7.674,
+     "end": 7.704,
      "value": "X"
     },
     {
-     "start": 11.696,
-     "end": 11.776,
+     "start": 7.704,
+     "end": 7.794,
      "value": "B"
     },
     {
-     "start": 11.776,
-     "end": 11.846,
+     "start": 7.794,
+     "end": 7.864,
      "value": "C"
     },
     {
-     "start": 11.846,
-     "end": 11.916,
-     "value": "E"
-    },
-    {
-     "start": 11.916,
-     "end": 11.986,
+     "start": 7.864,
+     "end": 7.934,
      "value": "F"
     },
     {
-     "start": 11.986,
-     "end": 12.056,
+     "start": 7.934,
+     "end": 8.004,
      "value": "E"
     },
     {
-     "start": 12.056,
-     "end": 12.266,
+     "start": 8.004,
+     "end": 8.214,
      "value": "B"
     },
     {
-     "start": 12.266,
-     "end": 12.336,
+     "start": 8.214,
+     "end": 8.284,
      "value": "C"
     },
     {
-     "start": 12.336,
-     "end": 12.406,
+     "start": 8.284,
+     "end": 8.354,
      "value": "E"
     },
     {
-     "start": 12.406,
-     "end": 12.546,
-     "value": "B"
+     "start": 8.354,
+     "end": 8.494,
+     "value": "C"
     },
     {
-     "start": 12.546,
-     "end": 12.916,
+     "start": 8.494,
+     "end": 8.634,
      "value": "A"
     },
     {
-     "start": 12.916,
-     "end": 13.016,
+     "start": 8.634,
+     "end": 8.764,
      "value": "G"
     },
     {
-     "start": 13.016,
-     "end": 13.086,
+     "start": 8.764,
+     "end": 8.834,
      "value": "H"
     },
     {
-     "start": 13.086,
-     "end": 13.156,
+     "start": 8.834,
+     "end": 8.974,
      "value": "C"
     },
     {
-     "start": 13.156,
-     "end": 13.296,
+     "start": 8.974,
+     "end": 9.044,
      "value": "B"
     },
     {
-     "start": 13.296,
-     "end": 13.506,
+     "start": 9.044,
+     "end": 9.254,
      "value": "F"
     },
     {
-     "start": 13.506,
-     "end": 13.586,
+     "start": 9.254,
+     "end": 9.334,
      "value": "A"
     },
     {
-     "start": 13.586,
-     "end": 13.966,
+     "start": 9.334,
+     "end": 9.734,
      "value": "C"
     },
     {
-     "start": 13.966,
-     "end": 14.106,
-     "value": "B"
-    },
-    {
-     "start": 14.106,
-     "end": 14.246,
-     "value": "C"
-    },
-    {
-     "start": 14.246,
-     "end": 14.456,
-     "value": "B"
-    },
-    {
-     "start": 14.456,
-     "end": 14.526,
-     "value": "F"
-    },
-    {
-     "start": 14.526,
-     "end": 14.666,
-     "value": "E"
-    },
-    {
-     "start": 14.666,
-     "end": 14.736,
-     "value": "B"
-    },
-    {
-     "start": 14.736,
-     "end": 14.816,
-     "value": "A"
-    },
-    {
-     "start": 14.816,
-     "end": 14.906,
-     "value": "C"
-    },
-    {
-     "start": 14.906,
-     "end": 15.106,
-     "value": "A"
-    },
-    {
-     "start": 15.106,
-     "end": 15.156,
+     "start": 9.734,
+     "end": 9.784,
      "value": "X"
     }
    ]
@@ -599,134 +474,194 @@
   {
    "id": "l004",
    "speaker": "A",
-   "text": "Good morning, and welcome to World Desk Daily. I'm Mark Ellis.",
-   "start": 19.562,
-   "end": 23.348,
+   "text": "Good morning. I'm Mark Ellis, and this is World Desk Daily for Monday, November 9.",
+   "start": 12.639,
+   "end": 18.154,
    "segmentIndex": 3,
    "cues": [
     {
-     "start": 19.562,
-     "end": 19.672,
+     "start": 12.639,
+     "end": 12.739,
      "value": "F"
     },
     {
-     "start": 19.672,
-     "end": 19.742,
+     "start": 12.739,
+     "end": 12.809,
      "value": "B"
     },
     {
-     "start": 19.742,
-     "end": 19.822,
+     "start": 12.809,
+     "end": 12.889,
      "value": "A"
     },
     {
-     "start": 19.822,
-     "end": 19.972,
+     "start": 12.889,
+     "end": 13.019,
      "value": "E"
     },
     {
-     "start": 19.972,
-     "end": 20.322,
+     "start": 13.019,
+     "end": 13.299,
      "value": "B"
     },
     {
-     "start": 20.322,
-     "end": 20.392,
-     "value": "F"
-    },
-    {
-     "start": 20.392,
-     "end": 20.462,
-     "value": "C"
-    },
-    {
-     "start": 20.462,
-     "end": 20.602,
-     "value": "B"
-    },
-    {
-     "start": 20.602,
-     "end": 20.682,
-     "value": "A"
-    },
-    {
-     "start": 20.682,
-     "end": 20.942,
-     "value": "F"
-    },
-    {
-     "start": 20.942,
-     "end": 21.082,
-     "value": "E"
-    },
-    {
-     "start": 21.082,
-     "end": 21.152,
-     "value": "B"
-    },
-    {
-     "start": 21.152,
-     "end": 21.292,
-     "value": "C"
-    },
-    {
-     "start": 21.292,
-     "end": 21.432,
-     "value": "B"
-    },
-    {
-     "start": 21.432,
-     "end": 21.642,
-     "value": "C"
-    },
-    {
-     "start": 21.642,
-     "end": 21.922,
-     "value": "B"
-    },
-    {
-     "start": 21.922,
-     "end": 22.152,
+     "start": 13.299,
+     "end": 13.549,
      "value": "X"
     },
     {
-     "start": 22.152,
-     "end": 22.292,
+     "start": 13.549,
+     "end": 13.749,
      "value": "B"
     },
     {
-     "start": 22.292,
-     "end": 22.362,
+     "start": 13.749,
+     "end": 13.819,
      "value": "C"
     },
     {
-     "start": 22.362,
-     "end": 22.432,
+     "start": 13.819,
+     "end": 13.889,
      "value": "B"
     },
     {
-     "start": 22.432,
-     "end": 22.552,
+     "start": 13.889,
+     "end": 13.999,
      "value": "A"
     },
     {
-     "start": 22.552,
-     "end": 22.652,
+     "start": 13.999,
+     "end": 14.159,
      "value": "D"
     },
     {
-     "start": 22.652,
-     "end": 22.932,
+     "start": 14.159,
+     "end": 14.369,
      "value": "C"
     },
     {
-     "start": 22.932,
-     "end": 23.282,
+     "start": 14.369,
+     "end": 14.759,
      "value": "B"
     },
     {
-     "start": 23.282,
-     "end": 23.342,
+     "start": 14.759,
+     "end": 14.859,
+     "value": "C"
+    },
+    {
+     "start": 14.859,
+     "end": 15.279,
+     "value": "B"
+    },
+    {
+     "start": 15.279,
+     "end": 15.419,
+     "value": "F"
+    },
+    {
+     "start": 15.419,
+     "end": 15.629,
+     "value": "E"
+    },
+    {
+     "start": 15.629,
+     "end": 15.699,
+     "value": "B"
+    },
+    {
+     "start": 15.699,
+     "end": 15.909,
+     "value": "C"
+    },
+    {
+     "start": 15.909,
+     "end": 16.049,
+     "value": "B"
+    },
+    {
+     "start": 16.049,
+     "end": 16.189,
+     "value": "C"
+    },
+    {
+     "start": 16.189,
+     "end": 16.399,
+     "value": "B"
+    },
+    {
+     "start": 16.399,
+     "end": 16.469,
+     "value": "G"
+    },
+    {
+     "start": 16.469,
+     "end": 16.539,
+     "value": "B"
+    },
+    {
+     "start": 16.539,
+     "end": 16.639,
+     "value": "A"
+    },
+    {
+     "start": 16.639,
+     "end": 16.999,
+     "value": "C"
+    },
+    {
+     "start": 16.999,
+     "end": 17.069,
+     "value": "B"
+    },
+    {
+     "start": 17.069,
+     "end": 17.279,
+     "value": "C"
+    },
+    {
+     "start": 17.279,
+     "end": 17.349,
+     "value": "E"
+    },
+    {
+     "start": 17.349,
+     "end": 17.419,
+     "value": "G"
+    },
+    {
+     "start": 17.419,
+     "end": 17.489,
+     "value": "C"
+    },
+    {
+     "start": 17.489,
+     "end": 17.569,
+     "value": "A"
+    },
+    {
+     "start": 17.569,
+     "end": 17.719,
+     "value": "E"
+    },
+    {
+     "start": 17.719,
+     "end": 17.789,
+     "value": "C"
+    },
+    {
+     "start": 17.789,
+     "end": 17.929,
+     "value": "D"
+    },
+    {
+     "start": 17.929,
+     "end": 18.139,
+     "value": "B"
+    },
+    {
+     "start": 18.139,
+     "end": 18.149,
      "value": "X"
     }
    ]
@@ -734,289 +669,99 @@
   {
    "id": "l005",
    "speaker": "B",
-   "text": "And I'm Dana Reyes. This is a short test broadcast to check our voices, graphics and maps. There is no real news in this episode.",
-   "start": 23.798,
-   "end": 31.935,
+   "text": "I'm Dana Reyes. Let's get right to it.",
+   "start": 18.604,
+   "end": 20.926,
    "segmentIndex": 3,
    "cues": [
     {
-     "start": 23.798,
-     "end": 23.828,
+     "start": 18.604,
+     "end": 18.664,
      "value": "X"
     },
     {
-     "start": 23.828,
-     "end": 23.898,
-     "value": "B"
-    },
-    {
-     "start": 23.898,
-     "end": 24.028,
+     "start": 18.664,
+     "end": 18.704,
      "value": "C"
     },
     {
-     "start": 24.028,
-     "end": 24.098,
-     "value": "B"
-    },
-    {
-     "start": 24.098,
-     "end": 24.178,
+     "start": 18.704,
+     "end": 18.784,
      "value": "A"
     },
     {
-     "start": 24.178,
-     "end": 24.248,
+     "start": 18.784,
+     "end": 18.844,
      "value": "B"
     },
     {
-     "start": 24.248,
-     "end": 24.388,
+     "start": 18.844,
+     "end": 18.904,
      "value": "C"
     },
     {
-     "start": 24.388,
-     "end": 24.458,
+     "start": 18.904,
+     "end": 18.974,
      "value": "B"
     },
     {
-     "start": 24.458,
-     "end": 24.598,
+     "start": 18.974,
+     "end": 19.114,
      "value": "C"
     },
     {
-     "start": 24.598,
-     "end": 24.668,
+     "start": 19.114,
+     "end": 19.184,
      "value": "B"
     },
     {
-     "start": 24.668,
-     "end": 24.808,
+     "start": 19.184,
+     "end": 19.324,
      "value": "C"
     },
     {
-     "start": 24.808,
-     "end": 25.088,
+     "start": 19.324,
+     "end": 19.834,
      "value": "B"
     },
     {
-     "start": 25.088,
-     "end": 25.508,
-     "value": "X"
+     "start": 19.834,
+     "end": 19.894,
+     "value": "H"
     },
     {
-     "start": 25.508,
-     "end": 25.798,
+     "start": 19.894,
+     "end": 20.024,
      "value": "B"
     },
     {
-     "start": 25.798,
-     "end": 25.868,
+     "start": 20.024,
+     "end": 20.164,
      "value": "C"
     },
     {
-     "start": 25.868,
-     "end": 26.008,
+     "start": 20.164,
+     "end": 20.304,
      "value": "B"
     },
     {
-     "start": 26.008,
-     "end": 26.148,
-     "value": "E"
-    },
-    {
-     "start": 26.148,
-     "end": 26.218,
-     "value": "B"
-    },
-    {
-     "start": 26.218,
-     "end": 26.358,
+     "start": 20.304,
+     "end": 20.374,
      "value": "C"
     },
     {
-     "start": 26.358,
-     "end": 26.428,
-     "value": "B"
-    },
-    {
-     "start": 26.428,
-     "end": 26.508,
-     "value": "A"
-    },
-    {
-     "start": 26.508,
-     "end": 26.618,
-     "value": "E"
-    },
-    {
-     "start": 26.618,
-     "end": 26.688,
-     "value": "B"
-    },
-    {
-     "start": 26.688,
-     "end": 26.948,
-     "value": "C"
-    },
-    {
-     "start": 26.948,
-     "end": 26.998,
-     "value": "E"
-    },
-    {
-     "start": 26.998,
-     "end": 27.178,
+     "start": 20.374,
+     "end": 20.654,
      "value": "F"
     },
     {
-     "start": 27.178,
-     "end": 27.248,
+     "start": 20.654,
+     "end": 20.864,
      "value": "B"
     },
     {
-     "start": 27.248,
-     "end": 27.318,
-     "value": "C"
-    },
-    {
-     "start": 27.318,
-     "end": 27.458,
-     "value": "D"
-    },
-    {
-     "start": 27.458,
-     "end": 27.528,
-     "value": "B"
-    },
-    {
-     "start": 27.528,
-     "end": 27.598,
-     "value": "G"
-    },
-    {
-     "start": 27.598,
-     "end": 27.668,
-     "value": "E"
-    },
-    {
-     "start": 27.668,
-     "end": 28.378,
-     "value": "B"
-    },
-    {
-     "start": 28.378,
-     "end": 28.518,
-     "value": "C"
-    },
-    {
-     "start": 28.518,
-     "end": 28.588,
-     "value": "G"
-    },
-    {
-     "start": 28.588,
-     "end": 28.938,
-     "value": "B"
-    },
-    {
-     "start": 28.938,
-     "end": 29.018,
-     "value": "A"
-    },
-    {
-     "start": 29.018,
-     "end": 29.118,
-     "value": "C"
-    },
-    {
-     "start": 29.118,
-     "end": 29.298,
-     "value": "A"
-    },
-    {
-     "start": 29.298,
-     "end": 29.428,
-     "value": "B"
-    },
-    {
-     "start": 29.428,
-     "end": 29.708,
-     "value": "C"
-    },
-    {
-     "start": 29.708,
-     "end": 29.848,
-     "value": "B"
-    },
-    {
-     "start": 29.848,
-     "end": 29.918,
-     "value": "C"
-    },
-    {
-     "start": 29.918,
-     "end": 30.128,
-     "value": "B"
-    },
-    {
-     "start": 30.128,
-     "end": 30.198,
-     "value": "C"
-    },
-    {
-     "start": 30.198,
-     "end": 30.338,
-     "value": "E"
-    },
-    {
-     "start": 30.338,
-     "end": 30.408,
-     "value": "F"
-    },
-    {
-     "start": 30.408,
-     "end": 30.688,
-     "value": "B"
-    },
-    {
-     "start": 30.688,
-     "end": 30.968,
-     "value": "F"
-    },
-    {
-     "start": 30.968,
-     "end": 31.248,
-     "value": "B"
-    },
-    {
-     "start": 31.248,
-     "end": 31.318,
-     "value": "C"
-    },
-    {
-     "start": 31.318,
-     "end": 31.428,
-     "value": "A"
-    },
-    {
-     "start": 31.428,
-     "end": 31.598,
-     "value": "B"
-    },
-    {
-     "start": 31.598,
-     "end": 31.668,
-     "value": "E"
-    },
-    {
-     "start": 31.668,
-     "end": 31.878,
-     "value": "B"
-    },
-    {
-     "start": 31.878,
-     "end": 31.928,
+     "start": 20.864,
+     "end": 20.924,
      "value": "X"
     }
    ]
@@ -1025,183 +770,183 @@
    "id": "l006",
    "speaker": "B",
    "text": "First, a national story. For news that affects the whole country, the map shows all fifty states.",
-   "start": 32.835,
-   "end": 38.594,
+   "start": 21.426,
+   "end": 27.184,
    "segmentIndex": 4,
    "cues": [
     {
-     "start": 32.835,
-     "end": 32.885,
+     "start": 21.426,
+     "end": 21.476,
      "value": "X"
     },
     {
-     "start": 32.885,
-     "end": 32.925,
+     "start": 21.476,
+     "end": 21.516,
      "value": "G"
     },
     {
-     "start": 32.925,
-     "end": 33.105,
+     "start": 21.516,
+     "end": 21.696,
      "value": "E"
     },
     {
-     "start": 33.105,
-     "end": 33.175,
+     "start": 21.696,
+     "end": 21.766,
      "value": "B"
     },
     {
-     "start": 33.175,
-     "end": 33.595,
+     "start": 21.766,
+     "end": 22.186,
      "value": "C"
     },
     {
-     "start": 33.595,
-     "end": 33.735,
+     "start": 22.186,
+     "end": 22.326,
      "value": "B"
     },
     {
-     "start": 33.735,
-     "end": 33.805,
+     "start": 22.326,
+     "end": 22.396,
      "value": "C"
     },
     {
-     "start": 33.805,
-     "end": 33.875,
+     "start": 22.396,
+     "end": 22.466,
      "value": "H"
     },
     {
-     "start": 33.875,
-     "end": 33.945,
+     "start": 22.466,
+     "end": 22.536,
      "value": "B"
     },
     {
-     "start": 33.945,
-     "end": 34.085,
+     "start": 22.536,
+     "end": 22.676,
      "value": "E"
     },
     {
-     "start": 34.085,
-     "end": 34.365,
+     "start": 22.676,
+     "end": 22.956,
      "value": "B"
     },
     {
-     "start": 34.365,
-     "end": 34.795,
+     "start": 22.956,
+     "end": 23.386,
      "value": "X"
     },
     {
-     "start": 34.795,
-     "end": 34.865,
+     "start": 23.386,
+     "end": 23.456,
      "value": "B"
     },
     {
-     "start": 34.865,
-     "end": 35.205,
+     "start": 23.456,
+     "end": 23.796,
      "value": "F"
     },
     {
-     "start": 35.205,
-     "end": 35.345,
+     "start": 23.796,
+     "end": 23.936,
      "value": "B"
     },
     {
-     "start": 35.345,
-     "end": 35.485,
+     "start": 23.936,
+     "end": 24.076,
      "value": "G"
     },
     {
-     "start": 35.485,
-     "end": 35.555,
+     "start": 24.076,
+     "end": 24.146,
      "value": "C"
     },
     {
-     "start": 35.555,
-     "end": 35.695,
+     "start": 24.146,
+     "end": 24.286,
      "value": "B"
     },
     {
-     "start": 35.695,
-     "end": 35.835,
+     "start": 24.286,
+     "end": 24.426,
      "value": "E"
     },
     {
-     "start": 35.835,
-     "end": 35.905,
+     "start": 24.426,
+     "end": 24.496,
      "value": "F"
     },
     {
-     "start": 35.905,
-     "end": 36.115,
+     "start": 24.496,
+     "end": 24.706,
      "value": "C"
     },
     {
-     "start": 36.115,
-     "end": 36.815,
+     "start": 24.706,
+     "end": 25.406,
      "value": "B"
     },
     {
-     "start": 36.815,
-     "end": 36.895,
+     "start": 25.406,
+     "end": 25.486,
      "value": "A"
     },
     {
-     "start": 36.895,
-     "end": 36.975,
+     "start": 25.486,
+     "end": 25.566,
      "value": "C"
     },
     {
-     "start": 36.975,
-     "end": 37.105,
+     "start": 25.566,
+     "end": 25.696,
      "value": "A"
     },
     {
-     "start": 37.105,
-     "end": 37.195,
+     "start": 25.696,
+     "end": 25.786,
      "value": "B"
     },
     {
-     "start": 37.195,
-     "end": 37.265,
+     "start": 25.786,
+     "end": 25.856,
      "value": "E"
     },
     {
-     "start": 37.265,
-     "end": 37.335,
+     "start": 25.856,
+     "end": 25.926,
      "value": "F"
     },
     {
-     "start": 37.335,
-     "end": 37.475,
+     "start": 25.926,
+     "end": 26.066,
      "value": "B"
     },
     {
-     "start": 37.475,
-     "end": 37.685,
+     "start": 26.066,
+     "end": 26.276,
      "value": "E"
     },
     {
-     "start": 37.685,
-     "end": 37.755,
+     "start": 26.276,
+     "end": 26.346,
      "value": "G"
     },
     {
-     "start": 37.755,
-     "end": 38.105,
+     "start": 26.346,
+     "end": 26.696,
      "value": "B"
     },
     {
-     "start": 38.105,
-     "end": 38.245,
+     "start": 26.696,
+     "end": 26.836,
      "value": "C"
     },
     {
-     "start": 38.245,
-     "end": 38.525,
+     "start": 26.836,
+     "end": 27.116,
      "value": "B"
     },
     {
-     "start": 38.525,
-     "end": 38.585,
+     "start": 27.116,
+     "end": 27.176,
      "value": "X"
     }
    ]
@@ -1210,348 +955,348 @@
    "id": "l007",
    "speaker": "A",
    "text": "Thanks, Dana. U.S. stories come first in every episode. When a story is about one state, the map behind me zooms in on that state, here Pennsylvania.",
-   "start": 39.494,
-   "end": 50.24,
+   "start": 28.084,
+   "end": 38.831,
    "segmentIndex": 5,
    "cues": [
     {
-     "start": 39.494,
-     "end": 39.524,
+     "start": 28.084,
+     "end": 28.114,
      "value": "X"
     },
     {
-     "start": 39.524,
-     "end": 39.584,
+     "start": 28.114,
+     "end": 28.174,
      "value": "B"
     },
     {
-     "start": 39.584,
-     "end": 39.714,
+     "start": 28.174,
+     "end": 28.304,
      "value": "C"
     },
     {
-     "start": 39.714,
-     "end": 39.854,
+     "start": 28.304,
+     "end": 28.444,
      "value": "B"
     },
     {
-     "start": 39.854,
-     "end": 40.134,
+     "start": 28.444,
+     "end": 28.724,
      "value": "C"
     },
     {
-     "start": 40.134,
-     "end": 40.204,
+     "start": 28.724,
+     "end": 28.794,
      "value": "B"
     },
     {
-     "start": 40.204,
-     "end": 40.414,
+     "start": 28.794,
+     "end": 29.004,
      "value": "C"
     },
     {
-     "start": 40.414,
-     "end": 40.884,
+     "start": 29.004,
+     "end": 29.474,
      "value": "X"
     },
     {
-     "start": 40.884,
-     "end": 41.174,
+     "start": 29.474,
+     "end": 29.764,
      "value": "F"
     },
     {
-     "start": 41.174,
-     "end": 41.314,
+     "start": 29.764,
+     "end": 29.904,
      "value": "C"
     },
     {
-     "start": 41.314,
-     "end": 41.594,
+     "start": 29.904,
+     "end": 30.184,
      "value": "B"
     },
     {
-     "start": 41.594,
-     "end": 41.804,
+     "start": 30.184,
+     "end": 30.394,
      "value": "E"
     },
     {
-     "start": 41.804,
-     "end": 41.944,
+     "start": 30.394,
+     "end": 30.534,
      "value": "B"
     },
     {
-     "start": 41.944,
-     "end": 42.154,
+     "start": 30.534,
+     "end": 30.744,
      "value": "C"
     },
     {
-     "start": 42.154,
-     "end": 42.234,
+     "start": 30.744,
+     "end": 30.824,
      "value": "A"
     },
     {
-     "start": 42.234,
-     "end": 42.364,
+     "start": 30.824,
+     "end": 30.954,
      "value": "G"
     },
     {
-     "start": 42.364,
-     "end": 42.434,
+     "start": 30.954,
+     "end": 31.024,
      "value": "E"
     },
     {
-     "start": 42.434,
-     "end": 42.574,
+     "start": 31.024,
+     "end": 31.164,
      "value": "B"
     },
     {
-     "start": 42.574,
-     "end": 42.784,
+     "start": 31.164,
+     "end": 31.374,
      "value": "C"
     },
     {
-     "start": 42.784,
-     "end": 42.854,
+     "start": 31.374,
+     "end": 31.444,
      "value": "G"
     },
     {
-     "start": 42.854,
-     "end": 42.994,
+     "start": 31.444,
+     "end": 31.584,
      "value": "B"
     },
     {
-     "start": 42.994,
-     "end": 43.064,
+     "start": 31.584,
+     "end": 31.654,
      "value": "C"
     },
     {
-     "start": 43.064,
-     "end": 43.174,
+     "start": 31.654,
+     "end": 31.764,
      "value": "A"
     },
     {
-     "start": 43.174,
-     "end": 43.334,
+     "start": 31.764,
+     "end": 31.924,
      "value": "B"
     },
     {
-     "start": 43.334,
-     "end": 43.474,
+     "start": 31.924,
+     "end": 32.064,
      "value": "E"
     },
     {
-     "start": 43.474,
-     "end": 43.684,
+     "start": 32.064,
+     "end": 32.274,
      "value": "B"
     },
     {
-     "start": 43.684,
-     "end": 44.234,
+     "start": 32.274,
+     "end": 32.824,
      "value": "X"
     },
     {
-     "start": 44.234,
-     "end": 44.284,
+     "start": 32.824,
+     "end": 32.874,
      "value": "F"
     },
     {
-     "start": 44.284,
-     "end": 44.324,
+     "start": 32.874,
+     "end": 32.914,
      "value": "C"
     },
     {
-     "start": 44.324,
-     "end": 44.534,
+     "start": 32.914,
+     "end": 33.124,
      "value": "B"
     },
     {
-     "start": 44.534,
-     "end": 44.814,
+     "start": 33.124,
+     "end": 33.404,
      "value": "E"
     },
     {
-     "start": 44.814,
-     "end": 45.024,
+     "start": 33.404,
+     "end": 33.614,
      "value": "B"
     },
     {
-     "start": 45.024,
-     "end": 45.104,
+     "start": 33.614,
+     "end": 33.694,
      "value": "A"
     },
     {
-     "start": 45.104,
-     "end": 45.264,
+     "start": 33.694,
+     "end": 33.854,
      "value": "C"
     },
     {
-     "start": 45.264,
-     "end": 45.404,
+     "start": 33.854,
+     "end": 33.994,
      "value": "B"
     },
     {
-     "start": 45.404,
-     "end": 45.474,
+     "start": 33.994,
+     "end": 34.064,
      "value": "F"
     },
     {
-     "start": 45.474,
-     "end": 45.614,
+     "start": 34.064,
+     "end": 34.204,
      "value": "C"
     },
     {
-     "start": 45.614,
-     "end": 45.754,
+     "start": 34.204,
+     "end": 34.344,
      "value": "B"
     },
     {
-     "start": 45.754,
-     "end": 45.964,
+     "start": 34.344,
+     "end": 34.554,
      "value": "C"
     },
     {
-     "start": 45.964,
-     "end": 46.104,
+     "start": 34.554,
+     "end": 34.694,
      "value": "B"
     },
     {
-     "start": 46.104,
-     "end": 46.314,
+     "start": 34.694,
+     "end": 34.904,
      "value": "C"
     },
     {
-     "start": 46.314,
-     "end": 46.454,
+     "start": 34.904,
+     "end": 35.044,
      "value": "B"
     },
     {
-     "start": 46.454,
-     "end": 46.544,
+     "start": 35.044,
+     "end": 35.134,
      "value": "A"
     },
     {
-     "start": 46.544,
-     "end": 46.624,
+     "start": 35.134,
+     "end": 35.214,
      "value": "C"
     },
     {
-     "start": 46.624,
-     "end": 46.744,
+     "start": 35.214,
+     "end": 35.334,
      "value": "A"
     },
     {
-     "start": 46.744,
-     "end": 46.884,
+     "start": 35.334,
+     "end": 35.474,
      "value": "B"
     },
     {
-     "start": 46.884,
-     "end": 47.094,
+     "start": 35.474,
+     "end": 35.684,
      "value": "C"
     },
     {
-     "start": 47.094,
-     "end": 47.164,
+     "start": 35.684,
+     "end": 35.754,
      "value": "B"
     },
     {
-     "start": 47.164,
-     "end": 47.244,
+     "start": 35.754,
+     "end": 35.834,
      "value": "A"
     },
     {
-     "start": 47.244,
-     "end": 47.344,
+     "start": 35.834,
+     "end": 35.934,
      "value": "B"
     },
     {
-     "start": 47.344,
-     "end": 47.694,
+     "start": 35.934,
+     "end": 36.284,
      "value": "F"
     },
     {
-     "start": 47.694,
-     "end": 47.794,
+     "start": 36.284,
+     "end": 36.384,
      "value": "A"
     },
     {
-     "start": 47.794,
-     "end": 48.024,
+     "start": 36.384,
+     "end": 36.614,
      "value": "B"
     },
     {
-     "start": 48.024,
-     "end": 48.094,
+     "start": 36.614,
+     "end": 36.684,
      "value": "C"
     },
     {
-     "start": 48.094,
-     "end": 48.234,
+     "start": 36.684,
+     "end": 36.824,
      "value": "E"
     },
     {
-     "start": 48.234,
-     "end": 48.374,
+     "start": 36.824,
+     "end": 36.964,
      "value": "C"
     },
     {
-     "start": 48.374,
-     "end": 48.584,
+     "start": 36.964,
+     "end": 37.174,
      "value": "B"
     },
     {
-     "start": 48.584,
-     "end": 48.794,
+     "start": 37.174,
+     "end": 37.384,
      "value": "C"
     },
     {
-     "start": 48.794,
-     "end": 49.214,
+     "start": 37.384,
+     "end": 37.804,
      "value": "B"
     },
     {
-     "start": 49.214,
-     "end": 49.294,
+     "start": 37.804,
+     "end": 37.884,
      "value": "A"
     },
     {
-     "start": 49.294,
-     "end": 49.494,
+     "start": 37.884,
+     "end": 38.084,
      "value": "C"
     },
     {
-     "start": 49.494,
-     "end": 49.564,
+     "start": 38.084,
+     "end": 38.154,
      "value": "B"
     },
     {
-     "start": 49.564,
-     "end": 49.634,
+     "start": 38.154,
+     "end": 38.224,
      "value": "C"
     },
     {
-     "start": 49.634,
-     "end": 49.774,
+     "start": 38.224,
+     "end": 38.364,
      "value": "G"
     },
     {
-     "start": 49.774,
-     "end": 49.844,
+     "start": 38.364,
+     "end": 38.434,
      "value": "C"
     },
     {
-     "start": 49.844,
-     "end": 49.914,
+     "start": 38.434,
+     "end": 38.504,
      "value": "B"
     },
     {
-     "start": 49.914,
-     "end": 50.194,
+     "start": 38.504,
+     "end": 38.784,
      "value": "C"
     },
     {
-     "start": 50.194,
-     "end": 50.234,
+     "start": 38.784,
+     "end": 38.824,
      "value": "X"
     }
    ]
@@ -1560,208 +1305,208 @@
    "id": "l008",
    "speaker": "A",
    "text": "If the mouth shapes match my words and both of us blink naturally, the lip sync is working.",
-   "start": 50.54,
-   "end": 56.097,
+   "start": 39.131,
+   "end": 44.688,
    "segmentIndex": 5,
    "cues": [
     {
-     "start": 50.54,
-     "end": 50.57,
+     "start": 39.131,
+     "end": 39.161,
      "value": "X"
     },
     {
-     "start": 50.57,
-     "end": 50.61,
+     "start": 39.161,
+     "end": 39.201,
      "value": "B"
     },
     {
-     "start": 50.61,
-     "end": 50.72,
+     "start": 39.201,
+     "end": 39.311,
      "value": "G"
     },
     {
-     "start": 50.72,
-     "end": 50.79,
+     "start": 39.311,
+     "end": 39.381,
      "value": "C"
     },
     {
-     "start": 50.79,
-     "end": 50.89,
+     "start": 39.381,
+     "end": 39.481,
      "value": "A"
     },
     {
-     "start": 50.89,
-     "end": 51.01,
+     "start": 39.481,
+     "end": 39.601,
      "value": "C"
     },
     {
-     "start": 51.01,
-     "end": 51.08,
+     "start": 39.601,
+     "end": 39.671,
      "value": "E"
     },
     {
-     "start": 51.08,
-     "end": 51.29,
+     "start": 39.671,
+     "end": 39.881,
      "value": "B"
     },
     {
-     "start": 51.29,
-     "end": 51.36,
+     "start": 39.881,
+     "end": 39.951,
      "value": "C"
     },
     {
-     "start": 51.36,
-     "end": 51.48,
+     "start": 39.951,
+     "end": 40.071,
      "value": "A"
     },
     {
-     "start": 51.48,
-     "end": 51.56,
+     "start": 40.071,
+     "end": 40.151,
      "value": "B"
     },
     {
-     "start": 51.56,
-     "end": 51.65,
+     "start": 40.151,
+     "end": 40.241,
      "value": "A"
     },
     {
-     "start": 51.65,
-     "end": 51.79,
+     "start": 40.241,
+     "end": 40.381,
      "value": "C"
     },
     {
-     "start": 51.79,
-     "end": 51.93,
+     "start": 40.381,
+     "end": 40.521,
      "value": "B"
     },
     {
-     "start": 51.93,
-     "end": 52.03,
+     "start": 40.521,
+     "end": 40.621,
      "value": "A"
     },
     {
-     "start": 52.03,
-     "end": 52.08,
+     "start": 40.621,
+     "end": 40.671,
      "value": "C"
     },
     {
-     "start": 52.08,
-     "end": 52.12,
+     "start": 40.671,
+     "end": 40.711,
      "value": "B"
     },
     {
-     "start": 52.12,
-     "end": 52.33,
+     "start": 40.711,
+     "end": 40.921,
      "value": "F"
     },
     {
-     "start": 52.33,
-     "end": 52.47,
+     "start": 40.921,
+     "end": 41.061,
      "value": "E"
     },
     {
-     "start": 52.47,
-     "end": 52.75,
+     "start": 41.061,
+     "end": 41.341,
      "value": "B"
     },
     {
-     "start": 52.75,
-     "end": 52.83,
+     "start": 41.341,
+     "end": 41.421,
      "value": "A"
     },
     {
-     "start": 52.83,
-     "end": 52.94,
+     "start": 41.421,
+     "end": 41.531,
      "value": "E"
     },
     {
-     "start": 52.94,
-     "end": 53.08,
+     "start": 41.531,
+     "end": 41.671,
      "value": "F"
     },
     {
-     "start": 53.08,
-     "end": 53.15,
+     "start": 41.671,
+     "end": 41.741,
      "value": "B"
     },
     {
-     "start": 53.15,
-     "end": 53.22,
+     "start": 41.741,
+     "end": 41.811,
      "value": "G"
     },
     {
-     "start": 53.22,
-     "end": 53.29,
+     "start": 41.811,
+     "end": 41.881,
      "value": "C"
     },
     {
-     "start": 53.29,
-     "end": 53.37,
+     "start": 41.881,
+     "end": 41.961,
      "value": "A"
     },
     {
-     "start": 53.37,
-     "end": 53.59,
+     "start": 41.961,
+     "end": 42.181,
      "value": "B"
     },
     {
-     "start": 53.59,
-     "end": 54.01,
+     "start": 42.181,
+     "end": 42.601,
      "value": "C"
     },
     {
-     "start": 54.01,
-     "end": 54.36,
+     "start": 42.601,
+     "end": 42.951,
      "value": "B"
     },
     {
-     "start": 54.36,
-     "end": 54.55,
+     "start": 42.951,
+     "end": 43.141,
      "value": "X"
     },
     {
-     "start": 54.55,
-     "end": 54.84,
+     "start": 43.141,
+     "end": 43.431,
      "value": "B"
     },
     {
-     "start": 54.84,
-     "end": 54.91,
+     "start": 43.431,
+     "end": 43.501,
      "value": "C"
     },
     {
-     "start": 54.91,
-     "end": 54.98,
+     "start": 43.501,
+     "end": 43.571,
      "value": "B"
     },
     {
-     "start": 54.98,
-     "end": 55.06,
+     "start": 43.571,
+     "end": 43.651,
      "value": "A"
     },
     {
-     "start": 55.06,
-     "end": 55.63,
+     "start": 43.651,
+     "end": 44.221,
      "value": "B"
     },
     {
-     "start": 55.63,
-     "end": 55.7,
+     "start": 44.221,
+     "end": 44.291,
      "value": "F"
     },
     {
-     "start": 55.7,
-     "end": 55.77,
+     "start": 44.291,
+     "end": 44.361,
      "value": "E"
     },
     {
-     "start": 55.77,
-     "end": 56.05,
+     "start": 44.361,
+     "end": 44.641,
      "value": "B"
     },
     {
-     "start": 56.05,
-     "end": 56.09,
+     "start": 44.641,
+     "end": 44.681,
      "value": "X"
     }
    ]
@@ -1770,243 +1515,243 @@
    "id": "l009",
    "speaker": "B",
    "text": "Now to news from around the world. World stories show a world map that flies in to the country, with its flag in the corner.",
-   "start": 56.997,
-   "end": 64.309,
+   "start": 45.588,
+   "end": 52.9,
    "segmentIndex": 6,
    "cues": [
     {
-     "start": 56.997,
-     "end": 57.027,
+     "start": 45.588,
+     "end": 45.618,
      "value": "X"
     },
     {
-     "start": 57.027,
-     "end": 57.167,
+     "start": 45.618,
+     "end": 45.758,
      "value": "C"
     },
     {
-     "start": 57.167,
-     "end": 57.207,
+     "start": 45.758,
+     "end": 45.798,
      "value": "E"
     },
     {
-     "start": 57.207,
-     "end": 57.817,
+     "start": 45.798,
+     "end": 46.408,
      "value": "F"
     },
     {
-     "start": 57.817,
-     "end": 57.887,
+     "start": 46.408,
+     "end": 46.478,
      "value": "B"
     },
     {
-     "start": 57.887,
-     "end": 57.967,
+     "start": 46.478,
+     "end": 46.558,
      "value": "A"
     },
     {
-     "start": 57.967,
-     "end": 58.067,
+     "start": 46.558,
+     "end": 46.658,
      "value": "E"
     },
     {
-     "start": 58.067,
-     "end": 58.207,
+     "start": 46.658,
+     "end": 46.798,
      "value": "C"
     },
     {
-     "start": 58.207,
-     "end": 58.277,
+     "start": 46.798,
+     "end": 46.868,
      "value": "B"
     },
     {
-     "start": 58.277,
-     "end": 58.347,
+     "start": 46.868,
+     "end": 46.938,
      "value": "C"
     },
     {
-     "start": 58.347,
-     "end": 58.417,
+     "start": 46.938,
+     "end": 47.008,
      "value": "F"
     },
     {
-     "start": 58.417,
-     "end": 58.557,
+     "start": 47.008,
+     "end": 47.148,
      "value": "E"
     },
     {
-     "start": 58.557,
-     "end": 58.697,
+     "start": 47.148,
+     "end": 47.288,
      "value": "B"
     },
     {
-     "start": 58.697,
-     "end": 59.207,
+     "start": 47.288,
+     "end": 47.798,
      "value": "X"
     },
     {
-     "start": 59.207,
-     "end": 59.307,
+     "start": 47.798,
+     "end": 47.898,
      "value": "F"
     },
     {
-     "start": 59.307,
-     "end": 59.447,
+     "start": 47.898,
+     "end": 48.038,
      "value": "E"
     },
     {
-     "start": 59.447,
-     "end": 59.587,
+     "start": 48.038,
+     "end": 48.178,
      "value": "B"
     },
     {
-     "start": 59.587,
-     "end": 59.727,
+     "start": 48.178,
+     "end": 48.318,
      "value": "E"
     },
     {
-     "start": 59.727,
-     "end": 60.147,
+     "start": 48.318,
+     "end": 48.738,
      "value": "B"
     },
     {
-     "start": 60.147,
-     "end": 60.217,
+     "start": 48.738,
+     "end": 48.808,
      "value": "E"
     },
     {
-     "start": 60.217,
-     "end": 60.287,
+     "start": 48.808,
+     "end": 48.878,
      "value": "F"
     },
     {
-     "start": 60.287,
-     "end": 60.357,
+     "start": 48.878,
+     "end": 48.948,
      "value": "C"
     },
     {
-     "start": 60.357,
-     "end": 60.497,
+     "start": 48.948,
+     "end": 49.088,
      "value": "F"
     },
     {
-     "start": 60.497,
-     "end": 60.637,
+     "start": 49.088,
+     "end": 49.228,
      "value": "E"
     },
     {
-     "start": 60.637,
-     "end": 60.707,
+     "start": 49.228,
+     "end": 49.298,
      "value": "B"
     },
     {
-     "start": 60.707,
-     "end": 60.787,
+     "start": 49.298,
+     "end": 49.378,
      "value": "A"
     },
     {
-     "start": 60.787,
-     "end": 60.867,
+     "start": 49.378,
+     "end": 49.458,
      "value": "C"
     },
     {
-     "start": 60.867,
-     "end": 61.067,
+     "start": 49.458,
+     "end": 49.658,
      "value": "A"
     },
     {
-     "start": 61.067,
-     "end": 61.207,
+     "start": 49.658,
+     "end": 49.798,
      "value": "B"
     },
     {
-     "start": 61.207,
-     "end": 61.347,
+     "start": 49.798,
+     "end": 49.938,
      "value": "G"
     },
     {
-     "start": 61.347,
-     "end": 61.417,
+     "start": 49.938,
+     "end": 50.008,
      "value": "H"
     },
     {
-     "start": 61.417,
-     "end": 61.557,
+     "start": 50.008,
+     "end": 50.148,
      "value": "C"
     },
     {
-     "start": 61.557,
-     "end": 61.767,
+     "start": 50.148,
+     "end": 50.358,
      "value": "B"
     },
     {
-     "start": 61.767,
-     "end": 61.977,
+     "start": 50.358,
+     "end": 50.568,
      "value": "F"
     },
     {
-     "start": 61.977,
-     "end": 62.607,
+     "start": 50.568,
+     "end": 51.198,
      "value": "B"
     },
     {
-     "start": 62.607,
-     "end": 62.747,
+     "start": 51.198,
+     "end": 51.338,
      "value": "C"
     },
     {
-     "start": 62.747,
-     "end": 62.897,
+     "start": 51.338,
+     "end": 51.488,
      "value": "B"
     },
     {
-     "start": 62.897,
-     "end": 62.947,
+     "start": 51.488,
+     "end": 51.538,
      "value": "F"
     },
     {
-     "start": 62.947,
-     "end": 63.207,
+     "start": 51.538,
+     "end": 51.798,
      "value": "B"
     },
     {
-     "start": 63.207,
-     "end": 63.277,
+     "start": 51.798,
+     "end": 51.868,
      "value": "G"
     },
     {
-     "start": 63.277,
-     "end": 63.347,
+     "start": 51.868,
+     "end": 51.938,
      "value": "H"
     },
     {
-     "start": 63.347,
-     "end": 63.417,
+     "start": 51.938,
+     "end": 52.008,
      "value": "C"
     },
     {
-     "start": 63.417,
-     "end": 63.767,
+     "start": 52.008,
+     "end": 52.358,
      "value": "B"
     },
     {
-     "start": 63.767,
-     "end": 64.047,
+     "start": 52.358,
+     "end": 52.638,
      "value": "E"
     },
     {
-     "start": 64.047,
-     "end": 64.117,
+     "start": 52.638,
+     "end": 52.708,
      "value": "C"
     },
     {
-     "start": 64.117,
-     "end": 64.257,
+     "start": 52.708,
+     "end": 52.848,
      "value": "E"
     },
     {
-     "start": 64.257,
-     "end": 64.307,
+     "start": 52.848,
+     "end": 52.898,
      "value": "X"
     }
    ]
@@ -2015,568 +1760,568 @@
    "id": "l010",
    "speaker": "B",
    "text": "In a real episode, this is where we would summarize the day's top story, using only facts reported by at least two different news outlets, and always saying who reported what. Longer lines like this one also cut to a full screen map in the middle, which gives the broadcast a little more variety. Mark?",
-   "start": 64.609,
-   "end": 83.269,
+   "start": 53.2,
+   "end": 71.86,
    "segmentIndex": 6,
    "cues": [
     {
-     "start": 64.609,
-     "end": 64.639,
+     "start": 53.2,
+     "end": 53.23,
      "value": "X"
     },
     {
-     "start": 64.639,
-     "end": 64.709,
+     "start": 53.23,
+     "end": 53.3,
      "value": "B"
     },
     {
-     "start": 64.709,
-     "end": 64.839,
+     "start": 53.3,
+     "end": 53.43,
      "value": "C"
     },
     {
-     "start": 64.839,
-     "end": 65.049,
+     "start": 53.43,
+     "end": 53.64,
      "value": "B"
     },
     {
-     "start": 65.049,
-     "end": 65.119,
+     "start": 53.64,
+     "end": 53.71,
      "value": "H"
     },
     {
-     "start": 65.119,
-     "end": 65.189,
+     "start": 53.71,
+     "end": 53.78,
      "value": "C"
     },
     {
-     "start": 65.189,
-     "end": 65.289,
+     "start": 53.78,
+     "end": 53.88,
      "value": "A"
     },
     {
-     "start": 65.289,
-     "end": 65.399,
+     "start": 53.88,
+     "end": 53.99,
      "value": "B"
     },
     {
-     "start": 65.399,
-     "end": 65.539,
+     "start": 53.99,
+     "end": 54.13,
      "value": "E"
     },
     {
-     "start": 65.539,
-     "end": 65.749,
+     "start": 54.13,
+     "end": 54.34,
      "value": "B"
     },
     {
-     "start": 65.749,
-     "end": 66.049,
+     "start": 54.34,
+     "end": 54.64,
      "value": "X"
     },
     {
-     "start": 66.049,
-     "end": 66.359,
+     "start": 54.64,
+     "end": 54.95,
      "value": "B"
     },
     {
-     "start": 66.359,
-     "end": 66.429,
+     "start": 54.95,
+     "end": 55.02,
      "value": "F"
     },
     {
-     "start": 66.429,
-     "end": 66.499,
+     "start": 55.02,
+     "end": 55.09,
      "value": "C"
     },
     {
-     "start": 66.499,
-     "end": 66.569,
+     "start": 55.09,
+     "end": 55.16,
      "value": "B"
     },
     {
-     "start": 66.569,
-     "end": 66.639,
+     "start": 55.16,
+     "end": 55.23,
      "value": "F"
     },
     {
-     "start": 66.639,
-     "end": 66.919,
+     "start": 55.23,
+     "end": 55.51,
      "value": "B"
     },
     {
-     "start": 66.919,
-     "end": 66.989,
+     "start": 55.51,
+     "end": 55.58,
      "value": "C"
     },
     {
-     "start": 66.989,
-     "end": 67.069,
+     "start": 55.58,
+     "end": 55.66,
      "value": "A"
     },
     {
-     "start": 67.069,
-     "end": 67.189,
+     "start": 55.66,
+     "end": 55.78,
      "value": "E"
     },
     {
-     "start": 67.189,
-     "end": 67.259,
+     "start": 55.78,
+     "end": 55.85,
      "value": "C"
     },
     {
-     "start": 67.259,
-     "end": 67.539,
+     "start": 55.85,
+     "end": 56.13,
      "value": "B"
     },
     {
-     "start": 67.539,
-     "end": 67.679,
+     "start": 56.13,
+     "end": 56.27,
      "value": "C"
     },
     {
-     "start": 67.679,
-     "end": 67.819,
+     "start": 56.27,
+     "end": 56.41,
      "value": "B"
     },
     {
-     "start": 67.819,
-     "end": 67.959,
+     "start": 56.41,
+     "end": 56.55,
      "value": "D"
     },
     {
-     "start": 67.959,
-     "end": 68.029,
+     "start": 56.55,
+     "end": 56.62,
      "value": "C"
     },
     {
-     "start": 68.029,
-     "end": 68.149,
+     "start": 56.62,
+     "end": 56.74,
      "value": "A"
     },
     {
-     "start": 68.149,
-     "end": 68.209,
+     "start": 56.74,
+     "end": 56.8,
      "value": "B"
     },
     {
-     "start": 68.209,
-     "end": 68.339,
+     "start": 56.8,
+     "end": 56.93,
      "value": "E"
     },
     {
-     "start": 68.339,
-     "end": 69.009,
+     "start": 56.93,
+     "end": 57.6,
      "value": "B"
     },
     {
-     "start": 69.009,
-     "end": 69.089,
+     "start": 57.6,
+     "end": 57.68,
      "value": "F"
     },
     {
-     "start": 69.089,
-     "end": 69.229,
+     "start": 57.68,
+     "end": 57.82,
      "value": "B"
     },
     {
-     "start": 69.229,
-     "end": 69.369,
+     "start": 57.82,
+     "end": 57.96,
      "value": "E"
     },
     {
-     "start": 69.369,
-     "end": 69.649,
+     "start": 57.96,
+     "end": 58.24,
      "value": "B"
     },
     {
-     "start": 69.649,
-     "end": 69.719,
+     "start": 58.24,
+     "end": 58.31,
      "value": "G"
     },
     {
-     "start": 69.719,
-     "end": 69.859,
+     "start": 58.31,
+     "end": 58.45,
      "value": "C"
     },
     {
-     "start": 69.859,
-     "end": 70.069,
+     "start": 58.45,
+     "end": 58.66,
      "value": "B"
     },
     {
-     "start": 70.069,
-     "end": 70.149,
+     "start": 58.66,
+     "end": 58.74,
      "value": "A"
     },
     {
-     "start": 70.149,
-     "end": 70.299,
+     "start": 58.74,
+     "end": 58.89,
      "value": "E"
     },
     {
-     "start": 70.299,
-     "end": 70.439,
+     "start": 58.89,
+     "end": 59.03,
      "value": "B"
     },
     {
-     "start": 70.439,
-     "end": 70.519,
+     "start": 59.03,
+     "end": 59.11,
      "value": "A"
     },
     {
-     "start": 70.519,
-     "end": 70.629,
+     "start": 59.11,
+     "end": 59.22,
      "value": "C"
     },
     {
-     "start": 70.629,
-     "end": 71.049,
+     "start": 59.22,
+     "end": 59.64,
      "value": "B"
     },
     {
-     "start": 71.049,
-     "end": 71.259,
+     "start": 59.64,
+     "end": 59.85,
      "value": "F"
     },
     {
-     "start": 71.259,
-     "end": 71.539,
+     "start": 59.85,
+     "end": 60.13,
      "value": "B"
     },
     {
-     "start": 71.539,
-     "end": 71.819,
+     "start": 60.13,
+     "end": 60.41,
      "value": "F"
     },
     {
-     "start": 71.819,
-     "end": 71.889,
+     "start": 60.41,
+     "end": 60.48,
      "value": "B"
     },
     {
-     "start": 71.889,
-     "end": 71.959,
+     "start": 60.48,
+     "end": 60.55,
      "value": "C"
     },
     {
-     "start": 71.959,
-     "end": 72.029,
+     "start": 60.55,
+     "end": 60.62,
      "value": "B"
     },
     {
-     "start": 72.029,
-     "end": 72.169,
+     "start": 60.62,
+     "end": 60.76,
      "value": "H"
     },
     {
-     "start": 72.169,
-     "end": 72.239,
+     "start": 60.76,
+     "end": 60.83,
      "value": "C"
     },
     {
-     "start": 72.239,
-     "end": 72.799,
+     "start": 60.83,
+     "end": 61.39,
      "value": "B"
     },
     {
-     "start": 72.799,
-     "end": 72.869,
+     "start": 61.39,
+     "end": 61.46,
      "value": "C"
     },
     {
-     "start": 72.869,
-     "end": 73.149,
+     "start": 61.46,
+     "end": 61.74,
      "value": "E"
     },
     {
-     "start": 73.149,
-     "end": 73.639,
+     "start": 61.74,
+     "end": 62.23,
      "value": "B"
     },
     {
-     "start": 73.639,
-     "end": 73.849,
+     "start": 62.23,
+     "end": 62.44,
      "value": "F"
     },
     {
-     "start": 73.849,
-     "end": 73.919,
+     "start": 62.44,
+     "end": 62.51,
      "value": "B"
     },
     {
-     "start": 73.919,
-     "end": 73.999,
+     "start": 62.51,
+     "end": 62.59,
      "value": "A"
     },
     {
-     "start": 73.999,
-     "end": 74.139,
+     "start": 62.59,
+     "end": 62.73,
      "value": "E"
     },
     {
-     "start": 74.139,
-     "end": 74.349,
+     "start": 62.73,
+     "end": 62.94,
      "value": "B"
     },
     {
-     "start": 74.349,
-     "end": 74.419,
+     "start": 62.94,
+     "end": 63.01,
      "value": "F"
     },
     {
-     "start": 74.419,
-     "end": 74.489,
+     "start": 63.01,
+     "end": 63.08,
      "value": "C"
     },
     {
-     "start": 74.489,
-     "end": 74.699,
+     "start": 63.08,
+     "end": 63.29,
      "value": "B"
     },
     {
-     "start": 74.699,
-     "end": 75.289,
+     "start": 63.29,
+     "end": 63.88,
      "value": "X"
     },
     {
-     "start": 75.289,
-     "end": 75.659,
+     "start": 63.88,
+     "end": 64.25,
      "value": "E"
     },
     {
-     "start": 75.659,
-     "end": 75.729,
+     "start": 64.25,
+     "end": 64.32,
      "value": "H"
     },
     {
-     "start": 75.729,
-     "end": 75.869,
+     "start": 64.32,
+     "end": 64.46,
      "value": "D"
     },
     {
-     "start": 75.869,
-     "end": 76.149,
+     "start": 64.46,
+     "end": 64.74,
      "value": "B"
     },
     {
-     "start": 76.149,
-     "end": 76.219,
+     "start": 64.74,
+     "end": 64.81,
      "value": "H"
     },
     {
-     "start": 76.219,
-     "end": 76.569,
+     "start": 64.81,
+     "end": 65.16,
      "value": "B"
     },
     {
-     "start": 76.569,
-     "end": 76.639,
+     "start": 65.16,
+     "end": 65.23,
      "value": "F"
     },
     {
-     "start": 76.639,
-     "end": 76.779,
+     "start": 65.23,
+     "end": 65.37,
      "value": "C"
     },
     {
-     "start": 76.779,
-     "end": 76.989,
+     "start": 65.37,
+     "end": 65.58,
      "value": "E"
     },
     {
-     "start": 76.989,
-     "end": 77.059,
+     "start": 65.58,
+     "end": 65.65,
      "value": "B"
     },
     {
-     "start": 77.059,
-     "end": 77.129,
+     "start": 65.65,
+     "end": 65.72,
      "value": "E"
     },
     {
-     "start": 77.129,
-     "end": 77.319,
+     "start": 65.72,
+     "end": 65.91,
      "value": "C"
     },
     {
-     "start": 77.319,
-     "end": 77.369,
+     "start": 65.91,
+     "end": 65.96,
      "value": "E"
     },
     {
-     "start": 77.369,
-     "end": 77.619,
+     "start": 65.96,
+     "end": 66.21,
      "value": "F"
     },
     {
-     "start": 77.619,
-     "end": 77.689,
+     "start": 66.21,
+     "end": 66.28,
      "value": "C"
     },
     {
-     "start": 77.689,
-     "end": 77.829,
+     "start": 66.28,
+     "end": 66.42,
      "value": "G"
     },
     {
-     "start": 77.829,
-     "end": 78.039,
+     "start": 66.42,
+     "end": 66.63,
      "value": "F"
     },
     {
-     "start": 78.039,
-     "end": 78.389,
+     "start": 66.63,
+     "end": 66.98,
      "value": "B"
     },
     {
-     "start": 78.389,
-     "end": 78.479,
+     "start": 66.98,
+     "end": 67.07,
      "value": "A"
     },
     {
-     "start": 78.479,
-     "end": 78.559,
+     "start": 67.07,
+     "end": 67.15,
      "value": "C"
     },
     {
-     "start": 78.559,
-     "end": 78.639,
+     "start": 67.15,
+     "end": 67.23,
      "value": "A"
     },
     {
-     "start": 78.639,
-     "end": 78.899,
+     "start": 67.23,
+     "end": 67.49,
      "value": "B"
     },
     {
-     "start": 78.899,
-     "end": 78.979,
+     "start": 67.49,
+     "end": 67.57,
      "value": "A"
     },
     {
-     "start": 78.979,
-     "end": 79.049,
+     "start": 67.57,
+     "end": 67.64,
      "value": "B"
     },
     {
-     "start": 79.049,
-     "end": 79.179,
+     "start": 67.64,
+     "end": 67.77,
      "value": "C"
     },
     {
-     "start": 79.179,
-     "end": 79.249,
+     "start": 67.77,
+     "end": 67.84,
      "value": "H"
     },
     {
-     "start": 79.249,
-     "end": 79.599,
+     "start": 67.84,
+     "end": 68.19,
      "value": "B"
     },
     {
-     "start": 79.599,
-     "end": 79.669,
+     "start": 68.19,
+     "end": 68.26,
      "value": "F"
     },
     {
-     "start": 79.669,
-     "end": 79.949,
+     "start": 68.26,
+     "end": 68.54,
      "value": "B"
     },
     {
-     "start": 79.949,
-     "end": 80.019,
+     "start": 68.54,
+     "end": 68.61,
      "value": "G"
     },
     {
-     "start": 80.019,
-     "end": 80.089,
+     "start": 68.61,
+     "end": 68.68,
      "value": "B"
     },
     {
-     "start": 80.089,
-     "end": 80.169,
+     "start": 68.68,
+     "end": 68.76,
      "value": "A"
     },
     {
-     "start": 80.169,
-     "end": 80.349,
+     "start": 68.76,
+     "end": 68.94,
      "value": "E"
     },
     {
-     "start": 80.349,
-     "end": 80.699,
+     "start": 68.94,
+     "end": 69.29,
      "value": "C"
     },
     {
-     "start": 80.699,
-     "end": 80.769,
+     "start": 69.29,
+     "end": 69.36,
      "value": "B"
     },
     {
-     "start": 80.769,
-     "end": 80.979,
+     "start": 69.36,
+     "end": 69.57,
      "value": "C"
     },
     {
-     "start": 80.979,
-     "end": 81.189,
+     "start": 69.57,
+     "end": 69.78,
      "value": "B"
     },
     {
-     "start": 81.189,
-     "end": 81.279,
+     "start": 69.78,
+     "end": 69.87,
      "value": "A"
     },
     {
-     "start": 81.279,
-     "end": 81.459,
+     "start": 69.87,
+     "end": 70.05,
      "value": "E"
     },
     {
-     "start": 81.459,
-     "end": 81.529,
+     "start": 70.05,
+     "end": 70.12,
      "value": "G"
     },
     {
-     "start": 81.529,
-     "end": 81.669,
+     "start": 70.12,
+     "end": 70.26,
      "value": "E"
     },
     {
-     "start": 81.669,
-     "end": 81.809,
+     "start": 70.26,
+     "end": 70.4,
      "value": "C"
     },
     {
-     "start": 81.809,
-     "end": 82.089,
+     "start": 70.4,
+     "end": 70.68,
      "value": "B"
     },
     {
-     "start": 82.089,
-     "end": 82.769,
+     "start": 70.68,
+     "end": 71.36,
      "value": "X"
     },
     {
-     "start": 82.769,
-     "end": 82.849,
+     "start": 71.36,
+     "end": 71.44,
      "value": "A"
     },
     {
-     "start": 82.849,
-     "end": 82.949,
+     "start": 71.44,
+     "end": 71.54,
      "value": "D"
     },
     {
-     "start": 82.949,
-     "end": 83.229,
+     "start": 71.54,
+     "end": 71.82,
      "value": "B"
     },
     {
-     "start": 83.229,
-     "end": 83.269,
+     "start": 71.82,
+     "end": 71.86,
      "value": "X"
     }
    ]
@@ -2585,98 +2330,98 @@
    "id": "l011",
    "speaker": "B",
    "text": "That's the end of our test. Thanks for watching.",
-   "start": 84.169,
-   "end": 86.762,
+   "start": 72.76,
+   "end": 75.353,
    "segmentIndex": 7,
    "cues": [
     {
-     "start": 84.169,
-     "end": 84.199,
+     "start": 72.76,
+     "end": 72.79,
      "value": "X"
     },
     {
-     "start": 84.199,
-     "end": 84.239,
+     "start": 72.79,
+     "end": 72.83,
      "value": "B"
     },
     {
-     "start": 84.239,
-     "end": 84.279,
+     "start": 72.83,
+     "end": 72.87,
      "value": "C"
     },
     {
-     "start": 84.279,
-     "end": 84.559,
+     "start": 72.87,
+     "end": 73.15,
      "value": "B"
     },
     {
-     "start": 84.559,
-     "end": 84.699,
+     "start": 73.15,
+     "end": 73.29,
      "value": "C"
     },
     {
-     "start": 84.699,
-     "end": 84.839,
+     "start": 73.29,
+     "end": 73.43,
      "value": "B"
     },
     {
-     "start": 84.839,
-     "end": 84.909,
+     "start": 73.43,
+     "end": 73.5,
      "value": "G"
     },
     {
-     "start": 84.909,
-     "end": 84.979,
+     "start": 73.5,
+     "end": 73.57,
      "value": "B"
     },
     {
-     "start": 84.979,
-     "end": 85.259,
+     "start": 73.57,
+     "end": 73.85,
      "value": "C"
     },
     {
-     "start": 85.259,
-     "end": 85.789,
+     "start": 73.85,
+     "end": 74.38,
      "value": "B"
     },
     {
-     "start": 85.789,
-     "end": 85.859,
+     "start": 74.38,
+     "end": 74.45,
      "value": "C"
     },
     {
-     "start": 85.859,
-     "end": 85.999,
+     "start": 74.45,
+     "end": 74.59,
      "value": "B"
     },
     {
-     "start": 85.999,
-     "end": 86.069,
+     "start": 74.59,
+     "end": 74.66,
      "value": "G"
     },
     {
-     "start": 86.069,
-     "end": 86.139,
+     "start": 74.66,
+     "end": 74.73,
      "value": "E"
     },
     {
-     "start": 86.139,
-     "end": 86.209,
+     "start": 74.73,
+     "end": 74.8,
      "value": "F"
     },
     {
-     "start": 86.209,
-     "end": 86.349,
+     "start": 74.8,
+     "end": 74.94,
      "value": "D"
     },
     {
-     "start": 86.349,
-     "end": 86.699,
+     "start": 74.94,
+     "end": 75.29,
      "value": "B"
     },
     {
-     "start": 86.699,
-     "end": 86.759,
+     "start": 75.29,
+     "end": 75.35,
      "value": "X"
     }
    ]
@@ -2685,128 +2430,128 @@
    "id": "l012",
    "speaker": "A",
    "text": "Subscribe for tomorrow's edition. Have a good day.",
-   "start": 87.212,
-   "end": 90.491,
+   "start": 75.803,
+   "end": 79.082,
    "segmentIndex": 7,
    "cues": [
     {
-     "start": 87.212,
-     "end": 87.242,
+     "start": 75.803,
+     "end": 75.833,
      "value": "X"
     },
     {
-     "start": 87.242,
-     "end": 87.322,
+     "start": 75.833,
+     "end": 75.913,
      "value": "B"
     },
     {
-     "start": 87.322,
-     "end": 87.442,
+     "start": 75.913,
+     "end": 76.033,
      "value": "A"
     },
     {
-     "start": 87.442,
-     "end": 87.722,
+     "start": 76.033,
+     "end": 76.313,
      "value": "B"
     },
     {
-     "start": 87.722,
-     "end": 87.792,
+     "start": 76.313,
+     "end": 76.383,
      "value": "C"
     },
     {
-     "start": 87.792,
-     "end": 87.952,
+     "start": 76.383,
+     "end": 76.543,
      "value": "A"
     },
     {
-     "start": 87.952,
-     "end": 88.012,
+     "start": 76.543,
+     "end": 76.603,
      "value": "G"
     },
     {
-     "start": 88.012,
-     "end": 88.062,
+     "start": 76.603,
+     "end": 76.653,
      "value": "E"
     },
     {
-     "start": 88.062,
-     "end": 88.202,
+     "start": 76.653,
+     "end": 76.793,
      "value": "B"
     },
     {
-     "start": 88.202,
-     "end": 88.282,
+     "start": 76.793,
+     "end": 76.873,
      "value": "A"
     },
     {
-     "start": 88.282,
-     "end": 88.442,
+     "start": 76.873,
+     "end": 77.033,
      "value": "D"
     },
     {
-     "start": 88.442,
-     "end": 88.582,
+     "start": 77.033,
+     "end": 77.173,
      "value": "E"
     },
     {
-     "start": 88.582,
-     "end": 88.652,
+     "start": 77.173,
+     "end": 77.243,
      "value": "B"
     },
     {
-     "start": 88.652,
-     "end": 88.722,
+     "start": 77.243,
+     "end": 77.313,
      "value": "C"
     },
     {
-     "start": 88.722,
-     "end": 89.212,
+     "start": 77.313,
+     "end": 77.803,
      "value": "B"
     },
     {
-     "start": 89.212,
-     "end": 89.582,
+     "start": 77.803,
+     "end": 78.173,
      "value": "X"
     },
     {
-     "start": 89.582,
-     "end": 89.662,
+     "start": 78.173,
+     "end": 78.253,
      "value": "C"
     },
     {
-     "start": 89.662,
-     "end": 89.732,
+     "start": 78.253,
+     "end": 78.323,
      "value": "G"
     },
     {
-     "start": 89.732,
-     "end": 89.802,
+     "start": 78.323,
+     "end": 78.393,
      "value": "C"
     },
     {
-     "start": 89.802,
-     "end": 90.012,
+     "start": 78.393,
+     "end": 78.603,
      "value": "F"
     },
     {
-     "start": 90.012,
-     "end": 90.082,
+     "start": 78.603,
+     "end": 78.673,
      "value": "B"
     },
     {
-     "start": 90.082,
-     "end": 90.292,
+     "start": 78.673,
+     "end": 78.883,
      "value": "C"
     },
     {
-     "start": 90.292,
-     "end": 90.432,
+     "start": 78.883,
+     "end": 79.023,
      "value": "B"
     },
     {
-     "start": 90.432,
-     "end": 90.482,
+     "start": 79.023,
+     "end": 79.073,
      "value": "X"
     }
    ]

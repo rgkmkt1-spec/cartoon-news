@@ -22,10 +22,11 @@ export const ColdOpen: React.FC<{ props: EpisodeProps; t: number; frame: number;
 
   if (idx === -1) {
     // title card before the first teaser
-    const k = interpolate(t, [0, 0.5], [0, 1], clamp);
+    const k = interpolate(t, [0, 0.18], [0, 1], clamp);
+    const shake = Math.max(0, 1 - (t - 0.18) / 0.25) * (t > 0.18 ? 1 : 0);
     return (
       <AbsoluteFill style={{ background: "radial-gradient(circle at 50% 50%, #1B4F9C 0%, #0B1F3A 65%, #050D1C 100%)", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: 18 }}>
-        <div style={{ fontFamily: FONT_HEAD, fontWeight: 700, fontSize: 150, color: "white", letterSpacing: 8, transform: `scale(${0.85 + 0.15 * out3(k)})`, opacity: k }}>
+        <div style={{ fontFamily: FONT_HEAD, fontWeight: 700, fontSize: 170, color: "white", letterSpacing: 8, transform: `translate(${Math.sin(frame * 2.3) * 14 * shake}px, ${Math.cos(frame * 3.1) * 10 * shake}px) scale(${1.6 - 0.6 * out3(k)})`, opacity: k }}>
           TOP STORIES
         </div>
         <div style={{ fontFamily: FONT_BODY, fontWeight: 700, fontSize: 40, color: COLORS.gold, opacity: k }}>{props.dateLabel}</div>
@@ -35,12 +36,16 @@ export const ColdOpen: React.FC<{ props: EpisodeProps; t: number; frame: number;
 
   const seg = colds[idx];
   const age = t - seg.start;
-  const slide = out3(interpolate(age, [0, 0.45], [0, 1], clamp));
-  const flash = interpolate(age, [0, 0.2], [0.85, 0], clamp);
+  const slide = out3(interpolate(age, [0.05, 0.3], [0, 1], clamp));
+  const flash = interpolate(age, [0, 0.15], [0.9, 0], clamp);
+  const shake = interpolate(age, [0.3, 0.6], [1, 0], clamp) * (age > 0.3 ? 1 : 0);
+  const sx = Math.sin(frame * 2.7) * 12 * shake;
+  const sy = Math.cos(frame * 3.3) * 8 * shake;
+  const sweep = interpolate(age, [0, 0.32], [-900, 2400], clamp);
   return (
-    <AbsoluteFill style={{ background: "#000" }}>
-      <AbsoluteFill style={{ transform: `scale(${1 + age * 0.012})` }}>
-        <MapFor seg={seg} w={1920} h={1080} progress={age / 2.2} frame={frame} />
+    <AbsoluteFill style={{ background: "#000", transform: `translate(${sx}px, ${sy}px)` }}>
+      <AbsoluteFill style={{ transform: `scale(${1.04 + age * 0.015})` }}>
+        <MapFor seg={seg} w={1920} h={1080} progress={age / 1.3} frame={frame} />
       </AbsoluteFill>
       <AbsoluteFill style={{ background: "linear-gradient(90deg, rgba(5,13,28,0.92) 0%, rgba(5,13,28,0.65) 45%, rgba(5,13,28,0.05) 75%)" }} />
       <div style={{ position: "absolute", left: 110, top: 90, display: "flex", alignItems: "center", gap: 0 }}>
@@ -49,7 +54,7 @@ export const ColdOpen: React.FC<{ props: EpisodeProps; t: number; frame: number;
           {idx + 1} / {colds.length}
         </div>
       </div>
-      <div style={{ position: "absolute", left: 110, top: 360, width: 1100, transform: `translateX(${(1 - slide) * -160}px)`, opacity: slide }}>
+      <div style={{ position: "absolute", left: 110, top: 360, width: 1100, transform: `translateX(${(1 - slide) * -260}px) scale(${1.12 - 0.12 * slide})`, transformOrigin: "left center", opacity: slide }}>
         <div style={{ display: "flex", alignItems: "center", gap: 18, marginBottom: 22 }}>
           {seg.flagCode ? <Flag code={seg.flagCode} height={54} /> : <Globe size={60} rotate={frame} />}
           <div style={{ fontFamily: FONT_HEAD, fontWeight: 600, fontSize: 38, color: COLORS.gold, letterSpacing: 3 }}>{(seg.location || "World").toUpperCase()}</div>
@@ -58,6 +63,7 @@ export const ColdOpen: React.FC<{ props: EpisodeProps; t: number; frame: number;
           {seg.headline.toUpperCase()}
         </div>
       </div>
+      <div style={{ position: "absolute", top: -200, left: sweep, width: 260, height: 1500, background: COLORS.red, transform: "skewX(-18deg)", opacity: 0.9 }} />
       <AbsoluteFill style={{ background: "white", opacity: flash }} />
     </AbsoluteFill>
   );

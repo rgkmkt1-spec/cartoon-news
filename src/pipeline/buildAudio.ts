@@ -8,8 +8,8 @@ import type { EpisodeLine, EpisodeProps, EpisodeSegment, MouthCue } from "../../
 
 export const LEAD_IN = 4.0; // seconds of logo sting before first line
 export const TAIL = 3.0;
-export const STING = 4.0; // logo sting between the cold open and the intro
-export const COLD_LEAD = 1.8; // "TOP STORIES" title before the first teaser
+export const STING = 2.6; // logo sting between the cold open and the intro
+export const COLD_LEAD = 0.9; // "TOP STORIES" title before the first teaser
 
 function run(cmd: string, args: string[], opts: { input?: string } = {}): Promise<string> {
   return new Promise((resolve, reject) => {
@@ -99,8 +99,9 @@ export async function buildAudio(cfg: ChannelConfig, script: Script, date: strin
     seg.lines.forEach((l, li) => {
       const prev = flat[flat.length - 1];
       let gap = li === 0 ? 0.9 : prev && prev.speaker !== l.speaker ? 0.45 : 0.3;
-      if (seg.type === "cold" && li === 0) gap = 0.7;
-      if (seg.type === "intro" && li === 0 && hasCold) gap = STING + 0.4;
+      if (seg.type === "cold" && li === 0) gap = 0.35;
+      if (seg.type === "intro" && li === 0 && hasCold) gap = STING + 0.25;
+      if (seg.type === "story" && li === 0 && allSegs[si - 1]?.type === "intro") gap = 0.5;
       flat.push({ id: `l${String(flat.length + 1).padStart(3, "0")}`, speaker: l.speaker, text: l.text, segmentIndex: si, gapBefore: gap });
     });
   });
@@ -116,7 +117,7 @@ export async function buildAudio(cfg: ChannelConfig, script: Script, date: strin
       id: l.id,
       text: l.text,
       voice: cfg.anchors[l.speaker].voice,
-      speed: cfg.anchors[l.speaker].speed,
+      speed: cfg.anchors[l.speaker].speed * (allSegs[l.segmentIndex].type === "cold" ? 1.08 : 1),
       gapBefore: l.gapBefore,
     })),
   };
@@ -168,6 +169,26 @@ export async function buildAudio(cfg: ChannelConfig, script: Script, date: strin
   const firstIntro = lines.find((l) => allSegs[l.segmentIndex].type === "intro");
   const stingStart = hasCold && lastCold ? lastCold.end + 0.35 : 0;
   const stingEnd = hasCold && firstIntro ? firstIntro.start - 0.2 : LEAD_IN;
+
+  // Opening music, sound effects and end-card music (generated in code; or your own public/music/intro.mp3|wav)
+  if (env("SOUND_FX", "on") !== "off") {
+    const custom = ["mp3", "wav"].map((x) => path.join(ROOT, "public", "music", `intro.${x}`)).find((p) => fs.existsSync(p)) ?? null;
+    const lastLine = lines[lines.length - 1];
+    const sfxJob = {
+      wav: path.join(audioDir, "episode.wav"),
+      coldStarts: segments.filter((s) => s.type === "cold").map((s) => s.start),
+      stingStart,
+      stingEnd,
+      voice: lines.map((l) => [l.start, l.end]),
+      outroStart: lastLine ? lastLine.end + 0.5 : null,
+      duration: result.duration,
+      customMusic: custom,
+    };
+    const sfxFile = path.join(audioDir, "sfx.json");
+    fs.writeFileSync(sfxFile, JSON.stringify(sfxJob));
+    await run(python, [path.join(ROOT, "src", "pipeline", "sfx.py"), sfxFile]);
+    log("audio", `music + sound effects mixed${custom ? ` (your track: ${path.basename(custom)})` : " (built-in theme)"}`);
+  }
 
   // Copy audio into Remotion's public folder so the renderer can serve it.
   const publicDir = path.join(ROOT, "public", "current");

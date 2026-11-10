@@ -97,8 +97,12 @@ export function checkScript(
   if (script.coldOpen.length < 2) problems.push("coldOpen needs 3 teasers for the top 3 stories.");
   script.coldOpen.forEach((c, i) => {
     if (c.story > stories.length) problems.push(`coldOpen ${i + 1}: story ${c.story} does not exist.`);
-    if (c.text.split(/\s+/).length > 25) problems.push(`coldOpen ${i + 1}: teaser over 25 words.`);
+    if (c.text.split(/\s+/).length > 18) problems.push(`coldOpen ${i + 1}: teaser over 18 words — make it punchier.`);
   });
+
+  const intro = segs.find((s) => s.type === "intro");
+  const introWords = intro ? intro.lines.reduce((n, l) => n + l.text.split(/\s+/).length, 0) : 0;
+  if (introWords > 40) problems.push(`Intro is ${introWords} words — keep it to 2 short lines (under 35 words), no headline preview.`);
 
   const speakers = new Set(segs.flatMap((s) => s.lines.map((l) => l.speaker)));
   if (speakers.size < 2) problems.push("Both anchors (A and B) must speak.");

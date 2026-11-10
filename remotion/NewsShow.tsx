@@ -141,9 +141,10 @@ const Desk: React.FC = () => (
 const IntroSting: React.FC<{ props: EpisodeProps; frame: number; fps: number; length: number }> = ({ props, frame, fps, length }) => {
   const t = frame / fps;
   const lead = length;
-  const logoIn = interpolate(t, [0.2, 1.0], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: (x) => 1 - Math.pow(1 - x, 3) });
-  const dateIn = interpolate(t, [1.0, 1.6], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const wipe = interpolate(t, [lead - 0.6, lead], [0, 2200], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  // overshoot "pop" so the logo lands on the impact sound
+  const logoIn = interpolate(t, [0.0, 0.35], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: (x) => 1 + 2.2 * Math.pow(x - 1, 3) + 1.2 * Math.pow(x - 1, 2) });
+  const dateIn = interpolate(t, [0.45, 0.8], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const wipe = interpolate(t, [lead - 0.4, lead], [0, 2200], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   return (
     <AbsoluteFill style={{ clipPath: `inset(0 0 0 ${wipe}px)` }}>
       <AbsoluteFill style={{ background: "radial-gradient(circle at 50% 45%, #1B4F9C 0%, #0B1F3A 60%, #050D1C 100%)" }} />

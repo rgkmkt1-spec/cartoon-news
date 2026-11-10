@@ -35,8 +35,8 @@ EDITORIAL RULES (strict)
 7. Deaths, violence and disasters: plain, respectful language. No graphic detail.
 8. Write for the EAR: short sentences, spell out abbreviations on first use, say "percent" not "%", no URLs, no parentheses, no emoji, no stage directions.
 9. Anchors alternate stories. Hand-offs are brief and natural ("Thanks, ${B.split(" ")[0]}."). Keep banter minimal and professional.
-10. Intro: ${A} greets viewers, names the show and the date; ${B} previews the top 3 headlines. Outro: brief sign-off from both, invite viewers to subscribe for tomorrow's edition.
-11. COLD OPEN: write 3 teasers for the top 3 stories (in story order), each one punchy but factual sentence under 20 words, e.g. "A government shutdown deadline is days away as talks stall in Congress." No clickbait, no questions, no exaggeration.
+10. Intro: EXACTLY 2 very short lines, no headline preview (the cold open already teased the stories). Line 1 (${A}): "Good morning. I'm ${A}, and this is ${cfg.channelName} for <weekday, month day>." Line 2 (${B}): "I'm ${B.split(" ")[0]} ${B.split(" ").slice(1).join(" ")}. Let's get right to it." then the first story starts immediately. Outro: brief sign-off from both, invite viewers to subscribe for tomorrow's edition.
+11. COLD OPEN: write 3 teasers for the top 3 stories (in story order), each one short, punchy, factual sentence of 8-14 words that makes viewers want to keep watching, e.g. "A government shutdown deadline is days away as talks stall in Congress." No clickbait, no questions, no exaggeration.
 12. KEY FACTS: every story gets 2-3 "keyFacts" shown on screen: very short (under 50 characters), concrete facts taken from the wire items — numbers, names, places, dates. Example: "Vote: 52-48 in the Senate", "Damage: est. $2 billion", "Where: Maui County, Hawaii".
 13. Total spoken length about ${words} words (${cfg.targetMinutes} minutes). Give US lead stories more depth (about 150-200 words); world stories about 90-130 words. Each line under 60 words.
 

@@ -54,6 +54,7 @@ jobs:
           NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
           YOUTUBE_MODE: ${{ vars.YOUTUBE_MODE || 'off' }}
           REVIEW_WINDOW_HOURS: ${{ vars.REVIEW_WINDOW_HOURS || '2' }}
+          SOUND_FX: ${{ vars.SOUND_FX || 'on' }}
           YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
           YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}

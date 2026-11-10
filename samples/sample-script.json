@@ -17,11 +17,11 @@
       "lines": [
         {
           "speaker": "A",
-          "text": "Good morning, and welcome to World Desk Daily. I'm Mark Ellis."
+          "text": "Good morning. I'm Mark Ellis, and this is World Desk Daily for Monday, November 9."
         },
         {
           "speaker": "B",
-          "text": "And I'm Dana Reyes. This is a short test broadcast to check our voices, graphics and maps. There is no real news in this episode."
+          "text": "I'm Dana Reyes. Let's get right to it."
         }
       ]
     },
@@ -109,15 +109,15 @@
   "coldOpen": [
     {
       "story": 1,
-      "text": "Our national map shows all fifty states for stories that affect the whole country."
+      "text": "Our national map now covers all fifty states."
     },
     {
       "story": 2,
-      "text": "State stories zoom right in, starting today with Pennsylvania."
+      "text": "State stories zoom right in, starting with Pennsylvania."
     },
     {
       "story": 3,
-      "text": "And our world roundup flies to Japan to test the world map."
+      "text": "And the world roundup flies to Japan."
     }
   ]
 }

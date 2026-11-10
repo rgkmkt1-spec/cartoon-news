@@ -118,3 +118,10 @@ Once the audit is approved, set the GitHub variable `YOUTUBE_MODE` to one of:
 - If anything fails, you get a ❌ email with the error.
 
 Reuters and AP don't offer free public RSS feeds, so the default sources are BBC, Al Jazeera, NPR, The Guardian, DW, France 24, UN News, CBC and ABC (Australia).
+
+## Music & sound effects
+
+The opening theme, whooshes and impacts are generated in code (`src/pipeline/sfx.py`), so they're original and copyright-free.
+
+- **Use your own theme:** put a track at `public/music/intro.mp3` (or `.wav`), for example one from the YouTube Audio Library, then commit and push it. It's used for the opening and the end card instead of the built-in theme.
+- **Turn music and effects off:** set `SOUND_FX=off` in `.env` (local runs) or as a GitHub variable.
