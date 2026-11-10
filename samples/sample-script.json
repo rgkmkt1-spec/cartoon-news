@@ -1,0 +1,95 @@
+{
+  "episodeTitle": "Test Broadcast",
+  "youtubeTitle": "World Desk Daily \u2014 Test Broadcast",
+  "summary": "A short test broadcast used to check the voices, lip sync, graphics and rendering pipeline. It contains no real news.",
+  "tags": [
+    "test"
+  ],
+  "ticker": [
+    "This is a test broadcast \u2014 no real news",
+    "U.S. stories first, then a world roundup",
+    "Every story is cross-checked against at least two outlets",
+    "U.S. stories get a state map, world stories a world map"
+  ],
+  "segments": [
+    {
+      "type": "intro",
+      "lines": [
+        {
+          "speaker": "A",
+          "text": "Good morning, and welcome to World Desk Daily. I'm Mark Ellis."
+        },
+        {
+          "speaker": "B",
+          "text": "And I'm Dana Reyes. This is a short test broadcast to check our voices, graphics and maps. There is no real news in this episode."
+        }
+      ]
+    },
+    {
+      "type": "story",
+      "scope": "us",
+      "usState": "",
+      "headline": "TEST: National map \u2014 United States",
+      "countryCode": "US",
+      "location": "Washington, D.C.",
+      "sourceIds": [],
+      "lines": [
+        {
+          "speaker": "B",
+          "text": "First, a national story. For news that affects the whole country, the map shows all fifty states."
+        }
+      ]
+    },
+    {
+      "type": "story",
+      "headline": "TEST: State map \u2014 Pennsylvania",
+      "countryCode": "US",
+      "location": "Harrisburg, Pennsylvania",
+      "sourceIds": [],
+      "lines": [
+        {
+          "speaker": "A",
+          "text": "Thanks, Dana. U.S. stories come first in every episode. When a story is about one state, the map behind me zooms in on that state, here Pennsylvania."
+        },
+        {
+          "speaker": "A",
+          "text": "If the mouth shapes match my words and both of us blink naturally, the lip sync is working."
+        }
+      ],
+      "scope": "us",
+      "usState": "PA"
+    },
+    {
+      "type": "story",
+      "headline": "TEST: World map and flag \u2014 Japan",
+      "countryCode": "JP",
+      "location": "Tokyo, Japan",
+      "sourceIds": [],
+      "lines": [
+        {
+          "speaker": "B",
+          "text": "Now to news from around the world. World stories show a world map that flies in to the country, with its flag in the corner."
+        },
+        {
+          "speaker": "B",
+          "text": "In a real episode, this is where we would summarize the day's top story, using only facts reported by at least two different news outlets, and always saying who reported what. Longer lines like this one also cut to a full screen map in the middle, which gives the broadcast a little more variety. Mark?"
+        }
+      ],
+      "scope": "world",
+      "usState": ""
+    },
+    {
+      "type": "outro",
+      "lines": [
+        {
+          "speaker": "B",
+          "text": "That's the end of our test. Thanks for watching."
+        },
+        {
+          "speaker": "A",
+          "text": "Subscribe for tomorrow's edition. Have a good day."
+        }
+      ]
+    }
+  ]
+}

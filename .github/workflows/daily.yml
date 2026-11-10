@@ -1,0 +1,79 @@
+name: Daily episode
+
+on:
+  schedule:
+    # 10:00 UTC = 5:00 AM Eastern (standard time) / 6:00 AM (daylight time)
+    - cron: "0 10 * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "What to run"
+        type: choice
+        default: full
+        options: [full, script-only, sample]
+
+concurrency:
+  group: daily-episode
+  cancel-in-progress: false
+
+jobs:
+  episode:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Cache voice model + lip-sync tool
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: assets-${{ runner.os }}-${{ hashFiles('scripts/setup.ts') }}
+
+      - name: Install
+        run: |
+          npm ci
+          pip install -r requirements.txt
+          npm run setup
+
+      - name: Make episode
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
+          YOUTUBE_MODE: ${{ vars.YOUTUBE_MODE || 'off' }}
+          REVIEW_WINDOW_HOURS: ${{ vars.REVIEW_WINDOW_HOURS || '2' }}
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: |
+          MODE="${{ github.event.inputs.mode || 'full' }}"
+          if [ "$MODE" = "script-only" ]; then npm run daily -- --script-only
+          elif [ "$MODE" = "sample" ]; then npm run daily -- --sample --no-upload
+          else npm run daily
+          fi
+
+      - name: Save video for download
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: episode-${{ github.run_number }}
+          retention-days: 7
+          if-no-files-found: ignore
+          path: |
+            out/*/episode.mp4
+            out/*/thumbnail.png
+            out/*/script.txt
+            out/*/description.txt
+            out/*/script.json

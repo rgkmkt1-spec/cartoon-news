@@ -1,0 +1,9 @@
+node_modules/
+out/
+.cache/
+.env
+public/current/
+public/flags/
+public/fonts/
+*.part
+tmp-*.ts

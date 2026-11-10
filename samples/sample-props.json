@@ -1,0 +1,2297 @@
+{
+ "channelName": "World Desk Daily",
+ "tagline": "America's top stories and the world's biggest headlines, every morning",
+ "dateLabel": "Monday, November 9, 2026",
+ "shortDate": "NOV 9",
+ "anchors": {
+  "A": {
+   "name": "Mark Ellis"
+  },
+  "B": {
+   "name": "Dana Reyes"
+  }
+ },
+ "audioFile": "current/episode.wav",
+ "durationSec": 77.929,
+ "leadIn": 4,
+ "segments": [
+  {
+   "type": "intro",
+   "scope": "world",
+   "usState": "",
+   "headline": "",
+   "countryCode": "",
+   "flagCode": "",
+   "location": "",
+   "start": 0,
+   "end": 16.773
+  },
+  {
+   "type": "story",
+   "scope": "us",
+   "usState": "",
+   "headline": "TEST: National map — United States",
+   "countryCode": "US",
+   "flagCode": "US",
+   "location": "Washington, D.C.",
+   "start": 16.873,
+   "end": 23.430999999999997
+  },
+  {
+   "type": "story",
+   "scope": "us",
+   "usState": "PA",
+   "headline": "TEST: State map — Pennsylvania",
+   "countryCode": "US",
+   "flagCode": "US",
+   "location": "Harrisburg, Pennsylvania",
+   "start": 23.531000000000002,
+   "end": 40.934999999999995
+  },
+  {
+   "type": "story",
+   "scope": "world",
+   "usState": "",
+   "headline": "TEST: World map and flag — Japan",
+   "countryCode": "JP",
+   "flagCode": "JP",
+   "location": "Tokyo, Japan",
+   "start": 41.035000000000004,
+   "end": 68.107
+  },
+  {
+   "type": "outro",
+   "scope": "world",
+   "usState": "",
+   "headline": "",
+   "countryCode": "",
+   "flagCode": "",
+   "location": "",
+   "start": 68.207,
+   "end": 75.32900000000001
+  }
+ ],
+ "lines": [
+  {
+   "id": "l001",
+   "speaker": "A",
+   "text": "Good morning, and welcome to World Desk Daily. I'm Mark Ellis.",
+   "start": 4,
+   "end": 7.786,
+   "segmentIndex": 0,
+   "cues": [
+    {
+     "start": 4,
+     "end": 4.1,
+     "value": "F"
+    },
+    {
+     "start": 4.1,
+     "end": 4.17,
+     "value": "B"
+    },
+    {
+     "start": 4.17,
+     "end": 4.25,
+     "value": "A"
+    },
+    {
+     "start": 4.25,
+     "end": 4.41,
+     "value": "E"
+    },
+    {
+     "start": 4.41,
+     "end": 4.76,
+     "value": "B"
+    },
+    {
+     "start": 4.76,
+     "end": 4.83,
+     "value": "F"
+    },
+    {
+     "start": 4.83,
+     "end": 4.9,
+     "value": "C"
+    },
+    {
+     "start": 4.9,
+     "end": 5.04,
+     "value": "B"
+    },
+    {
+     "start": 5.04,
+     "end": 5.12,
+     "value": "A"
+    },
+    {
+     "start": 5.12,
+     "end": 5.37,
+     "value": "F"
+    },
+    {
+     "start": 5.37,
+     "end": 5.51,
+     "value": "E"
+    },
+    {
+     "start": 5.51,
+     "end": 5.65,
+     "value": "B"
+    },
+    {
+     "start": 5.65,
+     "end": 5.79,
+     "value": "C"
+    },
+    {
+     "start": 5.79,
+     "end": 5.86,
+     "value": "B"
+    },
+    {
+     "start": 5.86,
+     "end": 6.07,
+     "value": "C"
+    },
+    {
+     "start": 6.07,
+     "end": 6.35,
+     "value": "B"
+    },
+    {
+     "start": 6.35,
+     "end": 6.59,
+     "value": "X"
+    },
+    {
+     "start": 6.59,
+     "end": 6.73,
+     "value": "B"
+    },
+    {
+     "start": 6.73,
+     "end": 6.8,
+     "value": "C"
+    },
+    {
+     "start": 6.8,
+     "end": 6.87,
+     "value": "B"
+    },
+    {
+     "start": 6.87,
+     "end": 6.99,
+     "value": "A"
+    },
+    {
+     "start": 6.99,
+     "end": 7.09,
+     "value": "D"
+    },
+    {
+     "start": 7.09,
+     "end": 7.37,
+     "value": "C"
+    },
+    {
+     "start": 7.37,
+     "end": 7.72,
+     "value": "B"
+    },
+    {
+     "start": 7.72,
+     "end": 7.78,
+     "value": "X"
+    }
+   ]
+  },
+  {
+   "id": "l002",
+   "speaker": "B",
+   "text": "And I'm Dana Reyes. This is a short test broadcast to check our voices, graphics and maps. There is no real news in this episode.",
+   "start": 8.236,
+   "end": 16.373,
+   "segmentIndex": 0,
+   "cues": [
+    {
+     "start": 8.236,
+     "end": 8.266,
+     "value": "X"
+    },
+    {
+     "start": 8.266,
+     "end": 8.336,
+     "value": "B"
+    },
+    {
+     "start": 8.336,
+     "end": 8.466,
+     "value": "C"
+    },
+    {
+     "start": 8.466,
+     "end": 8.536,
+     "value": "B"
+    },
+    {
+     "start": 8.536,
+     "end": 8.616,
+     "value": "A"
+    },
+    {
+     "start": 8.616,
+     "end": 8.686,
+     "value": "B"
+    },
+    {
+     "start": 8.686,
+     "end": 8.826,
+     "value": "C"
+    },
+    {
+     "start": 8.826,
+     "end": 8.896,
+     "value": "B"
+    },
+    {
+     "start": 8.896,
+     "end": 9.036,
+     "value": "C"
+    },
+    {
+     "start": 9.036,
+     "end": 9.106,
+     "value": "B"
+    },
+    {
+     "start": 9.106,
+     "end": 9.246,
+     "value": "C"
+    },
+    {
+     "start": 9.246,
+     "end": 9.526,
+     "value": "B"
+    },
+    {
+     "start": 9.526,
+     "end": 9.956,
+     "value": "X"
+    },
+    {
+     "start": 9.956,
+     "end": 10.236,
+     "value": "B"
+    },
+    {
+     "start": 10.236,
+     "end": 10.306,
+     "value": "C"
+    },
+    {
+     "start": 10.306,
+     "end": 10.446,
+     "value": "B"
+    },
+    {
+     "start": 10.446,
+     "end": 10.586,
+     "value": "E"
+    },
+    {
+     "start": 10.586,
+     "end": 10.656,
+     "value": "B"
+    },
+    {
+     "start": 10.656,
+     "end": 10.796,
+     "value": "C"
+    },
+    {
+     "start": 10.796,
+     "end": 10.866,
+     "value": "B"
+    },
+    {
+     "start": 10.866,
+     "end": 10.946,
+     "value": "A"
+    },
+    {
+     "start": 10.946,
+     "end": 11.056,
+     "value": "E"
+    },
+    {
+     "start": 11.056,
+     "end": 11.126,
+     "value": "B"
+    },
+    {
+     "start": 11.126,
+     "end": 11.386,
+     "value": "C"
+    },
+    {
+     "start": 11.386,
+     "end": 11.436,
+     "value": "E"
+    },
+    {
+     "start": 11.436,
+     "end": 11.616,
+     "value": "F"
+    },
+    {
+     "start": 11.616,
+     "end": 11.686,
+     "value": "B"
+    },
+    {
+     "start": 11.686,
+     "end": 11.756,
+     "value": "C"
+    },
+    {
+     "start": 11.756,
+     "end": 11.896,
+     "value": "D"
+    },
+    {
+     "start": 11.896,
+     "end": 11.966,
+     "value": "B"
+    },
+    {
+     "start": 11.966,
+     "end": 12.036,
+     "value": "G"
+    },
+    {
+     "start": 12.036,
+     "end": 12.106,
+     "value": "E"
+    },
+    {
+     "start": 12.106,
+     "end": 12.816,
+     "value": "B"
+    },
+    {
+     "start": 12.816,
+     "end": 12.956,
+     "value": "C"
+    },
+    {
+     "start": 12.956,
+     "end": 13.026,
+     "value": "G"
+    },
+    {
+     "start": 13.026,
+     "end": 13.376,
+     "value": "B"
+    },
+    {
+     "start": 13.376,
+     "end": 13.456,
+     "value": "A"
+    },
+    {
+     "start": 13.456,
+     "end": 13.556,
+     "value": "C"
+    },
+    {
+     "start": 13.556,
+     "end": 13.736,
+     "value": "A"
+    },
+    {
+     "start": 13.736,
+     "end": 13.866,
+     "value": "B"
+    },
+    {
+     "start": 13.866,
+     "end": 14.146,
+     "value": "C"
+    },
+    {
+     "start": 14.146,
+     "end": 14.286,
+     "value": "B"
+    },
+    {
+     "start": 14.286,
+     "end": 14.356,
+     "value": "C"
+    },
+    {
+     "start": 14.356,
+     "end": 14.566,
+     "value": "B"
+    },
+    {
+     "start": 14.566,
+     "end": 14.636,
+     "value": "C"
+    },
+    {
+     "start": 14.636,
+     "end": 14.776,
+     "value": "E"
+    },
+    {
+     "start": 14.776,
+     "end": 14.846,
+     "value": "F"
+    },
+    {
+     "start": 14.846,
+     "end": 15.126,
+     "value": "B"
+    },
+    {
+     "start": 15.126,
+     "end": 15.406,
+     "value": "F"
+    },
+    {
+     "start": 15.406,
+     "end": 15.686,
+     "value": "B"
+    },
+    {
+     "start": 15.686,
+     "end": 15.756,
+     "value": "C"
+    },
+    {
+     "start": 15.756,
+     "end": 15.866,
+     "value": "A"
+    },
+    {
+     "start": 15.866,
+     "end": 16.036,
+     "value": "B"
+    },
+    {
+     "start": 16.036,
+     "end": 16.106,
+     "value": "E"
+    },
+    {
+     "start": 16.106,
+     "end": 16.316,
+     "value": "B"
+    },
+    {
+     "start": 16.316,
+     "end": 16.366,
+     "value": "X"
+    }
+   ]
+  },
+  {
+   "id": "l003",
+   "speaker": "B",
+   "text": "First, a national story. For news that affects the whole country, the map shows all fifty states.",
+   "start": 17.273,
+   "end": 23.031,
+   "segmentIndex": 1,
+   "cues": [
+    {
+     "start": 17.273,
+     "end": 17.333,
+     "value": "X"
+    },
+    {
+     "start": 17.333,
+     "end": 17.543,
+     "value": "E"
+    },
+    {
+     "start": 17.543,
+     "end": 17.613,
+     "value": "B"
+    },
+    {
+     "start": 17.613,
+     "end": 18.033,
+     "value": "C"
+    },
+    {
+     "start": 18.033,
+     "end": 18.173,
+     "value": "B"
+    },
+    {
+     "start": 18.173,
+     "end": 18.243,
+     "value": "C"
+    },
+    {
+     "start": 18.243,
+     "end": 18.313,
+     "value": "H"
+    },
+    {
+     "start": 18.313,
+     "end": 18.383,
+     "value": "B"
+    },
+    {
+     "start": 18.383,
+     "end": 18.523,
+     "value": "E"
+    },
+    {
+     "start": 18.523,
+     "end": 18.803,
+     "value": "B"
+    },
+    {
+     "start": 18.803,
+     "end": 19.233,
+     "value": "X"
+    },
+    {
+     "start": 19.233,
+     "end": 19.283,
+     "value": "G"
+    },
+    {
+     "start": 19.283,
+     "end": 19.333,
+     "value": "B"
+    },
+    {
+     "start": 19.333,
+     "end": 19.613,
+     "value": "F"
+    },
+    {
+     "start": 19.613,
+     "end": 19.823,
+     "value": "B"
+    },
+    {
+     "start": 19.823,
+     "end": 19.893,
+     "value": "G"
+    },
+    {
+     "start": 19.893,
+     "end": 19.963,
+     "value": "C"
+    },
+    {
+     "start": 19.963,
+     "end": 20.103,
+     "value": "B"
+    },
+    {
+     "start": 20.103,
+     "end": 20.173,
+     "value": "C"
+    },
+    {
+     "start": 20.173,
+     "end": 20.243,
+     "value": "E"
+    },
+    {
+     "start": 20.243,
+     "end": 20.313,
+     "value": "F"
+    },
+    {
+     "start": 20.313,
+     "end": 20.523,
+     "value": "C"
+    },
+    {
+     "start": 20.523,
+     "end": 21.253,
+     "value": "B"
+    },
+    {
+     "start": 21.253,
+     "end": 21.333,
+     "value": "A"
+    },
+    {
+     "start": 21.333,
+     "end": 21.413,
+     "value": "C"
+    },
+    {
+     "start": 21.413,
+     "end": 21.543,
+     "value": "A"
+    },
+    {
+     "start": 21.543,
+     "end": 21.633,
+     "value": "B"
+    },
+    {
+     "start": 21.633,
+     "end": 21.703,
+     "value": "E"
+    },
+    {
+     "start": 21.703,
+     "end": 21.773,
+     "value": "F"
+    },
+    {
+     "start": 21.773,
+     "end": 21.913,
+     "value": "B"
+    },
+    {
+     "start": 21.913,
+     "end": 22.123,
+     "value": "E"
+    },
+    {
+     "start": 22.123,
+     "end": 22.193,
+     "value": "G"
+    },
+    {
+     "start": 22.193,
+     "end": 22.543,
+     "value": "B"
+    },
+    {
+     "start": 22.543,
+     "end": 22.683,
+     "value": "C"
+    },
+    {
+     "start": 22.683,
+     "end": 22.963,
+     "value": "B"
+    },
+    {
+     "start": 22.963,
+     "end": 23.023,
+     "value": "X"
+    }
+   ]
+  },
+  {
+   "id": "l004",
+   "speaker": "A",
+   "text": "Thanks, Dana. U.S. stories come first in every episode. When a story is about one state, the map behind me zooms in on that state, here Pennsylvania.",
+   "start": 23.931,
+   "end": 34.678,
+   "segmentIndex": 2,
+   "cues": [
+    {
+     "start": 23.931,
+     "end": 23.991,
+     "value": "X"
+    },
+    {
+     "start": 23.991,
+     "end": 24.131,
+     "value": "C"
+    },
+    {
+     "start": 24.131,
+     "end": 24.341,
+     "value": "B"
+    },
+    {
+     "start": 24.341,
+     "end": 24.551,
+     "value": "C"
+    },
+    {
+     "start": 24.551,
+     "end": 24.621,
+     "value": "B"
+    },
+    {
+     "start": 24.621,
+     "end": 24.831,
+     "value": "C"
+    },
+    {
+     "start": 24.831,
+     "end": 25.331,
+     "value": "X"
+    },
+    {
+     "start": 25.331,
+     "end": 25.611,
+     "value": "F"
+    },
+    {
+     "start": 25.611,
+     "end": 25.751,
+     "value": "C"
+    },
+    {
+     "start": 25.751,
+     "end": 26.031,
+     "value": "B"
+    },
+    {
+     "start": 26.031,
+     "end": 26.241,
+     "value": "E"
+    },
+    {
+     "start": 26.241,
+     "end": 26.381,
+     "value": "B"
+    },
+    {
+     "start": 26.381,
+     "end": 26.591,
+     "value": "C"
+    },
+    {
+     "start": 26.591,
+     "end": 26.671,
+     "value": "A"
+    },
+    {
+     "start": 26.671,
+     "end": 26.801,
+     "value": "G"
+    },
+    {
+     "start": 26.801,
+     "end": 26.871,
+     "value": "E"
+    },
+    {
+     "start": 26.871,
+     "end": 27.011,
+     "value": "B"
+    },
+    {
+     "start": 27.011,
+     "end": 27.221,
+     "value": "C"
+    },
+    {
+     "start": 27.221,
+     "end": 27.291,
+     "value": "G"
+    },
+    {
+     "start": 27.291,
+     "end": 27.431,
+     "value": "B"
+    },
+    {
+     "start": 27.431,
+     "end": 27.501,
+     "value": "C"
+    },
+    {
+     "start": 27.501,
+     "end": 27.611,
+     "value": "A"
+    },
+    {
+     "start": 27.611,
+     "end": 27.781,
+     "value": "B"
+    },
+    {
+     "start": 27.781,
+     "end": 28.061,
+     "value": "E"
+    },
+    {
+     "start": 28.061,
+     "end": 28.671,
+     "value": "X"
+    },
+    {
+     "start": 28.671,
+     "end": 28.721,
+     "value": "F"
+    },
+    {
+     "start": 28.721,
+     "end": 28.761,
+     "value": "C"
+    },
+    {
+     "start": 28.761,
+     "end": 28.971,
+     "value": "B"
+    },
+    {
+     "start": 28.971,
+     "end": 29.251,
+     "value": "E"
+    },
+    {
+     "start": 29.251,
+     "end": 29.461,
+     "value": "B"
+    },
+    {
+     "start": 29.461,
+     "end": 29.541,
+     "value": "A"
+    },
+    {
+     "start": 29.541,
+     "end": 29.701,
+     "value": "C"
+    },
+    {
+     "start": 29.701,
+     "end": 29.841,
+     "value": "B"
+    },
+    {
+     "start": 29.841,
+     "end": 29.911,
+     "value": "F"
+    },
+    {
+     "start": 29.911,
+     "end": 30.051,
+     "value": "C"
+    },
+    {
+     "start": 30.051,
+     "end": 30.191,
+     "value": "B"
+    },
+    {
+     "start": 30.191,
+     "end": 30.401,
+     "value": "C"
+    },
+    {
+     "start": 30.401,
+     "end": 30.541,
+     "value": "B"
+    },
+    {
+     "start": 30.541,
+     "end": 30.751,
+     "value": "C"
+    },
+    {
+     "start": 30.751,
+     "end": 30.891,
+     "value": "B"
+    },
+    {
+     "start": 30.891,
+     "end": 30.981,
+     "value": "A"
+    },
+    {
+     "start": 30.981,
+     "end": 31.061,
+     "value": "C"
+    },
+    {
+     "start": 31.061,
+     "end": 31.181,
+     "value": "A"
+    },
+    {
+     "start": 31.181,
+     "end": 31.321,
+     "value": "B"
+    },
+    {
+     "start": 31.321,
+     "end": 31.531,
+     "value": "C"
+    },
+    {
+     "start": 31.531,
+     "end": 31.601,
+     "value": "B"
+    },
+    {
+     "start": 31.601,
+     "end": 31.681,
+     "value": "A"
+    },
+    {
+     "start": 31.681,
+     "end": 31.781,
+     "value": "B"
+    },
+    {
+     "start": 31.781,
+     "end": 32.131,
+     "value": "F"
+    },
+    {
+     "start": 32.131,
+     "end": 32.231,
+     "value": "A"
+    },
+    {
+     "start": 32.231,
+     "end": 32.461,
+     "value": "B"
+    },
+    {
+     "start": 32.461,
+     "end": 32.531,
+     "value": "C"
+    },
+    {
+     "start": 32.531,
+     "end": 32.671,
+     "value": "E"
+    },
+    {
+     "start": 32.671,
+     "end": 32.811,
+     "value": "C"
+    },
+    {
+     "start": 32.811,
+     "end": 33.021,
+     "value": "B"
+    },
+    {
+     "start": 33.021,
+     "end": 33.231,
+     "value": "C"
+    },
+    {
+     "start": 33.231,
+     "end": 33.651,
+     "value": "B"
+    },
+    {
+     "start": 33.651,
+     "end": 33.731,
+     "value": "A"
+    },
+    {
+     "start": 33.731,
+     "end": 33.931,
+     "value": "C"
+    },
+    {
+     "start": 33.931,
+     "end": 34.001,
+     "value": "B"
+    },
+    {
+     "start": 34.001,
+     "end": 34.071,
+     "value": "C"
+    },
+    {
+     "start": 34.071,
+     "end": 34.211,
+     "value": "G"
+    },
+    {
+     "start": 34.211,
+     "end": 34.281,
+     "value": "C"
+    },
+    {
+     "start": 34.281,
+     "end": 34.351,
+     "value": "B"
+    },
+    {
+     "start": 34.351,
+     "end": 34.631,
+     "value": "C"
+    },
+    {
+     "start": 34.631,
+     "end": 34.671,
+     "value": "X"
+    }
+   ]
+  },
+  {
+   "id": "l005",
+   "speaker": "A",
+   "text": "If the mouth shapes match my words and both of us blink naturally, the lip sync is working.",
+   "start": 34.978,
+   "end": 40.535,
+   "segmentIndex": 2,
+   "cues": [
+    {
+     "start": 34.978,
+     "end": 35.008,
+     "value": "X"
+    },
+    {
+     "start": 35.008,
+     "end": 35.048,
+     "value": "B"
+    },
+    {
+     "start": 35.048,
+     "end": 35.158,
+     "value": "G"
+    },
+    {
+     "start": 35.158,
+     "end": 35.228,
+     "value": "C"
+    },
+    {
+     "start": 35.228,
+     "end": 35.328,
+     "value": "A"
+    },
+    {
+     "start": 35.328,
+     "end": 35.448,
+     "value": "C"
+    },
+    {
+     "start": 35.448,
+     "end": 35.518,
+     "value": "E"
+    },
+    {
+     "start": 35.518,
+     "end": 35.728,
+     "value": "B"
+    },
+    {
+     "start": 35.728,
+     "end": 35.798,
+     "value": "C"
+    },
+    {
+     "start": 35.798,
+     "end": 35.908,
+     "value": "A"
+    },
+    {
+     "start": 35.908,
+     "end": 35.988,
+     "value": "B"
+    },
+    {
+     "start": 35.988,
+     "end": 36.088,
+     "value": "A"
+    },
+    {
+     "start": 36.088,
+     "end": 36.228,
+     "value": "C"
+    },
+    {
+     "start": 36.228,
+     "end": 36.368,
+     "value": "B"
+    },
+    {
+     "start": 36.368,
+     "end": 36.468,
+     "value": "A"
+    },
+    {
+     "start": 36.468,
+     "end": 36.518,
+     "value": "C"
+    },
+    {
+     "start": 36.518,
+     "end": 36.558,
+     "value": "B"
+    },
+    {
+     "start": 36.558,
+     "end": 36.768,
+     "value": "F"
+    },
+    {
+     "start": 36.768,
+     "end": 36.908,
+     "value": "E"
+    },
+    {
+     "start": 36.908,
+     "end": 37.188,
+     "value": "B"
+    },
+    {
+     "start": 37.188,
+     "end": 37.268,
+     "value": "A"
+    },
+    {
+     "start": 37.268,
+     "end": 37.378,
+     "value": "E"
+    },
+    {
+     "start": 37.378,
+     "end": 37.518,
+     "value": "F"
+    },
+    {
+     "start": 37.518,
+     "end": 37.588,
+     "value": "B"
+    },
+    {
+     "start": 37.588,
+     "end": 37.658,
+     "value": "G"
+    },
+    {
+     "start": 37.658,
+     "end": 37.728,
+     "value": "C"
+    },
+    {
+     "start": 37.728,
+     "end": 37.808,
+     "value": "A"
+    },
+    {
+     "start": 37.808,
+     "end": 38.028,
+     "value": "B"
+    },
+    {
+     "start": 38.028,
+     "end": 38.448,
+     "value": "C"
+    },
+    {
+     "start": 38.448,
+     "end": 38.798,
+     "value": "B"
+    },
+    {
+     "start": 38.798,
+     "end": 38.988,
+     "value": "X"
+    },
+    {
+     "start": 38.988,
+     "end": 39.278,
+     "value": "B"
+    },
+    {
+     "start": 39.278,
+     "end": 39.348,
+     "value": "C"
+    },
+    {
+     "start": 39.348,
+     "end": 39.418,
+     "value": "B"
+    },
+    {
+     "start": 39.418,
+     "end": 39.498,
+     "value": "A"
+    },
+    {
+     "start": 39.498,
+     "end": 40.068,
+     "value": "B"
+    },
+    {
+     "start": 40.068,
+     "end": 40.138,
+     "value": "F"
+    },
+    {
+     "start": 40.138,
+     "end": 40.208,
+     "value": "E"
+    },
+    {
+     "start": 40.208,
+     "end": 40.488,
+     "value": "B"
+    },
+    {
+     "start": 40.488,
+     "end": 40.528,
+     "value": "X"
+    }
+   ]
+  },
+  {
+   "id": "l006",
+   "speaker": "B",
+   "text": "Now to news from around the world. World stories show a world map that flies in to the country, with its flag in the corner.",
+   "start": 41.435,
+   "end": 48.747,
+   "segmentIndex": 3,
+   "cues": [
+    {
+     "start": 41.435,
+     "end": 41.465,
+     "value": "X"
+    },
+    {
+     "start": 41.465,
+     "end": 41.605,
+     "value": "C"
+    },
+    {
+     "start": 41.605,
+     "end": 41.645,
+     "value": "E"
+    },
+    {
+     "start": 41.645,
+     "end": 42.255,
+     "value": "F"
+    },
+    {
+     "start": 42.255,
+     "end": 42.325,
+     "value": "B"
+    },
+    {
+     "start": 42.325,
+     "end": 42.405,
+     "value": "A"
+    },
+    {
+     "start": 42.405,
+     "end": 42.505,
+     "value": "E"
+    },
+    {
+     "start": 42.505,
+     "end": 42.645,
+     "value": "C"
+    },
+    {
+     "start": 42.645,
+     "end": 42.715,
+     "value": "B"
+    },
+    {
+     "start": 42.715,
+     "end": 42.785,
+     "value": "C"
+    },
+    {
+     "start": 42.785,
+     "end": 42.855,
+     "value": "F"
+    },
+    {
+     "start": 42.855,
+     "end": 42.995,
+     "value": "E"
+    },
+    {
+     "start": 42.995,
+     "end": 43.135,
+     "value": "B"
+    },
+    {
+     "start": 43.135,
+     "end": 43.645,
+     "value": "X"
+    },
+    {
+     "start": 43.645,
+     "end": 43.735,
+     "value": "F"
+    },
+    {
+     "start": 43.735,
+     "end": 43.875,
+     "value": "E"
+    },
+    {
+     "start": 43.875,
+     "end": 44.015,
+     "value": "B"
+    },
+    {
+     "start": 44.015,
+     "end": 44.155,
+     "value": "E"
+    },
+    {
+     "start": 44.155,
+     "end": 44.575,
+     "value": "B"
+    },
+    {
+     "start": 44.575,
+     "end": 44.645,
+     "value": "E"
+    },
+    {
+     "start": 44.645,
+     "end": 44.715,
+     "value": "F"
+    },
+    {
+     "start": 44.715,
+     "end": 44.785,
+     "value": "C"
+    },
+    {
+     "start": 44.785,
+     "end": 44.925,
+     "value": "F"
+    },
+    {
+     "start": 44.925,
+     "end": 45.065,
+     "value": "E"
+    },
+    {
+     "start": 45.065,
+     "end": 45.135,
+     "value": "B"
+    },
+    {
+     "start": 45.135,
+     "end": 45.215,
+     "value": "A"
+    },
+    {
+     "start": 45.215,
+     "end": 45.305,
+     "value": "C"
+    },
+    {
+     "start": 45.305,
+     "end": 45.505,
+     "value": "A"
+    },
+    {
+     "start": 45.505,
+     "end": 45.645,
+     "value": "B"
+    },
+    {
+     "start": 45.645,
+     "end": 45.785,
+     "value": "G"
+    },
+    {
+     "start": 45.785,
+     "end": 45.855,
+     "value": "H"
+    },
+    {
+     "start": 45.855,
+     "end": 45.995,
+     "value": "C"
+    },
+    {
+     "start": 45.995,
+     "end": 46.205,
+     "value": "B"
+    },
+    {
+     "start": 46.205,
+     "end": 46.415,
+     "value": "F"
+    },
+    {
+     "start": 46.415,
+     "end": 47.045,
+     "value": "B"
+    },
+    {
+     "start": 47.045,
+     "end": 47.185,
+     "value": "C"
+    },
+    {
+     "start": 47.185,
+     "end": 47.335,
+     "value": "B"
+    },
+    {
+     "start": 47.335,
+     "end": 47.385,
+     "value": "F"
+    },
+    {
+     "start": 47.385,
+     "end": 47.645,
+     "value": "B"
+    },
+    {
+     "start": 47.645,
+     "end": 47.715,
+     "value": "G"
+    },
+    {
+     "start": 47.715,
+     "end": 47.785,
+     "value": "H"
+    },
+    {
+     "start": 47.785,
+     "end": 47.855,
+     "value": "C"
+    },
+    {
+     "start": 47.855,
+     "end": 48.205,
+     "value": "B"
+    },
+    {
+     "start": 48.205,
+     "end": 48.485,
+     "value": "E"
+    },
+    {
+     "start": 48.485,
+     "end": 48.555,
+     "value": "C"
+    },
+    {
+     "start": 48.555,
+     "end": 48.695,
+     "value": "E"
+    },
+    {
+     "start": 48.695,
+     "end": 48.745,
+     "value": "X"
+    }
+   ]
+  },
+  {
+   "id": "l007",
+   "speaker": "B",
+   "text": "In a real episode, this is where we would summarize the day's top story, using only facts reported by at least two different news outlets, and always saying who reported what. Longer lines like this one also cut to a full screen map in the middle, which gives the broadcast a little more variety. Mark?",
+   "start": 49.047,
+   "end": 67.707,
+   "segmentIndex": 3,
+   "cues": [
+    {
+     "start": 49.047,
+     "end": 49.077,
+     "value": "X"
+    },
+    {
+     "start": 49.077,
+     "end": 49.147,
+     "value": "B"
+    },
+    {
+     "start": 49.147,
+     "end": 49.277,
+     "value": "C"
+    },
+    {
+     "start": 49.277,
+     "end": 49.487,
+     "value": "B"
+    },
+    {
+     "start": 49.487,
+     "end": 49.557,
+     "value": "H"
+    },
+    {
+     "start": 49.557,
+     "end": 49.627,
+     "value": "C"
+    },
+    {
+     "start": 49.627,
+     "end": 49.727,
+     "value": "A"
+    },
+    {
+     "start": 49.727,
+     "end": 49.877,
+     "value": "B"
+    },
+    {
+     "start": 49.877,
+     "end": 49.947,
+     "value": "E"
+    },
+    {
+     "start": 49.947,
+     "end": 50.157,
+     "value": "B"
+    },
+    {
+     "start": 50.157,
+     "end": 50.487,
+     "value": "X"
+    },
+    {
+     "start": 50.487,
+     "end": 50.797,
+     "value": "B"
+    },
+    {
+     "start": 50.797,
+     "end": 50.867,
+     "value": "F"
+    },
+    {
+     "start": 50.867,
+     "end": 50.937,
+     "value": "C"
+    },
+    {
+     "start": 50.937,
+     "end": 51.007,
+     "value": "B"
+    },
+    {
+     "start": 51.007,
+     "end": 51.077,
+     "value": "F"
+    },
+    {
+     "start": 51.077,
+     "end": 51.357,
+     "value": "B"
+    },
+    {
+     "start": 51.357,
+     "end": 51.427,
+     "value": "C"
+    },
+    {
+     "start": 51.427,
+     "end": 51.507,
+     "value": "A"
+    },
+    {
+     "start": 51.507,
+     "end": 51.627,
+     "value": "E"
+    },
+    {
+     "start": 51.627,
+     "end": 51.697,
+     "value": "C"
+    },
+    {
+     "start": 51.697,
+     "end": 51.977,
+     "value": "B"
+    },
+    {
+     "start": 51.977,
+     "end": 52.117,
+     "value": "C"
+    },
+    {
+     "start": 52.117,
+     "end": 52.257,
+     "value": "B"
+    },
+    {
+     "start": 52.257,
+     "end": 52.397,
+     "value": "D"
+    },
+    {
+     "start": 52.397,
+     "end": 52.467,
+     "value": "C"
+    },
+    {
+     "start": 52.467,
+     "end": 52.587,
+     "value": "A"
+    },
+    {
+     "start": 52.587,
+     "end": 52.657,
+     "value": "B"
+    },
+    {
+     "start": 52.657,
+     "end": 52.787,
+     "value": "E"
+    },
+    {
+     "start": 52.787,
+     "end": 53.067,
+     "value": "B"
+    },
+    {
+     "start": 53.067,
+     "end": 53.457,
+     "value": "X"
+    },
+    {
+     "start": 53.457,
+     "end": 53.527,
+     "value": "F"
+    },
+    {
+     "start": 53.527,
+     "end": 53.667,
+     "value": "B"
+    },
+    {
+     "start": 53.667,
+     "end": 53.807,
+     "value": "E"
+    },
+    {
+     "start": 53.807,
+     "end": 54.087,
+     "value": "B"
+    },
+    {
+     "start": 54.087,
+     "end": 54.157,
+     "value": "G"
+    },
+    {
+     "start": 54.157,
+     "end": 54.297,
+     "value": "C"
+    },
+    {
+     "start": 54.297,
+     "end": 54.507,
+     "value": "B"
+    },
+    {
+     "start": 54.507,
+     "end": 54.587,
+     "value": "A"
+    },
+    {
+     "start": 54.587,
+     "end": 54.737,
+     "value": "E"
+    },
+    {
+     "start": 54.737,
+     "end": 54.877,
+     "value": "B"
+    },
+    {
+     "start": 54.877,
+     "end": 54.957,
+     "value": "A"
+    },
+    {
+     "start": 54.957,
+     "end": 55.067,
+     "value": "C"
+    },
+    {
+     "start": 55.067,
+     "end": 55.487,
+     "value": "B"
+    },
+    {
+     "start": 55.487,
+     "end": 55.697,
+     "value": "F"
+    },
+    {
+     "start": 55.697,
+     "end": 55.977,
+     "value": "B"
+    },
+    {
+     "start": 55.977,
+     "end": 56.257,
+     "value": "F"
+    },
+    {
+     "start": 56.257,
+     "end": 56.327,
+     "value": "B"
+    },
+    {
+     "start": 56.327,
+     "end": 56.397,
+     "value": "C"
+    },
+    {
+     "start": 56.397,
+     "end": 56.467,
+     "value": "B"
+    },
+    {
+     "start": 56.467,
+     "end": 56.607,
+     "value": "H"
+    },
+    {
+     "start": 56.607,
+     "end": 56.677,
+     "value": "C"
+    },
+    {
+     "start": 56.677,
+     "end": 57.237,
+     "value": "B"
+    },
+    {
+     "start": 57.237,
+     "end": 57.307,
+     "value": "C"
+    },
+    {
+     "start": 57.307,
+     "end": 57.587,
+     "value": "E"
+    },
+    {
+     "start": 57.587,
+     "end": 58.077,
+     "value": "B"
+    },
+    {
+     "start": 58.077,
+     "end": 58.287,
+     "value": "F"
+    },
+    {
+     "start": 58.287,
+     "end": 58.357,
+     "value": "B"
+    },
+    {
+     "start": 58.357,
+     "end": 58.437,
+     "value": "A"
+    },
+    {
+     "start": 58.437,
+     "end": 58.577,
+     "value": "E"
+    },
+    {
+     "start": 58.577,
+     "end": 58.787,
+     "value": "B"
+    },
+    {
+     "start": 58.787,
+     "end": 58.857,
+     "value": "F"
+    },
+    {
+     "start": 58.857,
+     "end": 58.927,
+     "value": "C"
+    },
+    {
+     "start": 58.927,
+     "end": 59.137,
+     "value": "B"
+    },
+    {
+     "start": 59.137,
+     "end": 59.737,
+     "value": "X"
+    },
+    {
+     "start": 59.737,
+     "end": 60.097,
+     "value": "E"
+    },
+    {
+     "start": 60.097,
+     "end": 60.167,
+     "value": "H"
+    },
+    {
+     "start": 60.167,
+     "end": 60.307,
+     "value": "D"
+    },
+    {
+     "start": 60.307,
+     "end": 60.587,
+     "value": "B"
+    },
+    {
+     "start": 60.587,
+     "end": 60.657,
+     "value": "H"
+    },
+    {
+     "start": 60.657,
+     "end": 61.007,
+     "value": "B"
+    },
+    {
+     "start": 61.007,
+     "end": 61.077,
+     "value": "F"
+    },
+    {
+     "start": 61.077,
+     "end": 61.217,
+     "value": "C"
+    },
+    {
+     "start": 61.217,
+     "end": 61.427,
+     "value": "E"
+    },
+    {
+     "start": 61.427,
+     "end": 61.497,
+     "value": "B"
+    },
+    {
+     "start": 61.497,
+     "end": 61.567,
+     "value": "E"
+    },
+    {
+     "start": 61.567,
+     "end": 61.757,
+     "value": "C"
+    },
+    {
+     "start": 61.757,
+     "end": 61.807,
+     "value": "E"
+    },
+    {
+     "start": 61.807,
+     "end": 62.057,
+     "value": "F"
+    },
+    {
+     "start": 62.057,
+     "end": 62.127,
+     "value": "C"
+    },
+    {
+     "start": 62.127,
+     "end": 62.267,
+     "value": "G"
+    },
+    {
+     "start": 62.267,
+     "end": 62.477,
+     "value": "F"
+    },
+    {
+     "start": 62.477,
+     "end": 62.827,
+     "value": "B"
+    },
+    {
+     "start": 62.827,
+     "end": 62.917,
+     "value": "A"
+    },
+    {
+     "start": 62.917,
+     "end": 62.997,
+     "value": "C"
+    },
+    {
+     "start": 62.997,
+     "end": 63.077,
+     "value": "A"
+    },
+    {
+     "start": 63.077,
+     "end": 63.337,
+     "value": "B"
+    },
+    {
+     "start": 63.337,
+     "end": 63.417,
+     "value": "A"
+    },
+    {
+     "start": 63.417,
+     "end": 63.487,
+     "value": "B"
+    },
+    {
+     "start": 63.487,
+     "end": 63.617,
+     "value": "C"
+    },
+    {
+     "start": 63.617,
+     "end": 63.687,
+     "value": "H"
+    },
+    {
+     "start": 63.687,
+     "end": 64.037,
+     "value": "B"
+    },
+    {
+     "start": 64.037,
+     "end": 64.107,
+     "value": "F"
+    },
+    {
+     "start": 64.107,
+     "end": 64.387,
+     "value": "B"
+    },
+    {
+     "start": 64.387,
+     "end": 64.457,
+     "value": "G"
+    },
+    {
+     "start": 64.457,
+     "end": 64.527,
+     "value": "B"
+    },
+    {
+     "start": 64.527,
+     "end": 64.607,
+     "value": "A"
+    },
+    {
+     "start": 64.607,
+     "end": 64.787,
+     "value": "E"
+    },
+    {
+     "start": 64.787,
+     "end": 65.137,
+     "value": "C"
+    },
+    {
+     "start": 65.137,
+     "end": 65.207,
+     "value": "B"
+    },
+    {
+     "start": 65.207,
+     "end": 65.347,
+     "value": "C"
+    },
+    {
+     "start": 65.347,
+     "end": 65.627,
+     "value": "B"
+    },
+    {
+     "start": 65.627,
+     "end": 65.707,
+     "value": "A"
+    },
+    {
+     "start": 65.707,
+     "end": 65.897,
+     "value": "E"
+    },
+    {
+     "start": 65.897,
+     "end": 65.967,
+     "value": "G"
+    },
+    {
+     "start": 65.967,
+     "end": 66.107,
+     "value": "E"
+    },
+    {
+     "start": 66.107,
+     "end": 66.247,
+     "value": "C"
+    },
+    {
+     "start": 66.247,
+     "end": 66.527,
+     "value": "B"
+    },
+    {
+     "start": 66.527,
+     "end": 67.207,
+     "value": "X"
+    },
+    {
+     "start": 67.207,
+     "end": 67.287,
+     "value": "A"
+    },
+    {
+     "start": 67.287,
+     "end": 67.387,
+     "value": "D"
+    },
+    {
+     "start": 67.387,
+     "end": 67.667,
+     "value": "B"
+    },
+    {
+     "start": 67.667,
+     "end": 67.707,
+     "value": "X"
+    }
+   ]
+  },
+  {
+   "id": "l008",
+   "speaker": "B",
+   "text": "That's the end of our test. Thanks for watching.",
+   "start": 68.607,
+   "end": 71.2,
+   "segmentIndex": 4,
+   "cues": [
+    {
+     "start": 68.607,
+     "end": 68.637,
+     "value": "X"
+    },
+    {
+     "start": 68.637,
+     "end": 68.677,
+     "value": "B"
+    },
+    {
+     "start": 68.677,
+     "end": 68.717,
+     "value": "C"
+    },
+    {
+     "start": 68.717,
+     "end": 68.997,
+     "value": "B"
+    },
+    {
+     "start": 68.997,
+     "end": 69.137,
+     "value": "C"
+    },
+    {
+     "start": 69.137,
+     "end": 69.277,
+     "value": "B"
+    },
+    {
+     "start": 69.277,
+     "end": 69.347,
+     "value": "G"
+    },
+    {
+     "start": 69.347,
+     "end": 69.417,
+     "value": "B"
+    },
+    {
+     "start": 69.417,
+     "end": 69.697,
+     "value": "C"
+    },
+    {
+     "start": 69.697,
+     "end": 70.227,
+     "value": "B"
+    },
+    {
+     "start": 70.227,
+     "end": 70.297,
+     "value": "C"
+    },
+    {
+     "start": 70.297,
+     "end": 70.437,
+     "value": "B"
+    },
+    {
+     "start": 70.437,
+     "end": 70.507,
+     "value": "G"
+    },
+    {
+     "start": 70.507,
+     "end": 70.577,
+     "value": "E"
+    },
+    {
+     "start": 70.577,
+     "end": 70.647,
+     "value": "F"
+    },
+    {
+     "start": 70.647,
+     "end": 70.787,
+     "value": "D"
+    },
+    {
+     "start": 70.787,
+     "end": 71.137,
+     "value": "B"
+    },
+    {
+     "start": 71.137,
+     "end": 71.197,
+     "value": "X"
+    }
+   ]
+  },
+  {
+   "id": "l009",
+   "speaker": "A",
+   "text": "Subscribe for tomorrow's edition. Have a good day.",
+   "start": 71.65,
+   "end": 74.929,
+   "segmentIndex": 4,
+   "cues": [
+    {
+     "start": 71.65,
+     "end": 71.68,
+     "value": "X"
+    },
+    {
+     "start": 71.68,
+     "end": 71.76,
+     "value": "B"
+    },
+    {
+     "start": 71.76,
+     "end": 71.88,
+     "value": "A"
+    },
+    {
+     "start": 71.88,
+     "end": 72.16,
+     "value": "B"
+    },
+    {
+     "start": 72.16,
+     "end": 72.23,
+     "value": "C"
+    },
+    {
+     "start": 72.23,
+     "end": 72.39,
+     "value": "A"
+    },
+    {
+     "start": 72.39,
+     "end": 72.45,
+     "value": "G"
+    },
+    {
+     "start": 72.45,
+     "end": 72.5,
+     "value": "E"
+    },
+    {
+     "start": 72.5,
+     "end": 72.64,
+     "value": "B"
+    },
+    {
+     "start": 72.64,
+     "end": 72.72,
+     "value": "A"
+    },
+    {
+     "start": 72.72,
+     "end": 72.88,
+     "value": "D"
+    },
+    {
+     "start": 72.88,
+     "end": 73.02,
+     "value": "E"
+    },
+    {
+     "start": 73.02,
+     "end": 73.09,
+     "value": "B"
+    },
+    {
+     "start": 73.09,
+     "end": 73.16,
+     "value": "C"
+    },
+    {
+     "start": 73.16,
+     "end": 73.65,
+     "value": "B"
+    },
+    {
+     "start": 73.65,
+     "end": 74.02,
+     "value": "X"
+    },
+    {
+     "start": 74.02,
+     "end": 74.1,
+     "value": "C"
+    },
+    {
+     "start": 74.1,
+     "end": 74.17,
+     "value": "G"
+    },
+    {
+     "start": 74.17,
+     "end": 74.24,
+     "value": "C"
+    },
+    {
+     "start": 74.24,
+     "end": 74.45,
+     "value": "F"
+    },
+    {
+     "start": 74.45,
+     "end": 74.52,
+     "value": "B"
+    },
+    {
+     "start": 74.52,
+     "end": 74.73,
+     "value": "C"
+    },
+    {
+     "start": 74.73,
+     "end": 74.87,
+     "value": "B"
+    },
+    {
+     "start": 74.87,
+     "end": 74.92,
+     "value": "X"
+    }
+   ]
+  }
+ ],
+ "ticker": [
+  "This is a test broadcast — no real news",
+  "U.S. stories first, then a world roundup",
+  "Every story is cross-checked against at least two outlets",
+  "U.S. stories get a state map, world stories a world map"
+ ]
+}

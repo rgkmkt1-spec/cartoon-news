@@ -1,0 +1,116 @@
+{
+  "channelName": "World Desk Daily",
+  "tagline": "America's top stories and the world's biggest headlines, every morning",
+  "targetMinutes": 10,
+  "storyCount": {
+    "min": 8,
+    "max": 10
+  },
+  "focus": {
+    "usShare": 0.7,
+    "minWorldStories": 2
+  },
+  "anchors": {
+    "A": {
+      "name": "Mark Ellis",
+      "voice": "am_michael",
+      "speed": 1.0
+    },
+    "B": {
+      "name": "Dana Reyes",
+      "voice": "af_heart",
+      "speed": 1.0
+    }
+  },
+  "feeds": [
+    {
+      "outlet": "NPR",
+      "region": "us",
+      "url": "https://feeds.npr.org/1003/rss.xml"
+    },
+    {
+      "outlet": "PBS NewsHour",
+      "region": "us",
+      "url": "https://www.pbs.org/newshour/feeds/rss/headlines"
+    },
+    {
+      "outlet": "ABC News",
+      "region": "us",
+      "url": "https://abcnews.go.com/abcnews/usheadlines"
+    },
+    {
+      "outlet": "CBS News",
+      "region": "us",
+      "url": "https://www.cbsnews.com/latest/rss/us"
+    },
+    {
+      "outlet": "NBC News",
+      "region": "us",
+      "url": "https://feeds.nbcnews.com/nbcnews/public/news"
+    },
+    {
+      "outlet": "Fox News",
+      "region": "us",
+      "url": "https://moxie.foxnews.com/google-publisher/us.xml"
+    },
+    {
+      "outlet": "The Hill",
+      "region": "us",
+      "url": "https://thehill.com/news/feed/"
+    },
+    {
+      "outlet": "The Guardian US",
+      "region": "us",
+      "url": "https://www.theguardian.com/us-news/rss"
+    },
+    {
+      "outlet": "BBC News US",
+      "region": "us",
+      "url": "https://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml"
+    },
+    {
+      "outlet": "BBC News",
+      "region": "world",
+      "url": "https://feeds.bbci.co.uk/news/world/rss.xml"
+    },
+    {
+      "outlet": "Al Jazeera",
+      "region": "world",
+      "url": "https://www.aljazeera.com/xml/rss/all.xml"
+    },
+    {
+      "outlet": "NPR World",
+      "region": "world",
+      "url": "https://feeds.npr.org/1004/rss.xml"
+    },
+    {
+      "outlet": "The Guardian",
+      "region": "world",
+      "url": "https://www.theguardian.com/world/rss"
+    },
+    {
+      "outlet": "DW",
+      "region": "world",
+      "url": "https://rss.dw.com/xml/rss-en-world"
+    },
+    {
+      "outlet": "France 24",
+      "region": "world",
+      "url": "https://www.france24.com/en/rss"
+    }
+  ],
+  "maxItemAgeHours": 30,
+  "maxItemsPerFeed": 20,
+  "youtube": {
+    "categoryId": "25",
+    "defaultTags": [
+      "us news",
+      "world news",
+      "news today",
+      "daily news",
+      "animated news",
+      "top stories"
+    ],
+    "language": "en"
+  }
+}
