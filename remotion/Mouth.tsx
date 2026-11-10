@@ -18,13 +18,16 @@ const SHAPES: Record<MouthShape, { w: number; h: number; teeth: number; tongue: 
   H: { w: 36, h: 17, teeth: 0.5, tongue: 1 },
 };
 
-export const Mouth: React.FC<{ shape: MouthShape; lip: string; idPrefix: string; smile?: number }> = ({
+const GRIN: { w: number; h: number; teeth: number; tongue: number; closed?: boolean } = { w: 46, h: 15, teeth: 1, tongue: 0.35 };
+
+export const Mouth: React.FC<{ shape: MouthShape; lip: string; idPrefix: string; smile?: number; grin?: boolean }> = ({
   shape,
   lip,
   idPrefix,
   smile = 0,
+  grin = false,
 }) => {
-  const s = SHAPES[shape] ?? SHAPES.X;
+  const s = grin ? GRIN : SHAPES[shape] ?? SHAPES.X;
   if (s.closed) {
     const w = s.w / 2;
     const curve = shape === "X" ? 5 + smile * 4 : 1.5;
@@ -45,7 +48,9 @@ export const Mouth: React.FC<{ shape: MouthShape; lip: string; idPrefix: string;
   const h = s.h;
   const top = -h * 0.35;
   const bottom = h * 0.65;
-  const d = `M ${-w} 0 Q 0 ${-h * 0.7} ${w} 0 Q 0 ${h * 1.3} ${-w} 0 Z`;
+  const d = grin
+    ? `M ${-w} ${-3} Q 0 ${-h * 0.25} ${w} ${-3} Q 0 ${h * 1.9} ${-w} ${-3} Z`
+    : `M ${-w} 0 Q 0 ${-h * 0.7} ${w} 0 Q 0 ${h * 1.3} ${-w} 0 Z`;
   const clipId = `${idPrefix}-mouth`;
   return (
     <g>

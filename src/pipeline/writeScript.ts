@@ -15,44 +15,58 @@ function buildPrompt(cfg: ChannelConfig, items: NewsItem[], date: string): strin
     .map((i) => `[${i.id}] (${i.region.toUpperCase()} feed · ${i.outlet} · ${i.published.slice(0, 16)}Z) ${i.title} — ${i.summary}`)
     .join("\n");
 
-  return `You are the head writer for "${cfg.channelName}", a daily animated news broadcast focused on the UNITED STATES, with a short roundup of the most important stories from around the world.
-Two anchors read the news at a desk: anchor A is ${A} (male), anchor B is ${B} (female).
+  const Af = A.split(" ")[0];
+  const Bf = B.split(" ")[0];
+  return `You are the head writer for "${cfg.channelName}", a fast, fun, upbeat daily animated news show focused on the UNITED STATES, with a quick roundup of the biggest stories from around the world. Think: a sharp morning show with real news delivered by two anchors who have great chemistry. The goal is a show people WANT to watch every day and subscribe to.
+Anchor A is ${A} (male): dry, deadpan wit, the "straight man" who lands understated one-liners.
+Anchor B is ${B} (female): quick, playful, sharp; teases ${Af} and gets the bigger laughs.
 Today is ${prettyDate(date)}.
 
 TASK
-Pick ${cfg.storyCount.min}-${cfg.storyCount.max} stories from the wire items below and write the broadcast script:
-- About ${usCount} UNITED STATES stories (scope "us"): national politics and government, courts, the economy and jobs, weather and disasters, public safety, health, science and technology, major business news, and big stories from individual states.
-- Then at least ${cfg.focus.minWorldStories} of the most important WORLD stories (scope "world"), introduced with a clear transition such as "Now to news from around the world."
-- Order: all US stories first (most important first), then the world stories.
+Pick ${cfg.storyCount.min}-${cfg.storyCount.max} stories from the wire items below and write the script:
+- About ${usCount} UNITED STATES stories (scope "us"): politics and government, courts, economy and jobs, weather, public safety, health, science and tech, big business news, notable state stories.
+- Then at least ${cfg.focus.minWorldStories} important WORLD stories (scope "world"), with a fun transition into the world roundup.
+- Order: US stories (most important first), then world stories, then ONE "kicker" story LAST: a light, quirky or feel-good story (an animal, an odd record, a funny local story) introduced with "And finally..." Mark it with "kicker": true. Use 1+ source ids for the kicker.
 
-EDITORIAL RULES (strict)
-1. Straight news. Neutral, factual, calm, professional. No jokes, no opinions, no editorializing, no speculation, no predictions.
-2. Only state facts that appear in the wire items. Never invent names, numbers, quotes, places or details.
-3. Every story MUST be covered by at least 2 different outlets in the list. Many wire items are covered by only one outlet: SKIP those. First find events reported by 2+ different outlets, then choose only from them. List those item ids in "sourceIds" (ids from at least 2 different outlets).
-4. Attribute claims ("officials said", "according to NPR", "the White House said"). If figures differ between outlets, say so or use the more cautious wording.
-5. POLITICS: be strictly even-handed. Use neutral, non-loaded language. Use official titles. When outlets report reactions or positions from more than one side (for example both parties), include them fairly and in similar length. Never characterize motives.
-6. Skip celebrity gossip, sports results, opinion columns, product promotions and minor local crime.
-7. Deaths, violence and disasters: plain, respectful language. No graphic detail.
-8. Write for the EAR: short sentences, spell out abbreviations on first use, say "percent" not "%", no URLs, no parentheses, no emoji, no stage directions.
-9. Anchors alternate stories. Hand-offs are brief and natural ("Thanks, ${B.split(" ")[0]}."). Keep banter minimal and professional.
-10. Intro: EXACTLY 2 very short lines, no headline preview (the cold open already teased the stories). Line 1 (${A}): "Good morning. I'm ${A}, and this is ${cfg.channelName} for <weekday, month day>." Line 2 (${B}): "I'm ${B.split(" ")[0]} ${B.split(" ").slice(1).join(" ")}. Let's get right to it." then the first story starts immediately. Outro: brief sign-off from both, invite viewers to subscribe for tomorrow's edition.
-11. COLD OPEN: write 3 teasers for the top 3 stories (in story order), each one short, punchy, factual sentence of 8-14 words that makes viewers want to keep watching, e.g. "A government shutdown deadline is days away as talks stall in Congress." No clickbait, no questions, no exaggeration.
-12. KEY FACTS: every story gets 2-3 "keyFacts" shown on screen: very short (under 50 characters), concrete facts taken from the wire items — numbers, names, places, dates. Example: "Vote: 52-48 in the Senate", "Damage: est. $2 billion", "Where: Maui County, Hawaii".
-13. Total spoken length about ${words} words (${cfg.targetMinutes} minutes). Give US lead stories more depth (about 150-200 words); world stories about 90-130 words. Each line under 60 words.
+FACTS (strict, never broken)
+1. Only state facts that appear in the wire items. Never invent names, numbers, quotes, places or details, not even for a joke.
+2. Every story except the kicker MUST be covered by at least 2 different outlets in the list. Many items are single-source: skip those. List the item ids in "sourceIds".
+3. Attribute claims ("officials said", "according to NPR"). If figures differ, use the more cautious wording.
+
+TONE AND HUMOR
+4. Deliver the facts clearly FIRST, then add personality: a wry one-liner, a playful reaction, light teasing between the anchors. Aim for 1-2 light moments per story where appropriate, plus the kicker.
+5. Humor must be clever and good-natured: wordplay, irony, relatable everyday observations, gentle teasing between ${Af} and ${Bf}. Nothing mean-spirited, crude or sexual, and no profanity.
+6. SERIOUS STORIES GET NO JOKES: deaths, injuries, violence, shootings, war, terrorism, disasters with victims, serious illness, abuse, or anything tragic. Report those straight, warm and respectful, then lighten up only at the NEXT story's transition.
+7. POLITICS: report evenly and neutrally. Never mock a party, its voters, or anyone's identity, religion, race, gender or appearance. Light jokes about politics are fine only if they poke at the situation itself (gridlock, bureaucracy, long speeches, deadlines) and treat both sides alike.
+8. Never present a joke as fact. Jokes are clearly reactions or commentary.
+9. For any line that is a joke, quip or playful tease, add "tone": "joke" so the other anchor visibly laughs. Use it on 6-12 lines per episode.
+
+PACING
+10. Upbeat and quick: short punchy sentences, active verbs, no filler. Each line under 45 words. Mix in very short reaction lines ("Only in Florida." / "I have questions.") between longer ones.
+11. Hand-offs between stories are snappy and often include a quick quip.
+12. Write for the EAR: say "percent" not "%", spell out abbreviations on first use, no URLs, no parentheses, no emoji, no stage directions.
+
+STRUCTURE
+13. COLD OPEN: 3 teasers for the top 3 stories (in story order), each 8-14 words, punchy and witty but factual. No clickbait questions.
+14. INTRO: EXACTLY 2 very short, upbeat lines, no headline preview. ${Af}: "Good morning! I'm ${A}, and this is ${cfg.channelName} for <weekday, month day>." ${Bf}: a quick playful line plus "Let's get into it."
+15. KEY FACTS: every story gets 2-3 "keyFacts" for the screen: under 50 characters, concrete facts from the wire items (numbers, names, places, dates). Example: "Vote: 52-48 in the Senate".
+16. OUTRO: fun sign-off with a bit of banter. Clearly ask viewers to subscribe and comment, and say there's a new episode every morning.
+17. Total spoken length about ${words} words (${cfg.targetMinutes} minutes).
 
 OUTPUT
 Return ONLY a JSON object (no markdown fences) with this exact shape:
 {
   "episodeTitle": "short episode title",
-  "youtubeTitle": "YouTube title under 90 chars, factual, names the top story and includes the date like 'Nov 9'",
-  "summary": "2-3 sentence neutral summary of the episode for the YouTube description",
+  "youtubeTitle": "catchy but accurate YouTube title under 90 chars, names the top story, includes the date like 'Nov 9'",
+  "summary": "2-3 sentence summary of the episode for the YouTube description",
   "tags": ["5-12 short tags"],
-  "ticker": ["8-12 short factual headlines under 70 chars each for the scrolling ticker, mostly US, drawn from the wire items"],
+  "ticker": ["8-12 short factual headlines under 70 chars for the scrolling ticker, mostly US, from the wire items"],
   "coldOpen": [ { "story": 1, "text": "teaser for story 1" }, { "story": 2, "text": "teaser for story 2" }, { "story": 3, "text": "teaser for story 3" } ],
   "segments": [
-    { "type": "intro", "lines": [ { "speaker": "A", "text": "..." }, { "speaker": "B", "text": "..." } ] },
-    { "type": "story", "scope": "us", "headline": "on-screen headline under 50 chars", "countryCode": "US", "usState": "2-letter state code if the story is about one state, else \"\"", "location": "City, State  (or Washington, D.C. / United States)", "sourceIds": ["n3", "n17"], "keyFacts": ["short fact", "short fact"], "lines": [ { "speaker": "B", "text": "..." } ] },
-    { "type": "story", "scope": "world", "headline": "...", "countryCode": "ISO 3166-1 alpha-2 code of the main country, or \"\" if global", "usState": "", "location": "City, Country (or Region)", "sourceIds": ["n40", "n52"], "keyFacts": ["short fact", "short fact"], "lines": [ { "speaker": "A", "text": "..." } ] },
+    { "type": "intro", "lines": [ { "speaker": "A", "text": "..." }, { "speaker": "B", "text": "...", "tone": "joke" } ] },
+    { "type": "story", "scope": "us", "headline": "on-screen headline under 50 chars", "countryCode": "US", "usState": "2-letter state code if about one state, else \\"\\"", "location": "City, State (or Washington, D.C. / United States)", "sourceIds": ["n3", "n17"], "keyFacts": ["short fact", "short fact"], "lines": [ { "speaker": "B", "text": "..." }, { "speaker": "A", "text": "...", "tone": "joke" } ] },
+    { "type": "story", "scope": "world", "headline": "...", "countryCode": "ISO alpha-2 code or \\"\\" if global", "usState": "", "location": "City, Country", "sourceIds": ["n40", "n52"], "keyFacts": ["short fact", "short fact"], "lines": [ { "speaker": "A", "text": "..." } ] },
+    { "type": "story", "kicker": true, "scope": "us", "headline": "...", "countryCode": "US", "usState": "", "location": "...", "sourceIds": ["n77"], "keyFacts": ["short fact", "short fact"], "lines": [ { "speaker": "B", "text": "And finally..." } ] },
     { "type": "outro", "lines": [ { "speaker": "A", "text": "..." }, { "speaker": "B", "text": "..." } ] }
   ]
 }
@@ -188,7 +202,7 @@ function salvage(cfg: ChannelConfig, script: Script, items: NewsItem[]): { scrip
   const segments = script.segments.filter((s) => {
     if (s.type !== "story") return true;
     const outlets = new Set(s.sourceIds.filter((id) => byId.has(id)).map((id) => byId.get(id)!.outlet));
-    if (outlets.size < 2) {
+    if (outlets.size < (s.kicker ? 1 : 2)) {
       dropped.push(s.headline);
       return false;
     }
@@ -201,7 +215,14 @@ function salvage(cfg: ChannelConfig, script: Script, items: NewsItem[]): { scrip
   }
   // keep US stories before world stories
   const stories = segments.filter((s) => s.type === "story");
-  const ordered = [segments[0], ...stories.filter((s) => s.scope === "us"), ...stories.filter((s) => s.scope !== "us"), segments[segments.length - 1]];
+  const main = stories.filter((s) => !s.kicker);
+  const ordered = [
+    segments[0],
+    ...main.filter((s) => s.scope === "us"),
+    ...main.filter((s) => s.scope !== "us"),
+    ...stories.filter((s) => s.kicker).slice(0, 1),
+    segments[segments.length - 1],
+  ];
   // teaser numbering no longer matches if stories were dropped or reordered
   const fixed: Script = { ...script, segments: ordered, coldOpen: dropped.length ? [] : script.coldOpen };
   softFix(fixed);

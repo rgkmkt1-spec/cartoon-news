@@ -17,11 +17,12 @@
       "lines": [
         {
           "speaker": "A",
-          "text": "Good morning. I'm Mark Ellis, and this is World Desk Daily for Monday, November 9."
+          "text": "Good morning! I'm Mark Ellis, and this is World Desk Daily for Tuesday, November 10th."
         },
         {
           "speaker": "B",
-          "text": "I'm Dana Reyes. Let's get right to it."
+          "text": "And I'm Dana Reyes, already on my second coffee. Let's get into it.",
+          "tone": "joke"
         }
       ]
     },
@@ -36,7 +37,12 @@
       "lines": [
         {
           "speaker": "B",
-          "text": "First, a national story. For news that affects the whole country, the map shows all fifty states."
+          "text": "First up, a national story. For news that affects the whole country, the map shows all fifty states."
+        },
+        {
+          "speaker": "A",
+          "text": "All fifty. I counted. Twice.",
+          "tone": "joke"
         }
       ],
       "keyFacts": [
@@ -53,11 +59,12 @@
       "lines": [
         {
           "speaker": "A",
-          "text": "Thanks, Dana. U.S. stories come first in every episode. When a story is about one state, the map behind me zooms in on that state, here Pennsylvania."
+          "text": "State stories zoom right in. Today, that's Pennsylvania, home of Harrisburg."
         },
         {
-          "speaker": "A",
-          "text": "If the mouth shapes match my words and both of us blink naturally, the lip sync is working."
+          "speaker": "B",
+          "text": "And home of very strong opinions about sandwiches.",
+          "tone": "joke"
         }
       ],
       "scope": "us",
@@ -76,12 +83,8 @@
       "sourceIds": [],
       "lines": [
         {
-          "speaker": "B",
-          "text": "Now to news from around the world. World stories show a world map that flies in to the country, with its flag in the corner."
-        },
-        {
-          "speaker": "B",
-          "text": "In a real episode, this is where we would summarize the day's top story, using only facts reported by at least two different news outlets, and always saying who reported what. Longer lines like this one also cut to a full screen map in the middle, which gives the broadcast a little more variety. Mark?"
+          "speaker": "A",
+          "text": "Now to the world. Our world map flies to the country in the story, here Japan, with its flag up in the corner."
         }
       ],
       "scope": "world",
@@ -93,15 +96,40 @@
       ]
     },
     {
+      "type": "story",
+      "scope": "us",
+      "kicker": true,
+      "usState": "PA",
+      "headline": "TEST: And finally \u2014 a very good dog",
+      "countryCode": "US",
+      "location": "Erie, Pennsylvania",
+      "sourceIds": [],
+      "keyFacts": [
+        "Good dog: confirmed",
+        "Treats: several"
+      ],
+      "lines": [
+        {
+          "speaker": "B",
+          "text": "And finally, the last story of every episode is a light one, like a very good dog in Erie."
+        },
+        {
+          "speaker": "A",
+          "text": "Breaking news. He is, in fact, a good boy.",
+          "tone": "joke"
+        }
+      ]
+    },
+    {
       "type": "outro",
       "lines": [
         {
           "speaker": "B",
-          "text": "That's the end of our test. Thanks for watching."
+          "text": "That's the show! Subscribe and drop us a comment."
         },
         {
           "speaker": "A",
-          "text": "Subscribe for tomorrow's edition. Have a good day."
+          "text": "New episode every morning. See you tomorrow."
         }
       ]
     }
@@ -109,11 +137,11 @@
   "coldOpen": [
     {
       "story": 1,
-      "text": "Our national map now covers all fifty states."
+      "text": "Fifty states, one map, zero excuses."
     },
     {
       "story": 2,
-      "text": "State stories zoom right in, starting with Pennsylvania."
+      "text": "Pennsylvania gets the spotlight, and the gold highlight."
     },
     {
       "story": 3,

@@ -107,7 +107,7 @@ export async function buildAudio(cfg: ChannelConfig, script: Script, date: strin
       ...stories[c.story - 1],
       type: "cold" as const,
       storyNumber: c.story,
-      lines: [{ speaker: (i % 2 === 0 ? "B" : "A") as "A" | "B", text: c.text }],
+      lines: [{ speaker: (i % 2 === 0 ? "B" : "A") as "A" | "B", text: c.text, tone: "normal" as const }],
     }));
   let storyNo = 0;
   const allSegs: Seg[] = [
@@ -117,15 +117,17 @@ export async function buildAudio(cfg: ChannelConfig, script: Script, date: strin
   const hasCold = cold.length > 0;
 
   // Flatten lines; longer pause between segments than within a segment, and room for the logo sting.
-  const flat: { id: string; speaker: "A" | "B"; text: string; segmentIndex: number; gapBefore: number }[] = [];
+  const flat: { id: string; speaker: "A" | "B"; text: string; tone: "joke" | "normal"; segmentIndex: number; gapBefore: number }[] = [];
   allSegs.forEach((seg, si) => {
     seg.lines.forEach((l, li) => {
       const prev = flat[flat.length - 1];
-      let gap = li === 0 ? 0.9 : prev && prev.speaker !== l.speaker ? 0.45 : 0.3;
+      // snappy pacing: short pauses, a beat after a joke so it lands
+      let gap = li === 0 ? 0.6 : prev && prev.speaker !== l.speaker ? 0.28 : 0.18;
+      if (prev?.tone === "joke") gap += 0.35;
       if (seg.type === "cold" && li === 0) gap = 0.35;
       if (seg.type === "intro" && li === 0 && hasCold) gap = STING + 0.25;
       if (seg.type === "story" && li === 0 && allSegs[si - 1]?.type === "intro") gap = 0.5;
-      flat.push({ id: `l${String(flat.length + 1).padStart(3, "0")}`, speaker: l.speaker, text: l.text, segmentIndex: si, gapBefore: gap });
+      flat.push({ id: `l${String(flat.length + 1).padStart(3, "0")}`, speaker: l.speaker, text: l.text, tone: l.tone ?? "normal", segmentIndex: si, gapBefore: gap });
     });
   });
 
@@ -162,6 +164,7 @@ export async function buildAudio(cfg: ChannelConfig, script: Script, date: strin
     id: l.id,
     speaker: l.speaker,
     text: l.text,
+    tone: l.tone,
     start: result.timeline[i].start,
     end: result.timeline[i].end,
     segmentIndex: l.segmentIndex,
@@ -182,6 +185,7 @@ export async function buildAudio(cfg: ChannelConfig, script: Script, date: strin
           : "",
       location: s.location ?? "",
       keyFacts: s.keyFacts ?? [],
+      kicker: !!s.kicker,
       storyNumber: s.storyNumber,
       start: si === 0 && s.type !== "cold" ? 0 : ls[0].start - (s.type === "cold" ? 0.35 : 0.4),
       end: ls[ls.length - 1].end + (s.type === "cold" ? 0.35 : 0.4),
@@ -200,6 +204,8 @@ export async function buildAudio(cfg: ChannelConfig, script: Script, date: strin
     const sfxJob = {
       wav: path.join(audioDir, "episode.wav"),
       coldStarts: segments.filter((s) => s.type === "cold").map((s) => s.start),
+      storyStarts: segments.filter((s) => s.type === "story").map((s) => s.start),
+      bed: env("MUSIC_BED", "on") !== "off",
       stingStart,
       stingEnd,
       voice: lines.map((l) => [l.start, l.end]),

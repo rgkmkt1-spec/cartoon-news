@@ -92,7 +92,8 @@ export const Anchor: React.FC<{
   talking: boolean;
   look: number; // -1 screen-left .. 1 screen-right, 0 = camera
   seed: number;
-}> = ({ variant, mouth, talking, look, seed }) => {
+  laugh?: number; // 0..1 — reacting to a joke
+}> = ({ variant, mouth, talking, look, seed, laugh = 0 }) => {
   const frame = useCurrentFrame();
   const c = variant === "male" ? MALE : FEMALE;
   const id = `${variant}-${seed}`;
@@ -100,10 +101,12 @@ export const Anchor: React.FC<{
 
   const breathe = Math.sin(frame / 22 + seed) * 0.5 + 0.5;
   const talkAmt = talking ? 1 : 0.3;
-  const tilt = Math.sin(frame / 37 + seed * 2) * 1.8 * talkAmt + look * 3;
-  const nod = talking ? Math.sin(frame / 9 + seed) * 1.8 + Math.sin(frame / 23) * 1.2 : Math.sin(frame / 40 + seed) * 0.7;
+  const tilt = Math.sin(frame / 37 + seed * 2) * 1.8 * talkAmt + look * 3 + laugh * (variant === "male" ? -4 : 4);
+  const nod =
+    (talking ? Math.sin(frame / 9 + seed) * 1.8 + Math.sin(frame / 23) * 1.2 : Math.sin(frame / 40 + seed) * 0.7) +
+    laugh * (Math.abs(Math.sin(frame * 0.9)) * 5 - 2); // chuckle bounce
   const blink = blinkAmount(frame, seed);
-  const browLift = talking ? Math.max(0, Math.sin(frame / 31 + seed * 3)) * 4 : 0;
+  const browLift = (talking ? Math.max(0, Math.sin(frame / 31 + seed * 3)) * 4 : 0) + laugh * 6;
   const turn = look * 7; // face features slide = fake 3D head turn
   const pupil = look * 5;
 
@@ -112,7 +115,7 @@ export const Anchor: React.FC<{
   const Eye = ({ cx, side }: { cx: number; side: -1 | 1 }) => {
     const x = cx + turn;
     // upper lid line height: 0 (open) .. 1 (closed); resting lid covers top of iris a little
-    const lid = 0.18 + blink * 0.82;
+    const lid = Math.min(1, 0.18 + laugh * 0.32 + blink * 0.82); // happy squint
     const top = EYE_Y - 25;
     const lidY = top + lid * 50;
     const clip = `${id}-eye${side}`;
@@ -349,7 +352,7 @@ export const Anchor: React.FC<{
 
         {/* mouth */}
         <g transform={`translate(${200 + turn} 252) scale(1.2)`}>
-          <Mouth shape={mouth} lip={c.lip} idPrefix={id} smile={talking ? 0 : 1} />
+          <Mouth shape={mouth} lip={c.lip} idPrefix={id} smile={talking ? 0 : 1} grin={!talking && laugh > 0.3} />
         </g>
         {/* chin highlight */}
         <ellipse cx={200 + turn * 0.7} cy={278} rx={14} ry={5} fill="#FFFFFF" opacity={0.12} />

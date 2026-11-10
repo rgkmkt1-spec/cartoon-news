@@ -197,6 +197,20 @@ export const NewsShow: React.FC<EpisodeProps> = (props) => {
   const endOpacity = interpolate(t, [lastEnd + 0.5, lastEnd + 1.1], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
 
   const speakingNow = current?.speaker;
+
+  // Laugh reactions: the other anchor cracks up during the end of a joke line and just after it;
+  // the joker smiles after landing it.
+  const laughFor = (who: Speaker) => {
+    let amt = 0;
+    for (const l of props.lines) {
+      if (l.tone !== "joke") continue;
+      if (l.start > t + 0.1) break;
+      const dur = l.end - l.start;
+      const a = interpolate(t, [l.end - Math.min(1.2, dur * 0.4), l.end - 0.2, l.end + 1.0, l.end + 1.6], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+      amt = Math.max(amt, l.speaker === who ? a * 0.6 * (t > l.end ? 1 : 0) : a);
+    }
+    return speakingNow === who ? 0 : amt;
+  };
   const lookFor = (s: Speaker) => {
     if (speakingNow === s) return 0;
     if (speakingNow) return s === "A" ? 0.85 : -0.85;
@@ -209,7 +223,7 @@ export const NewsShow: React.FC<EpisodeProps> = (props) => {
     const age = (t - seg.start - 0.6) * fps;
     if (age >= 0) overlay = (
         <LowerThird
-          label={seg.scope === "world" ? `World · ${seg.location || "Global"}` : seg.location || "United States"}
+          label={seg.kicker ? "And finally" : seg.scope === "world" ? `World · ${seg.location || "Global"}` : seg.location || "United States"}
           title={seg.headline}
           age={age}
           fps={fps}
@@ -236,7 +250,7 @@ export const NewsShow: React.FC<EpisodeProps> = (props) => {
         </div>
         {(["A", "B"] as Speaker[]).map((s) => (
           <div key={s} style={{ position: "absolute", left: POS[s] - ANCHOR_W / 2, top: ANCHOR_TOP, width: ANCHOR_W, height: ANCHOR_H }}>
-            <Anchor variant={s === "A" ? "male" : "female"} mouth={mouthFor(props, s, t)} talking={speakingNow === s} look={lookFor(s)} seed={s === "A" ? 1 : 7} />
+            <Anchor variant={s === "A" ? "male" : "female"} mouth={mouthFor(props, s, t)} talking={speakingNow === s} look={lookFor(s)} seed={s === "A" ? 1 : 7} laugh={laughFor(s)} />
           </div>
         ))}
         <Desk />

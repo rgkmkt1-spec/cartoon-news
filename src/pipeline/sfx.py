@@ -219,7 +219,28 @@ def main():
         tail = (load_custom(job["customMusic"], dur) if job.get("customMusic") else theme(dur)) * fade(int(dur * SR), 0.8, 2.0) * 0.5
         place(music, tail, o0)
 
+    # ---- quiet music bed under the whole show (between the sting and the end card), ducked under voices
+    if job.get("bed", True):
+        b0 = job["stingEnd"]
+        b1 = job["outroStart"] if job.get("outroStart") else job["duration"]
+        if b1 - b0 > 5:
+            loop_len = 16 * 4 * BEAT  # 32 s loop, tiled
+            loop = load_custom(job["customMusic"], loop_len) if job.get("customMusic") else theme(loop_len)
+            loop = band(loop, 60, 2600)  # softer, less busy
+            n = int((b1 - b0) * SR)
+            bed = np.tile(loop, int(np.ceil(n / len(loop))))[:n] * fade(n, 1.5, 1.5)
+            g = np.full(n, 0.20, np.float32)
+            for s, e in job["voice"]:
+                i0, i1 = int((s - b0 - 0.05) * SR), int((e - b0 + 0.15) * SR)
+                if i1 > 0 and i0 < n:
+                    g[max(0, i0): min(n, i1)] = 0.075
+            k = int(0.12 * SR)
+            g = np.convolve(g, np.ones(k) / k, mode="same").astype(np.float32)
+            place(music, bed * g, b0)
+
     # ---- sound effects
+    for t in job.get("storyStarts", []):
+        place(fx, whoosh(0.4), max(0, t - 0.1), 0.35)
     for i, t in enumerate(job["coldStarts"]):
         place(fx, whoosh(0.45), max(0, t - 0.4), 0.55)
         place(fx, impact(), t, 0.7)

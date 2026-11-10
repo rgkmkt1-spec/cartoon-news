@@ -12,6 +12,7 @@ export interface EpisodeLine {
   id: string;
   speaker: Speaker;
   text: string;
+  tone?: "joke" | "normal";
   start: number;
   end: number;
   segmentIndex: number;
@@ -27,6 +28,7 @@ export interface EpisodeSegment {
   flagCode: string; // same as countryCode if a flag image exists, else ""
   location: string;
   keyFacts: string[];
+  kicker?: boolean;
   storyNumber: number; // 1-based among stories (cold open: the story it teases), else 0
   start: number;
   end: number;

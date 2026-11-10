@@ -6,11 +6,13 @@ import { US_STATES } from "../../remotion/usStates";
 export const LineSchema = z.object({
   speaker: z.enum(["A", "B"]),
   text: z.string().min(2).max(600),
+  tone: z.enum(["joke", "normal"]).optional().default("normal"),
 });
 
 export const SegmentSchema = z.object({
   type: z.enum(["intro", "story", "outro"]),
   scope: z.enum(["us", "world"]).optional().default("world"),
+  kicker: z.boolean().optional().default(false),
   usState: z.string().max(2).optional().default(""),
   headline: z.string().max(70).optional().default(""),
   countryCode: z.string().max(2).optional().default(""),
@@ -56,13 +58,17 @@ export function checkScript(
     problems.push(`Need ${opts.minStories}-${opts.maxStories} stories, got ${stories.length}.`);
   }
 
-  const us = stories.filter((s) => s.scope === "us").length;
-  const world = stories.length - us;
-  const minUs = Math.floor(stories.length * opts.usShare) - 1;
+  const main = stories.filter((s) => !s.kicker);
+  const kickers = stories.filter((s) => s.kicker);
+  if (kickers.length > 1) problems.push("Only one kicker story allowed.");
+  if (kickers.length === 1 && !stories[stories.length - 1].kicker) problems.push("The kicker story must be the last story.");
+  const us = main.filter((s) => s.scope === "us").length;
+  const world = main.length - us;
+  const minUs = Math.floor(main.length * opts.usShare) - 1;
   if (us < minUs) problems.push(`Need at least ${minUs} US stories (scope "us"), got ${us}.`);
   if (world < opts.minWorldStories) problems.push(`Need at least ${opts.minWorldStories} world stories (scope "world"), got ${world}.`);
-  const firstWorld = stories.findIndex((s) => s.scope === "world");
-  if (firstWorld !== -1 && stories.slice(firstWorld).some((s) => s.scope === "us")) {
+  const firstWorld = main.findIndex((s) => s.scope === "world");
+  if (firstWorld !== -1 && main.slice(firstWorld).some((s) => s.scope === "us")) {
     problems.push("Order stories with all US stories first, then all world stories.");
   }
 
@@ -75,7 +81,7 @@ export function checkScript(
     const missing = s.sourceIds.filter((id) => !byId.has(id));
     if (missing.length) problems.push(`${label}: unknown sourceIds ${missing.join(", ")}.`);
     const outlets = new Set(s.sourceIds.filter((id) => byId.has(id)).map((id) => byId.get(id)!.outlet));
-    if (outlets.size < 2) problems.push(`${label}: must cite items from at least 2 different outlets.`);
+    if (outlets.size < (s.kicker ? 1 : 2)) problems.push(`${label}: must cite items from at least ${s.kicker ? 1 : 2} different outlets.`);
     if (s.countryCode && !countries.isValid(s.countryCode.toUpperCase())) {
       problems.push(`${label}: countryCode "${s.countryCode}" is not a valid ISO alpha-2 code.`);
     }

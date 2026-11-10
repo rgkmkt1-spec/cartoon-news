@@ -1,9 +1,9 @@
 {
   "channelName": "World Desk Daily",
-  "tagline": "America's top stories and the world's biggest headlines, every morning",
-  "targetMinutes": 10,
+  "tagline": "The news you need, with a smile \u2014 every morning",
+  "targetMinutes": 8,
   "storyCount": {
-    "min": 8,
+    "min": 7,
     "max": 10
   },
   "focus": {
@@ -14,12 +14,12 @@
     "A": {
       "name": "Mark Ellis",
       "voice": "am_michael",
-      "speed": 1.0
+      "speed": 1.08
     },
     "B": {
       "name": "Dana Reyes",
       "voice": "af_heart",
-      "speed": 1.0
+      "speed": 1.08
     }
   },
   "feeds": [

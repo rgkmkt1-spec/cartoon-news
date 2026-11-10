@@ -1,8 +1,8 @@
 {
  "channelName": "World Desk Daily",
- "tagline": "America's top stories and the world's biggest headlines, every morning",
- "dateLabel": "Monday, November 9, 2026",
- "shortDate": "NOV 9",
+ "tagline": "The news you need, with a smile — every morning",
+ "dateLabel": "Tuesday, November 10, 2026",
+ "shortDate": "NOV 10",
  "anchors": {
   "A": {
    "name": "Mark Ellis"
@@ -12,11 +12,11 @@
   }
  },
  "audioFile": "current/episode.wav",
- "durationSec": 82.082,
+ "durationSec": 64.157,
  "leadIn": 4,
- "stingStart": 10.139,
- "stingEnd": 12.439,
- "storyCount": 3,
+ "stingStart": 9.17,
+ "stingEnd": 11.47,
+ "storyCount": 4,
  "segments": [
   {
    "type": "cold",
@@ -30,9 +30,10 @@
     "Map: all 50 states",
     "Used for: national stories"
    ],
+   "kicker": false,
    "storyNumber": 1,
    "start": 0.55,
-   "end": 3.879
+   "end": 3.463
   },
   {
    "type": "cold",
@@ -47,9 +48,10 @@
     "Capital: Harrisburg",
     "Zoom: state highlighted in gold"
    ],
+   "kicker": false,
    "storyNumber": 2,
-   "start": 3.529,
-   "end": 7.6739999999999995
+   "start": 3.113,
+   "end": 6.899
   },
   {
    "type": "cold",
@@ -64,9 +66,10 @@
     "Capital: Tokyo",
     "Flag: shown top left"
    ],
+   "kicker": false,
    "storyNumber": 3,
-   "start": 7.324000000000001,
-   "end": 10.139
+   "start": 6.549,
+   "end": 9.17
   },
   {
    "type": "intro",
@@ -77,9 +80,10 @@
    "flagCode": "",
    "location": "",
    "keyFacts": [],
+   "kicker": false,
    "storyNumber": 0,
-   "start": 12.238999999999999,
-   "end": 21.325999999999997
+   "start": 11.27,
+   "end": 21.426
   },
   {
    "type": "story",
@@ -93,9 +97,10 @@
     "Map: all 50 states",
     "Used for: national stories"
    ],
+   "kicker": false,
    "storyNumber": 1,
-   "start": 21.026,
-   "end": 27.584
+   "start": 21.126,
+   "end": 29.752
   },
   {
    "type": "story",
@@ -110,9 +115,10 @@
     "Capital: Harrisburg",
     "Zoom: state highlighted in gold"
    ],
+   "kicker": false,
    "storyNumber": 2,
-   "start": 27.684,
-   "end": 45.088
+   "start": 29.902,
+   "end": 38.498999999999995
   },
   {
    "type": "story",
@@ -127,9 +133,27 @@
     "Capital: Tokyo",
     "Flag: shown top left"
    ],
+   "kicker": false,
    "storyNumber": 3,
-   "start": 45.188,
-   "end": 72.26
+   "start": 38.649,
+   "end": 46.158
+  },
+  {
+   "type": "story",
+   "scope": "us",
+   "usState": "PA",
+   "headline": "TEST: And finally — a very good dog",
+   "countryCode": "US",
+   "flagCode": "US",
+   "location": "Erie, Pennsylvania",
+   "keyFacts": [
+    "Good dog: confirmed",
+    "Treats: several"
+   ],
+   "kicker": true,
+   "storyNumber": 4,
+   "start": 45.958,
+   "end": 54.952
   },
   {
    "type": "outro",
@@ -140,18 +164,20 @@
    "flagCode": "",
    "location": "",
    "keyFacts": [],
+   "kicker": false,
    "storyNumber": 0,
-   "start": 72.36,
-   "end": 79.482
+   "start": 55.102000000000004,
+   "end": 61.556999999999995
   }
  ],
  "lines": [
   {
    "id": "l001",
    "speaker": "B",
-   "text": "Our national map now covers all fifty states.",
+   "text": "Fifty states, one map, zero excuses.",
+   "tone": "normal",
    "start": 0.9,
-   "end": 3.529,
+   "end": 3.113,
    "segmentIndex": 0,
    "cues": [
     {
@@ -161,77 +187,77 @@
     },
     {
      "start": 0.93,
-     "end": 1,
-     "value": "B"
-    },
-    {
-     "start": 1,
-     "end": 1.2,
-     "value": "C"
-    },
-    {
-     "start": 1.2,
-     "end": 1.34,
-     "value": "B"
-    },
-    {
-     "start": 1.34,
-     "end": 1.42,
-     "value": "A"
-    },
-    {
-     "start": 1.42,
-     "end": 1.51,
-     "value": "C"
-    },
-    {
-     "start": 1.51,
-     "end": 1.85,
-     "value": "A"
-    },
-    {
-     "start": 1.85,
-     "end": 2.27,
-     "value": "C"
-    },
-    {
-     "start": 2.27,
-     "end": 2.41,
-     "value": "E"
-    },
-    {
-     "start": 2.41,
-     "end": 2.48,
-     "value": "B"
-    },
-    {
-     "start": 2.48,
-     "end": 2.69,
-     "value": "E"
-    },
-    {
-     "start": 2.69,
-     "end": 2.76,
+     "end": 0.97,
      "value": "G"
     },
     {
-     "start": 2.76,
-     "end": 3.11,
+     "start": 0.97,
+     "end": 1.22,
      "value": "B"
     },
     {
-     "start": 3.11,
-     "end": 3.25,
+     "start": 1.22,
+     "end": 1.36,
      "value": "C"
     },
     {
-     "start": 3.25,
-     "end": 3.46,
+     "start": 1.36,
+     "end": 1.64,
      "value": "B"
     },
     {
-     "start": 3.46,
-     "end": 3.52,
+     "start": 1.64,
+     "end": 1.71,
+     "value": "C"
+    },
+    {
+     "start": 1.71,
+     "end": 1.79,
+     "value": "A"
+    },
+    {
+     "start": 1.79,
+     "end": 1.87,
+     "value": "C"
+    },
+    {
+     "start": 1.87,
+     "end": 1.95,
+     "value": "A"
+    },
+    {
+     "start": 1.95,
+     "end": 2.28,
+     "value": "B"
+    },
+    {
+     "start": 2.28,
+     "end": 2.35,
+     "value": "E"
+    },
+    {
+     "start": 2.35,
+     "end": 2.42,
+     "value": "F"
+    },
+    {
+     "start": 2.42,
+     "end": 2.56,
+     "value": "B"
+    },
+    {
+     "start": 2.56,
+     "end": 2.77,
+     "value": "F"
+    },
+    {
+     "start": 2.77,
+     "end": 3.05,
+     "value": "B"
+    },
+    {
+     "start": 3.05,
+     "end": 3.11,
      "value": "X"
     }
    ]
@@ -239,134 +265,120 @@
   {
    "id": "l002",
    "speaker": "A",
-   "text": "State stories zoom right in, starting with Pennsylvania.",
-   "start": 3.879,
-   "end": 7.324,
+   "text": "Pennsylvania gets the spotlight, and the gold highlight.",
+   "tone": "normal",
+   "start": 3.463,
+   "end": 6.549,
    "segmentIndex": 1,
    "cues": [
     {
-     "start": 3.879,
-     "end": 3.909,
-     "value": "X"
-    },
-    {
-     "start": 3.909,
-     "end": 3.959,
-     "value": "B"
-    },
-    {
-     "start": 3.959,
-     "end": 4.079,
-     "value": "C"
-    },
-    {
-     "start": 4.079,
-     "end": 4.289,
-     "value": "B"
-    },
-    {
-     "start": 4.289,
-     "end": 4.499,
-     "value": "E"
-    },
-    {
-     "start": 4.499,
-     "end": 4.639,
-     "value": "B"
-    },
-    {
-     "start": 4.639,
-     "end": 4.989,
-     "value": "F"
-    },
-    {
-     "start": 4.989,
-     "end": 5.109,
+     "start": 3.463,
+     "end": 3.493,
      "value": "A"
     },
     {
-     "start": 5.109,
-     "end": 5.209,
-     "value": "B"
-    },
-    {
-     "start": 5.209,
-     "end": 5.279,
+     "start": 3.493,
+     "end": 3.643,
      "value": "C"
     },
     {
-     "start": 5.279,
-     "end": 5.559,
+     "start": 3.643,
+     "end": 3.713,
      "value": "B"
     },
     {
-     "start": 5.559,
-     "end": 5.889,
-     "value": "X"
-    },
-    {
-     "start": 5.889,
-     "end": 5.969,
-     "value": "B"
-    },
-    {
-     "start": 5.969,
-     "end": 6.179,
-     "value": "D"
-    },
-    {
-     "start": 6.179,
-     "end": 6.319,
-     "value": "B"
-    },
-    {
-     "start": 6.319,
-     "end": 6.389,
-     "value": "F"
-    },
-    {
-     "start": 6.389,
-     "end": 6.469,
-     "value": "A"
-    },
-    {
-     "start": 6.469,
-     "end": 6.639,
+     "start": 3.713,
+     "end": 3.783,
      "value": "C"
     },
     {
-     "start": 6.639,
-     "end": 6.709,
-     "value": "B"
-    },
-    {
-     "start": 6.709,
-     "end": 6.779,
-     "value": "C"
-    },
-    {
-     "start": 6.779,
-     "end": 6.919,
+     "start": 3.783,
+     "end": 3.853,
      "value": "G"
     },
     {
-     "start": 6.919,
-     "end": 6.989,
+     "start": 3.853,
+     "end": 4.343,
      "value": "C"
     },
     {
-     "start": 6.989,
-     "end": 7.059,
+     "start": 4.343,
+     "end": 4.553,
      "value": "B"
     },
     {
-     "start": 7.059,
-     "end": 7.269,
+     "start": 4.553,
+     "end": 4.633,
+     "value": "A"
+    },
+    {
+     "start": 4.633,
+     "end": 4.773,
+     "value": "D"
+    },
+    {
+     "start": 4.773,
+     "end": 4.843,
+     "value": "B"
+    },
+    {
+     "start": 4.843,
+     "end": 4.983,
+     "value": "H"
+    },
+    {
+     "start": 4.983,
+     "end": 5.053,
      "value": "C"
     },
     {
-     "start": 7.269,
-     "end": 7.319,
+     "start": 5.053,
+     "end": 5.463,
+     "value": "B"
+    },
+    {
+     "start": 5.463,
+     "end": 5.533,
+     "value": "C"
+    },
+    {
+     "start": 5.533,
+     "end": 5.663,
+     "value": "B"
+    },
+    {
+     "start": 5.663,
+     "end": 5.873,
+     "value": "E"
+    },
+    {
+     "start": 5.873,
+     "end": 5.943,
+     "value": "F"
+    },
+    {
+     "start": 5.943,
+     "end": 6.223,
+     "value": "C"
+    },
+    {
+     "start": 6.223,
+     "end": 6.363,
+     "value": "H"
+    },
+    {
+     "start": 6.363,
+     "end": 6.433,
+     "value": "C"
+    },
+    {
+     "start": 6.433,
+     "end": 6.503,
+     "value": "B"
+    },
+    {
+     "start": 6.503,
+     "end": 6.543,
      "value": "X"
     }
    ]
@@ -375,98 +387,99 @@
    "id": "l003",
    "speaker": "B",
    "text": "And the world roundup flies to Japan.",
-   "start": 7.674,
-   "end": 9.789,
+   "tone": "normal",
+   "start": 6.899,
+   "end": 8.82,
    "segmentIndex": 2,
    "cues": [
     {
-     "start": 7.674,
-     "end": 7.704,
+     "start": 6.899,
+     "end": 6.929,
      "value": "X"
     },
     {
-     "start": 7.704,
-     "end": 7.794,
+     "start": 6.929,
+     "end": 7.049,
      "value": "B"
     },
     {
-     "start": 7.794,
-     "end": 7.864,
+     "start": 7.049,
+     "end": 7.119,
      "value": "C"
     },
     {
-     "start": 7.864,
-     "end": 7.934,
-     "value": "F"
-    },
-    {
-     "start": 7.934,
-     "end": 8.004,
+     "start": 7.119,
+     "end": 7.259,
      "value": "E"
     },
     {
-     "start": 8.004,
-     "end": 8.214,
+     "start": 7.259,
+     "end": 7.399,
      "value": "B"
     },
     {
-     "start": 8.214,
-     "end": 8.284,
+     "start": 7.399,
+     "end": 7.469,
      "value": "C"
     },
     {
-     "start": 8.284,
-     "end": 8.354,
+     "start": 7.469,
+     "end": 7.539,
      "value": "E"
     },
     {
-     "start": 8.354,
-     "end": 8.494,
+     "start": 7.539,
+     "end": 7.609,
+     "value": "B"
+    },
+    {
+     "start": 7.609,
+     "end": 7.679,
      "value": "C"
     },
     {
-     "start": 8.494,
-     "end": 8.634,
+     "start": 7.679,
+     "end": 7.809,
      "value": "A"
     },
     {
-     "start": 8.634,
-     "end": 8.764,
+     "start": 7.809,
+     "end": 7.939,
      "value": "G"
     },
     {
-     "start": 8.764,
-     "end": 8.834,
+     "start": 7.939,
+     "end": 8.009,
      "value": "H"
     },
     {
-     "start": 8.834,
-     "end": 8.974,
+     "start": 8.009,
+     "end": 8.079,
      "value": "C"
     },
     {
-     "start": 8.974,
-     "end": 9.044,
+     "start": 8.079,
+     "end": 8.149,
      "value": "B"
     },
     {
-     "start": 9.044,
-     "end": 9.254,
+     "start": 8.149,
+     "end": 8.359,
      "value": "F"
     },
     {
-     "start": 9.254,
-     "end": 9.334,
+     "start": 8.359,
+     "end": 8.439,
      "value": "A"
     },
     {
-     "start": 9.334,
-     "end": 9.734,
+     "start": 8.439,
+     "end": 8.759,
      "value": "C"
     },
     {
-     "start": 9.734,
-     "end": 9.784,
+     "start": 8.759,
+     "end": 8.819,
      "value": "X"
     }
    ]
@@ -474,194 +487,185 @@
   {
    "id": "l004",
    "speaker": "A",
-   "text": "Good morning. I'm Mark Ellis, and this is World Desk Daily for Monday, November 9.",
-   "start": 12.639,
-   "end": 18.154,
+   "text": "Good morning! I'm Mark Ellis, and this is World Desk Daily for Tuesday, November 10th.",
+   "tone": "normal",
+   "start": 11.67,
+   "end": 16.95,
    "segmentIndex": 3,
    "cues": [
     {
-     "start": 12.639,
-     "end": 12.739,
+     "start": 11.67,
+     "end": 11.77,
      "value": "F"
     },
     {
-     "start": 12.739,
-     "end": 12.809,
+     "start": 11.77,
+     "end": 11.84,
      "value": "B"
     },
     {
-     "start": 12.809,
-     "end": 12.889,
+     "start": 11.84,
+     "end": 11.92,
      "value": "A"
     },
     {
-     "start": 12.889,
-     "end": 13.019,
+     "start": 11.92,
+     "end": 12.04,
      "value": "E"
     },
     {
-     "start": 13.019,
-     "end": 13.299,
+     "start": 12.04,
+     "end": 12.57,
      "value": "B"
     },
     {
-     "start": 13.299,
-     "end": 13.549,
-     "value": "X"
-    },
-    {
-     "start": 13.549,
-     "end": 13.749,
-     "value": "B"
-    },
-    {
-     "start": 13.749,
-     "end": 13.819,
+     "start": 12.57,
+     "end": 12.64,
      "value": "C"
     },
     {
-     "start": 13.819,
-     "end": 13.889,
+     "start": 12.64,
+     "end": 12.71,
      "value": "B"
     },
     {
-     "start": 13.889,
-     "end": 13.999,
+     "start": 12.71,
+     "end": 12.81,
      "value": "A"
     },
     {
-     "start": 13.999,
-     "end": 14.159,
+     "start": 12.81,
+     "end": 12.94,
      "value": "D"
     },
     {
-     "start": 14.159,
-     "end": 14.369,
+     "start": 12.94,
+     "end": 13.15,
      "value": "C"
     },
     {
-     "start": 14.369,
-     "end": 14.759,
+     "start": 13.15,
+     "end": 13.71,
      "value": "B"
     },
     {
-     "start": 14.759,
-     "end": 14.859,
+     "start": 13.71,
+     "end": 13.78,
      "value": "C"
     },
     {
-     "start": 14.859,
-     "end": 15.279,
+     "start": 13.78,
+     "end": 14.2,
      "value": "B"
     },
     {
-     "start": 15.279,
-     "end": 15.419,
+     "start": 14.2,
+     "end": 14.34,
      "value": "F"
     },
     {
-     "start": 15.419,
-     "end": 15.629,
+     "start": 14.34,
+     "end": 14.48,
      "value": "E"
     },
     {
-     "start": 15.629,
-     "end": 15.699,
+     "start": 14.48,
+     "end": 14.55,
      "value": "B"
     },
     {
-     "start": 15.699,
-     "end": 15.909,
+     "start": 14.55,
+     "end": 14.76,
      "value": "C"
     },
     {
-     "start": 15.909,
-     "end": 16.049,
+     "start": 14.76,
+     "end": 14.83,
      "value": "B"
     },
     {
-     "start": 16.049,
-     "end": 16.189,
+     "start": 14.83,
+     "end": 14.97,
      "value": "C"
     },
     {
-     "start": 16.189,
-     "end": 16.399,
+     "start": 14.97,
+     "end": 15.18,
      "value": "B"
     },
     {
-     "start": 16.399,
-     "end": 16.469,
+     "start": 15.18,
+     "end": 15.25,
      "value": "G"
     },
     {
-     "start": 16.469,
-     "end": 16.539,
-     "value": "B"
-    },
-    {
-     "start": 16.539,
-     "end": 16.639,
-     "value": "A"
-    },
-    {
-     "start": 16.639,
-     "end": 16.999,
-     "value": "C"
-    },
-    {
-     "start": 16.999,
-     "end": 17.069,
-     "value": "B"
-    },
-    {
-     "start": 17.069,
-     "end": 17.279,
-     "value": "C"
-    },
-    {
-     "start": 17.279,
-     "end": 17.349,
+     "start": 15.25,
+     "end": 15.32,
      "value": "E"
     },
     {
-     "start": 17.349,
-     "end": 17.419,
+     "start": 15.32,
+     "end": 15.67,
+     "value": "F"
+    },
+    {
+     "start": 15.67,
+     "end": 15.74,
+     "value": "B"
+    },
+    {
+     "start": 15.74,
+     "end": 15.88,
+     "value": "C"
+    },
+    {
+     "start": 15.88,
+     "end": 15.98,
+     "value": "B"
+    },
+    {
+     "start": 15.98,
+     "end": 16.05,
+     "value": "C"
+    },
+    {
+     "start": 16.05,
+     "end": 16.11,
+     "value": "E"
+    },
+    {
+     "start": 16.11,
+     "end": 16.18,
      "value": "G"
     },
     {
-     "start": 17.419,
-     "end": 17.489,
+     "start": 16.18,
+     "end": 16.25,
      "value": "C"
     },
     {
-     "start": 17.489,
-     "end": 17.569,
+     "start": 16.25,
+     "end": 16.33,
      "value": "A"
     },
     {
-     "start": 17.569,
-     "end": 17.719,
+     "start": 16.33,
+     "end": 16.42,
      "value": "E"
     },
     {
-     "start": 17.719,
-     "end": 17.789,
+     "start": 16.42,
+     "end": 16.77,
      "value": "C"
     },
     {
-     "start": 17.789,
-     "end": 17.929,
-     "value": "D"
-    },
-    {
-     "start": 17.929,
-     "end": 18.139,
+     "start": 16.77,
+     "end": 16.91,
      "value": "B"
     },
     {
-     "start": 18.139,
-     "end": 18.149,
+     "start": 16.91,
+     "end": 16.95,
      "value": "X"
     }
    ]
@@ -669,99 +673,160 @@
   {
    "id": "l005",
    "speaker": "B",
-   "text": "I'm Dana Reyes. Let's get right to it.",
-   "start": 18.604,
-   "end": 20.926,
+   "text": "And I'm Dana Reyes, already on my second coffee. Let's get into it.",
+   "tone": "joke",
+   "start": 17.23,
+   "end": 21.026,
    "segmentIndex": 3,
    "cues": [
     {
-     "start": 18.604,
-     "end": 18.664,
+     "start": 17.23,
+     "end": 17.26,
      "value": "X"
     },
     {
-     "start": 18.664,
-     "end": 18.704,
+     "start": 17.26,
+     "end": 17.33,
+     "value": "B"
+    },
+    {
+     "start": 17.33,
+     "end": 17.4,
      "value": "C"
     },
     {
-     "start": 18.704,
-     "end": 18.784,
+     "start": 17.4,
+     "end": 17.48,
      "value": "A"
     },
     {
-     "start": 18.784,
-     "end": 18.844,
+     "start": 17.48,
+     "end": 17.54,
      "value": "B"
     },
     {
-     "start": 18.844,
-     "end": 18.904,
+     "start": 17.54,
+     "end": 17.8,
      "value": "C"
     },
     {
-     "start": 18.904,
-     "end": 18.974,
+     "start": 17.8,
+     "end": 17.87,
      "value": "B"
     },
     {
-     "start": 18.974,
-     "end": 19.114,
+     "start": 17.87,
+     "end": 18.01,
      "value": "C"
     },
     {
-     "start": 19.114,
-     "end": 19.184,
+     "start": 18.01,
+     "end": 18.29,
      "value": "B"
     },
     {
-     "start": 19.184,
-     "end": 19.324,
+     "start": 18.29,
+     "end": 18.43,
+     "value": "E"
+    },
+    {
+     "start": 18.43,
+     "end": 18.64,
+     "value": "B"
+    },
+    {
+     "start": 18.64,
+     "end": 18.71,
+     "value": "D"
+    },
+    {
+     "start": 18.71,
+     "end": 18.79,
+     "value": "A"
+    },
+    {
+     "start": 18.79,
+     "end": 18.83,
      "value": "C"
     },
     {
-     "start": 19.324,
-     "end": 19.834,
+     "start": 18.83,
+     "end": 19.01,
      "value": "B"
     },
     {
-     "start": 19.834,
-     "end": 19.894,
+     "start": 19.01,
+     "end": 19.08,
+     "value": "C"
+    },
+    {
+     "start": 19.08,
+     "end": 19.22,
+     "value": "B"
+    },
+    {
+     "start": 19.22,
+     "end": 19.36,
+     "value": "D"
+    },
+    {
+     "start": 19.36,
+     "end": 19.43,
+     "value": "C"
+    },
+    {
+     "start": 19.43,
+     "end": 19.57,
+     "value": "G"
+    },
+    {
+     "start": 19.57,
+     "end": 19.71,
+     "value": "B"
+    },
+    {
+     "start": 19.71,
+     "end": 20.1,
+     "value": "X"
+    },
+    {
+     "start": 20.1,
+     "end": 20.15,
      "value": "H"
     },
     {
-     "start": 19.894,
-     "end": 20.024,
-     "value": "B"
-    },
-    {
-     "start": 20.024,
-     "end": 20.164,
+     "start": 20.15,
+     "end": 20.19,
      "value": "C"
     },
     {
-     "start": 20.164,
-     "end": 20.304,
+     "start": 20.19,
+     "end": 20.33,
      "value": "B"
     },
     {
-     "start": 20.304,
-     "end": 20.374,
+     "start": 20.33,
+     "end": 20.47,
      "value": "C"
     },
     {
-     "start": 20.374,
-     "end": 20.654,
+     "start": 20.47,
+     "end": 20.54,
+     "value": "B"
+    },
+    {
+     "start": 20.54,
+     "end": 20.75,
      "value": "F"
     },
     {
-     "start": 20.654,
-     "end": 20.864,
+     "start": 20.75,
+     "end": 20.96,
      "value": "B"
     },
     {
-     "start": 20.864,
-     "end": 20.924,
+     "start": 20.96,
+     "end": 21.02,
      "value": "X"
     }
    ]
@@ -769,138 +834,154 @@
   {
    "id": "l006",
    "speaker": "B",
-   "text": "First, a national story. For news that affects the whole country, the map shows all fifty states.",
-   "start": 21.426,
-   "end": 27.184,
+   "text": "First up, a national story. For news that affects the whole country, the map shows all fifty states.",
+   "tone": "normal",
+   "start": 21.526,
+   "end": 27.096,
    "segmentIndex": 4,
    "cues": [
     {
-     "start": 21.426,
-     "end": 21.476,
+     "start": 21.526,
+     "end": 21.556,
      "value": "X"
     },
     {
-     "start": 21.476,
-     "end": 21.516,
+     "start": 21.556,
+     "end": 21.596,
      "value": "G"
     },
     {
-     "start": 21.516,
-     "end": 21.696,
+     "start": 21.596,
+     "end": 21.706,
      "value": "E"
     },
     {
-     "start": 21.696,
-     "end": 21.766,
+     "start": 21.706,
+     "end": 21.776,
      "value": "B"
     },
     {
-     "start": 21.766,
-     "end": 22.186,
+     "start": 21.776,
+     "end": 21.916,
      "value": "C"
     },
     {
-     "start": 22.186,
-     "end": 22.326,
+     "start": 21.916,
+     "end": 21.996,
+     "value": "A"
+    },
+    {
+     "start": 21.996,
+     "end": 22.336,
+     "value": "C"
+    },
+    {
+     "start": 22.336,
+     "end": 22.476,
      "value": "B"
     },
     {
-     "start": 22.326,
-     "end": 22.396,
+     "start": 22.476,
+     "end": 22.546,
      "value": "C"
     },
     {
-     "start": 22.396,
-     "end": 22.466,
+     "start": 22.546,
+     "end": 22.616,
      "value": "H"
     },
     {
-     "start": 22.466,
-     "end": 22.536,
+     "start": 22.616,
+     "end": 22.686,
      "value": "B"
     },
     {
-     "start": 22.536,
-     "end": 22.676,
+     "start": 22.686,
+     "end": 22.826,
      "value": "E"
     },
     {
-     "start": 22.676,
-     "end": 22.956,
+     "start": 22.826,
+     "end": 23.106,
      "value": "B"
     },
     {
-     "start": 22.956,
-     "end": 23.386,
+     "start": 23.106,
+     "end": 23.506,
      "value": "X"
     },
     {
-     "start": 23.386,
-     "end": 23.456,
-     "value": "B"
-    },
-    {
-     "start": 23.456,
-     "end": 23.796,
-     "value": "F"
-    },
-    {
-     "start": 23.796,
-     "end": 23.936,
-     "value": "B"
-    },
-    {
-     "start": 23.936,
-     "end": 24.076,
+     "start": 23.506,
+     "end": 23.576,
      "value": "G"
     },
     {
-     "start": 24.076,
-     "end": 24.146,
-     "value": "C"
-    },
-    {
-     "start": 24.146,
-     "end": 24.286,
+     "start": 23.576,
+     "end": 23.636,
      "value": "B"
     },
     {
-     "start": 24.286,
-     "end": 24.426,
-     "value": "E"
-    },
-    {
-     "start": 24.426,
-     "end": 24.496,
+     "start": 23.636,
+     "end": 23.916,
      "value": "F"
     },
     {
-     "start": 24.496,
-     "end": 24.706,
-     "value": "C"
-    },
-    {
-     "start": 24.706,
-     "end": 25.406,
+     "start": 23.916,
+     "end": 23.986,
      "value": "B"
     },
     {
-     "start": 25.406,
-     "end": 25.486,
-     "value": "A"
-    },
-    {
-     "start": 25.486,
-     "end": 25.566,
+     "start": 23.986,
+     "end": 24.056,
      "value": "C"
     },
     {
-     "start": 25.566,
-     "end": 25.696,
+     "start": 24.056,
+     "end": 24.126,
+     "value": "G"
+    },
+    {
+     "start": 24.126,
+     "end": 24.196,
+     "value": "C"
+    },
+    {
+     "start": 24.196,
+     "end": 24.406,
+     "value": "B"
+    },
+    {
+     "start": 24.406,
+     "end": 24.546,
+     "value": "E"
+    },
+    {
+     "start": 24.546,
+     "end": 24.826,
+     "value": "C"
+    },
+    {
+     "start": 24.826,
+     "end": 25.386,
+     "value": "B"
+    },
+    {
+     "start": 25.386,
+     "end": 25.466,
      "value": "A"
     },
     {
-     "start": 25.696,
+     "start": 25.466,
+     "end": 25.546,
+     "value": "C"
+    },
+    {
+     "start": 25.546,
+     "end": 25.676,
+     "value": "A"
+    },
+    {
+     "start": 25.676,
      "end": 25.786,
      "value": "B"
     },
@@ -931,22 +1012,22 @@
     },
     {
      "start": 26.346,
-     "end": 26.696,
+     "end": 26.626,
      "value": "B"
     },
     {
-     "start": 26.696,
-     "end": 26.836,
+     "start": 26.626,
+     "end": 26.766,
      "value": "C"
     },
     {
-     "start": 26.836,
-     "end": 27.116,
+     "start": 26.766,
+     "end": 27.046,
      "value": "B"
     },
     {
-     "start": 27.116,
-     "end": 27.176,
+     "start": 27.046,
+     "end": 27.086,
      "value": "X"
     }
    ]
@@ -954,349 +1035,65 @@
   {
    "id": "l007",
    "speaker": "A",
-   "text": "Thanks, Dana. U.S. stories come first in every episode. When a story is about one state, the map behind me zooms in on that state, here Pennsylvania.",
-   "start": 28.084,
-   "end": 38.831,
-   "segmentIndex": 5,
+   "text": "All fifty. I counted. Twice.",
+   "tone": "joke",
+   "start": 27.376,
+   "end": 29.352,
+   "segmentIndex": 4,
    "cues": [
     {
-     "start": 28.084,
-     "end": 28.114,
+     "start": 27.376,
+     "end": 27.406,
      "value": "X"
     },
     {
-     "start": 28.114,
-     "end": 28.174,
-     "value": "B"
-    },
-    {
-     "start": 28.174,
-     "end": 28.304,
-     "value": "C"
-    },
-    {
-     "start": 28.304,
-     "end": 28.444,
-     "value": "B"
-    },
-    {
-     "start": 28.444,
-     "end": 28.724,
-     "value": "C"
-    },
-    {
-     "start": 28.724,
-     "end": 28.794,
-     "value": "B"
-    },
-    {
-     "start": 28.794,
-     "end": 29.004,
-     "value": "C"
-    },
-    {
-     "start": 29.004,
-     "end": 29.474,
-     "value": "X"
-    },
-    {
-     "start": 29.474,
-     "end": 29.764,
-     "value": "F"
-    },
-    {
-     "start": 29.764,
-     "end": 29.904,
-     "value": "C"
-    },
-    {
-     "start": 29.904,
-     "end": 30.184,
-     "value": "B"
-    },
-    {
-     "start": 30.184,
-     "end": 30.394,
+     "start": 27.406,
+     "end": 27.556,
      "value": "E"
     },
     {
-     "start": 30.394,
-     "end": 30.534,
-     "value": "B"
-    },
-    {
-     "start": 30.534,
-     "end": 30.744,
-     "value": "C"
-    },
-    {
-     "start": 30.744,
-     "end": 30.824,
-     "value": "A"
-    },
-    {
-     "start": 30.824,
-     "end": 30.954,
+     "start": 27.556,
+     "end": 27.696,
      "value": "G"
     },
     {
-     "start": 30.954,
-     "end": 31.024,
-     "value": "E"
-    },
-    {
-     "start": 31.024,
-     "end": 31.164,
+     "start": 27.696,
+     "end": 28.076,
      "value": "B"
     },
     {
-     "start": 31.164,
-     "end": 31.374,
+     "start": 28.076,
+     "end": 28.366,
      "value": "C"
     },
     {
-     "start": 31.374,
-     "end": 31.444,
-     "value": "G"
-    },
-    {
-     "start": 31.444,
-     "end": 31.584,
-     "value": "B"
-    },
-    {
-     "start": 31.584,
-     "end": 31.654,
-     "value": "C"
-    },
-    {
-     "start": 31.654,
-     "end": 31.764,
-     "value": "A"
-    },
-    {
-     "start": 31.764,
-     "end": 31.924,
-     "value": "B"
-    },
-    {
-     "start": 31.924,
-     "end": 32.064,
+     "start": 28.366,
+     "end": 28.436,
      "value": "E"
     },
     {
-     "start": 32.064,
-     "end": 32.274,
+     "start": 28.436,
+     "end": 28.786,
      "value": "B"
     },
     {
-     "start": 32.274,
-     "end": 32.824,
-     "value": "X"
-    },
-    {
-     "start": 32.824,
-     "end": 32.874,
+     "start": 28.786,
+     "end": 28.926,
      "value": "F"
     },
     {
-     "start": 32.874,
-     "end": 32.914,
+     "start": 28.926,
+     "end": 28.996,
      "value": "C"
     },
     {
-     "start": 32.914,
-     "end": 33.124,
+     "start": 28.996,
+     "end": 29.276,
      "value": "B"
     },
     {
-     "start": 33.124,
-     "end": 33.404,
-     "value": "E"
-    },
-    {
-     "start": 33.404,
-     "end": 33.614,
-     "value": "B"
-    },
-    {
-     "start": 33.614,
-     "end": 33.694,
-     "value": "A"
-    },
-    {
-     "start": 33.694,
-     "end": 33.854,
-     "value": "C"
-    },
-    {
-     "start": 33.854,
-     "end": 33.994,
-     "value": "B"
-    },
-    {
-     "start": 33.994,
-     "end": 34.064,
-     "value": "F"
-    },
-    {
-     "start": 34.064,
-     "end": 34.204,
-     "value": "C"
-    },
-    {
-     "start": 34.204,
-     "end": 34.344,
-     "value": "B"
-    },
-    {
-     "start": 34.344,
-     "end": 34.554,
-     "value": "C"
-    },
-    {
-     "start": 34.554,
-     "end": 34.694,
-     "value": "B"
-    },
-    {
-     "start": 34.694,
-     "end": 34.904,
-     "value": "C"
-    },
-    {
-     "start": 34.904,
-     "end": 35.044,
-     "value": "B"
-    },
-    {
-     "start": 35.044,
-     "end": 35.134,
-     "value": "A"
-    },
-    {
-     "start": 35.134,
-     "end": 35.214,
-     "value": "C"
-    },
-    {
-     "start": 35.214,
-     "end": 35.334,
-     "value": "A"
-    },
-    {
-     "start": 35.334,
-     "end": 35.474,
-     "value": "B"
-    },
-    {
-     "start": 35.474,
-     "end": 35.684,
-     "value": "C"
-    },
-    {
-     "start": 35.684,
-     "end": 35.754,
-     "value": "B"
-    },
-    {
-     "start": 35.754,
-     "end": 35.834,
-     "value": "A"
-    },
-    {
-     "start": 35.834,
-     "end": 35.934,
-     "value": "B"
-    },
-    {
-     "start": 35.934,
-     "end": 36.284,
-     "value": "F"
-    },
-    {
-     "start": 36.284,
-     "end": 36.384,
-     "value": "A"
-    },
-    {
-     "start": 36.384,
-     "end": 36.614,
-     "value": "B"
-    },
-    {
-     "start": 36.614,
-     "end": 36.684,
-     "value": "C"
-    },
-    {
-     "start": 36.684,
-     "end": 36.824,
-     "value": "E"
-    },
-    {
-     "start": 36.824,
-     "end": 36.964,
-     "value": "C"
-    },
-    {
-     "start": 36.964,
-     "end": 37.174,
-     "value": "B"
-    },
-    {
-     "start": 37.174,
-     "end": 37.384,
-     "value": "C"
-    },
-    {
-     "start": 37.384,
-     "end": 37.804,
-     "value": "B"
-    },
-    {
-     "start": 37.804,
-     "end": 37.884,
-     "value": "A"
-    },
-    {
-     "start": 37.884,
-     "end": 38.084,
-     "value": "C"
-    },
-    {
-     "start": 38.084,
-     "end": 38.154,
-     "value": "B"
-    },
-    {
-     "start": 38.154,
-     "end": 38.224,
-     "value": "C"
-    },
-    {
-     "start": 38.224,
-     "end": 38.364,
-     "value": "G"
-    },
-    {
-     "start": 38.364,
-     "end": 38.434,
-     "value": "C"
-    },
-    {
-     "start": 38.434,
-     "end": 38.504,
-     "value": "B"
-    },
-    {
-     "start": 38.504,
-     "end": 38.784,
-     "value": "C"
-    },
-    {
-     "start": 38.784,
-     "end": 38.824,
+     "start": 29.276,
+     "end": 29.346,
      "value": "X"
     }
    ]
@@ -1304,209 +1101,185 @@
   {
    "id": "l008",
    "speaker": "A",
-   "text": "If the mouth shapes match my words and both of us blink naturally, the lip sync is working.",
-   "start": 39.131,
-   "end": 44.688,
+   "text": "State stories zoom right in. Today, that's Pennsylvania, home of Harrisburg.",
+   "tone": "normal",
+   "start": 30.302,
+   "end": 35.218,
    "segmentIndex": 5,
    "cues": [
     {
-     "start": 39.131,
-     "end": 39.161,
+     "start": 30.302,
+     "end": 30.332,
      "value": "X"
     },
     {
-     "start": 39.161,
-     "end": 39.201,
+     "start": 30.332,
+     "end": 30.402,
      "value": "B"
     },
     {
-     "start": 39.201,
-     "end": 39.311,
-     "value": "G"
-    },
-    {
-     "start": 39.311,
-     "end": 39.381,
+     "start": 30.402,
+     "end": 30.462,
      "value": "C"
     },
     {
-     "start": 39.381,
-     "end": 39.481,
-     "value": "A"
+     "start": 30.462,
+     "end": 30.672,
+     "value": "B"
     },
     {
-     "start": 39.481,
-     "end": 39.601,
-     "value": "C"
-    },
-    {
-     "start": 39.601,
-     "end": 39.671,
+     "start": 30.672,
+     "end": 30.952,
      "value": "E"
     },
     {
-     "start": 39.671,
-     "end": 39.881,
+     "start": 30.952,
+     "end": 31.092,
      "value": "B"
     },
     {
-     "start": 39.881,
-     "end": 39.951,
-     "value": "C"
-    },
-    {
-     "start": 39.951,
-     "end": 40.071,
-     "value": "A"
-    },
-    {
-     "start": 40.071,
-     "end": 40.151,
-     "value": "B"
-    },
-    {
-     "start": 40.151,
-     "end": 40.241,
-     "value": "A"
-    },
-    {
-     "start": 40.241,
-     "end": 40.381,
-     "value": "C"
-    },
-    {
-     "start": 40.381,
-     "end": 40.521,
-     "value": "B"
-    },
-    {
-     "start": 40.521,
-     "end": 40.621,
-     "value": "A"
-    },
-    {
-     "start": 40.621,
-     "end": 40.671,
-     "value": "C"
-    },
-    {
-     "start": 40.671,
-     "end": 40.711,
-     "value": "B"
-    },
-    {
-     "start": 40.711,
-     "end": 40.921,
+     "start": 31.092,
+     "end": 31.372,
      "value": "F"
     },
     {
-     "start": 40.921,
-     "end": 41.061,
-     "value": "E"
-    },
-    {
-     "start": 41.061,
-     "end": 41.341,
-     "value": "B"
-    },
-    {
-     "start": 41.341,
-     "end": 41.421,
+     "start": 31.372,
+     "end": 31.482,
      "value": "A"
     },
     {
-     "start": 41.421,
-     "end": 41.531,
-     "value": "E"
-    },
-    {
-     "start": 41.531,
-     "end": 41.671,
-     "value": "F"
-    },
-    {
-     "start": 41.671,
-     "end": 41.741,
+     "start": 31.482,
+     "end": 31.562,
      "value": "B"
     },
     {
-     "start": 41.741,
-     "end": 41.811,
-     "value": "G"
-    },
-    {
-     "start": 41.811,
-     "end": 41.881,
+     "start": 31.562,
+     "end": 31.632,
      "value": "C"
     },
     {
-     "start": 41.881,
-     "end": 41.961,
-     "value": "A"
-    },
-    {
-     "start": 41.961,
-     "end": 42.181,
+     "start": 31.632,
+     "end": 31.912,
      "value": "B"
     },
     {
-     "start": 42.181,
-     "end": 42.601,
-     "value": "C"
-    },
-    {
-     "start": 42.601,
-     "end": 42.951,
-     "value": "B"
-    },
-    {
-     "start": 42.951,
-     "end": 43.141,
+     "start": 31.912,
+     "end": 32.302,
      "value": "X"
     },
     {
-     "start": 43.141,
-     "end": 43.431,
+     "start": 32.302,
+     "end": 32.522,
      "value": "B"
     },
     {
-     "start": 43.431,
-     "end": 43.501,
+     "start": 32.522,
+     "end": 32.732,
      "value": "C"
     },
     {
-     "start": 43.501,
-     "end": 43.571,
+     "start": 32.732,
+     "end": 33.082,
      "value": "B"
     },
     {
-     "start": 43.571,
-     "end": 43.651,
+     "start": 33.082,
+     "end": 33.162,
      "value": "A"
     },
     {
-     "start": 43.651,
-     "end": 44.221,
+     "start": 33.162,
+     "end": 33.472,
+     "value": "C"
+    },
+    {
+     "start": 33.472,
+     "end": 33.542,
+     "value": "H"
+    },
+    {
+     "start": 33.542,
+     "end": 33.612,
+     "value": "G"
+    },
+    {
+     "start": 33.612,
+     "end": 33.682,
+     "value": "C"
+    },
+    {
+     "start": 33.682,
+     "end": 33.822,
      "value": "B"
     },
     {
-     "start": 44.221,
-     "end": 44.291,
-     "value": "F"
+     "start": 33.822,
+     "end": 33.892,
+     "value": "C"
     },
     {
-     "start": 44.291,
-     "end": 44.361,
+     "start": 33.892,
+     "end": 34.102,
+     "value": "D"
+    },
+    {
+     "start": 34.102,
+     "end": 34.242,
      "value": "E"
     },
     {
-     "start": 44.361,
-     "end": 44.641,
+     "start": 34.242,
+     "end": 34.312,
+     "value": "F"
+    },
+    {
+     "start": 34.312,
+     "end": 34.392,
+     "value": "A"
+    },
+    {
+     "start": 34.392,
+     "end": 34.442,
      "value": "B"
     },
     {
-     "start": 44.641,
-     "end": 44.681,
+     "start": 34.442,
+     "end": 34.492,
+     "value": "G"
+    },
+    {
+     "start": 34.492,
+     "end": 34.632,
+     "value": "C"
+    },
+    {
+     "start": 34.632,
+     "end": 34.702,
+     "value": "B"
+    },
+    {
+     "start": 34.702,
+     "end": 34.782,
+     "value": "A"
+    },
+    {
+     "start": 34.782,
+     "end": 34.942,
+     "value": "E"
+    },
+    {
+     "start": 34.942,
+     "end": 35.012,
+     "value": "C"
+    },
+    {
+     "start": 35.012,
+     "end": 35.152,
+     "value": "B"
+    },
+    {
+     "start": 35.152,
+     "end": 35.212,
      "value": "X"
     }
    ]
@@ -1514,814 +1287,321 @@
   {
    "id": "l009",
    "speaker": "B",
-   "text": "Now to news from around the world. World stories show a world map that flies in to the country, with its flag in the corner.",
-   "start": 45.588,
-   "end": 52.9,
-   "segmentIndex": 6,
+   "text": "And home of very strong opinions about sandwiches.",
+   "tone": "joke",
+   "start": 35.498,
+   "end": 38.099,
+   "segmentIndex": 5,
    "cues": [
     {
-     "start": 45.588,
-     "end": 45.618,
+     "start": 35.498,
+     "end": 35.528,
      "value": "X"
     },
     {
-     "start": 45.618,
-     "end": 45.758,
-     "value": "C"
-    },
-    {
-     "start": 45.758,
-     "end": 45.798,
-     "value": "E"
-    },
-    {
-     "start": 45.798,
-     "end": 46.408,
-     "value": "F"
-    },
-    {
-     "start": 46.408,
-     "end": 46.478,
+     "start": 35.528,
+     "end": 35.598,
      "value": "B"
     },
     {
-     "start": 46.478,
-     "end": 46.558,
+     "start": 35.598,
+     "end": 35.738,
+     "value": "E"
+    },
+    {
+     "start": 35.738,
+     "end": 35.808,
+     "value": "F"
+    },
+    {
+     "start": 35.808,
+     "end": 35.888,
      "value": "A"
     },
     {
-     "start": 46.558,
-     "end": 46.658,
-     "value": "E"
-    },
-    {
-     "start": 46.658,
-     "end": 46.798,
+     "start": 35.888,
+     "end": 35.998,
      "value": "C"
     },
     {
-     "start": 46.798,
-     "end": 46.868,
-     "value": "B"
-    },
-    {
-     "start": 46.868,
-     "end": 46.938,
-     "value": "C"
-    },
-    {
-     "start": 46.938,
-     "end": 47.008,
-     "value": "F"
-    },
-    {
-     "start": 47.008,
-     "end": 47.148,
-     "value": "E"
-    },
-    {
-     "start": 47.148,
-     "end": 47.288,
-     "value": "B"
-    },
-    {
-     "start": 47.288,
-     "end": 47.798,
-     "value": "X"
-    },
-    {
-     "start": 47.798,
-     "end": 47.898,
-     "value": "F"
-    },
-    {
-     "start": 47.898,
-     "end": 48.038,
-     "value": "E"
-    },
-    {
-     "start": 48.038,
-     "end": 48.178,
-     "value": "B"
-    },
-    {
-     "start": 48.178,
-     "end": 48.318,
-     "value": "E"
-    },
-    {
-     "start": 48.318,
-     "end": 48.738,
-     "value": "B"
-    },
-    {
-     "start": 48.738,
-     "end": 48.808,
-     "value": "E"
-    },
-    {
-     "start": 48.808,
-     "end": 48.878,
-     "value": "F"
-    },
-    {
-     "start": 48.878,
-     "end": 48.948,
-     "value": "C"
-    },
-    {
-     "start": 48.948,
-     "end": 49.088,
-     "value": "F"
-    },
-    {
-     "start": 49.088,
-     "end": 49.228,
-     "value": "E"
-    },
-    {
-     "start": 49.228,
-     "end": 49.298,
-     "value": "B"
-    },
-    {
-     "start": 49.298,
-     "end": 49.378,
-     "value": "A"
-    },
-    {
-     "start": 49.378,
-     "end": 49.458,
-     "value": "C"
-    },
-    {
-     "start": 49.458,
-     "end": 49.658,
-     "value": "A"
-    },
-    {
-     "start": 49.658,
-     "end": 49.798,
-     "value": "B"
-    },
-    {
-     "start": 49.798,
-     "end": 49.938,
+     "start": 35.998,
+     "end": 36.068,
      "value": "G"
     },
     {
-     "start": 49.938,
-     "end": 50.008,
-     "value": "H"
-    },
-    {
-     "start": 50.008,
-     "end": 50.148,
+     "start": 36.068,
+     "end": 36.208,
      "value": "C"
     },
     {
-     "start": 50.148,
-     "end": 50.358,
+     "start": 36.208,
+     "end": 36.418,
      "value": "B"
     },
     {
-     "start": 50.358,
-     "end": 50.568,
-     "value": "F"
-    },
-    {
-     "start": 50.568,
-     "end": 51.198,
-     "value": "B"
-    },
-    {
-     "start": 51.198,
-     "end": 51.338,
-     "value": "C"
-    },
-    {
-     "start": 51.338,
-     "end": 51.488,
-     "value": "B"
-    },
-    {
-     "start": 51.488,
-     "end": 51.538,
-     "value": "F"
-    },
-    {
-     "start": 51.538,
-     "end": 51.798,
-     "value": "B"
-    },
-    {
-     "start": 51.798,
-     "end": 51.868,
-     "value": "G"
-    },
-    {
-     "start": 51.868,
-     "end": 51.938,
-     "value": "H"
-    },
-    {
-     "start": 51.938,
-     "end": 52.008,
-     "value": "C"
-    },
-    {
-     "start": 52.008,
-     "end": 52.358,
-     "value": "B"
-    },
-    {
-     "start": 52.358,
-     "end": 52.638,
+     "start": 36.418,
+     "end": 36.628,
      "value": "E"
     },
     {
-     "start": 52.638,
-     "end": 52.708,
+     "start": 36.628,
+     "end": 36.708,
+     "value": "A"
+    },
+    {
+     "start": 36.708,
+     "end": 36.828,
+     "value": "B"
+    },
+    {
+     "start": 36.828,
+     "end": 37.038,
      "value": "C"
     },
     {
-     "start": 52.708,
-     "end": 52.848,
-     "value": "E"
+     "start": 37.038,
+     "end": 37.108,
+     "value": "B"
     },
     {
-     "start": 52.848,
-     "end": 52.898,
+     "start": 37.108,
+     "end": 37.188,
+     "value": "A"
+    },
+    {
+     "start": 37.188,
+     "end": 37.258,
+     "value": "C"
+    },
+    {
+     "start": 37.258,
+     "end": 37.458,
+     "value": "B"
+    },
+    {
+     "start": 37.458,
+     "end": 37.528,
+     "value": "C"
+    },
+    {
+     "start": 37.528,
+     "end": 38.018,
+     "value": "B"
+    },
+    {
+     "start": 38.018,
+     "end": 38.098,
      "value": "X"
     }
    ]
   },
   {
    "id": "l010",
-   "speaker": "B",
-   "text": "In a real episode, this is where we would summarize the day's top story, using only facts reported by at least two different news outlets, and always saying who reported what. Longer lines like this one also cut to a full screen map in the middle, which gives the broadcast a little more variety. Mark?",
-   "start": 53.2,
-   "end": 71.86,
+   "speaker": "A",
+   "text": "Now to the world. Our world map flies to the country in the story, here Japan, with its flag up in the corner.",
+   "tone": "normal",
+   "start": 39.049,
+   "end": 45.758,
    "segmentIndex": 6,
    "cues": [
     {
-     "start": 53.2,
-     "end": 53.23,
+     "start": 39.049,
+     "end": 39.079,
      "value": "X"
     },
     {
-     "start": 53.23,
-     "end": 53.3,
-     "value": "B"
-    },
-    {
-     "start": 53.3,
-     "end": 53.43,
+     "start": 39.079,
+     "end": 39.229,
      "value": "C"
     },
     {
-     "start": 53.43,
-     "end": 53.64,
-     "value": "B"
-    },
-    {
-     "start": 53.64,
-     "end": 53.71,
-     "value": "H"
-    },
-    {
-     "start": 53.71,
-     "end": 53.78,
-     "value": "C"
-    },
-    {
-     "start": 53.78,
-     "end": 53.88,
-     "value": "A"
-    },
-    {
-     "start": 53.88,
-     "end": 53.99,
-     "value": "B"
-    },
-    {
-     "start": 53.99,
-     "end": 54.13,
+     "start": 39.229,
+     "end": 39.269,
      "value": "E"
     },
     {
-     "start": 54.13,
-     "end": 54.34,
+     "start": 39.269,
+     "end": 39.459,
+     "value": "F"
+    },
+    {
+     "start": 39.459,
+     "end": 39.529,
+     "value": "C"
+    },
+    {
+     "start": 39.529,
+     "end": 39.669,
+     "value": "F"
+    },
+    {
+     "start": 39.669,
+     "end": 39.879,
+     "value": "E"
+    },
+    {
+     "start": 39.879,
+     "end": 40.019,
      "value": "B"
     },
     {
-     "start": 54.34,
-     "end": 54.64,
+     "start": 40.019,
+     "end": 40.409,
      "value": "X"
     },
     {
-     "start": 54.64,
-     "end": 54.95,
-     "value": "B"
-    },
-    {
-     "start": 54.95,
-     "end": 55.02,
-     "value": "F"
-    },
-    {
-     "start": 55.02,
-     "end": 55.09,
-     "value": "C"
-    },
-    {
-     "start": 55.09,
-     "end": 55.16,
-     "value": "B"
-    },
-    {
-     "start": 55.16,
-     "end": 55.23,
-     "value": "F"
-    },
-    {
-     "start": 55.23,
-     "end": 55.51,
-     "value": "B"
-    },
-    {
-     "start": 55.51,
-     "end": 55.58,
-     "value": "C"
-    },
-    {
-     "start": 55.58,
-     "end": 55.66,
-     "value": "A"
-    },
-    {
-     "start": 55.66,
-     "end": 55.78,
-     "value": "E"
-    },
-    {
-     "start": 55.78,
-     "end": 55.85,
-     "value": "C"
-    },
-    {
-     "start": 55.85,
-     "end": 56.13,
-     "value": "B"
-    },
-    {
-     "start": 56.13,
-     "end": 56.27,
-     "value": "C"
-    },
-    {
-     "start": 56.27,
-     "end": 56.41,
-     "value": "B"
-    },
-    {
-     "start": 56.41,
-     "end": 56.55,
+     "start": 40.409,
+     "end": 40.549,
      "value": "D"
     },
     {
-     "start": 56.55,
-     "end": 56.62,
-     "value": "C"
-    },
-    {
-     "start": 56.62,
-     "end": 56.74,
-     "value": "A"
-    },
-    {
-     "start": 56.74,
-     "end": 56.8,
+     "start": 40.549,
+     "end": 40.619,
      "value": "B"
     },
     {
-     "start": 56.8,
-     "end": 56.93,
-     "value": "E"
-    },
-    {
-     "start": 56.93,
-     "end": 57.6,
-     "value": "B"
-    },
-    {
-     "start": 57.6,
-     "end": 57.68,
+     "start": 40.619,
+     "end": 40.759,
      "value": "F"
     },
     {
-     "start": 57.68,
-     "end": 57.82,
-     "value": "B"
-    },
-    {
-     "start": 57.82,
-     "end": 57.96,
+     "start": 40.759,
+     "end": 40.899,
      "value": "E"
     },
     {
-     "start": 57.96,
-     "end": 58.24,
+     "start": 40.899,
+     "end": 40.969,
      "value": "B"
     },
     {
-     "start": 58.24,
-     "end": 58.31,
+     "start": 40.969,
+     "end": 41.059,
+     "value": "A"
+    },
+    {
+     "start": 41.059,
+     "end": 41.139,
+     "value": "C"
+    },
+    {
+     "start": 41.139,
+     "end": 41.289,
+     "value": "A"
+    },
+    {
+     "start": 41.289,
+     "end": 41.359,
      "value": "G"
     },
     {
-     "start": 58.31,
-     "end": 58.45,
-     "value": "C"
-    },
-    {
-     "start": 58.45,
-     "end": 58.66,
-     "value": "B"
-    },
-    {
-     "start": 58.66,
-     "end": 58.74,
-     "value": "A"
-    },
-    {
-     "start": 58.74,
-     "end": 58.89,
-     "value": "E"
-    },
-    {
-     "start": 58.89,
-     "end": 59.03,
-     "value": "B"
-    },
-    {
-     "start": 59.03,
-     "end": 59.11,
-     "value": "A"
-    },
-    {
-     "start": 59.11,
-     "end": 59.22,
-     "value": "C"
-    },
-    {
-     "start": 59.22,
-     "end": 59.64,
-     "value": "B"
-    },
-    {
-     "start": 59.64,
-     "end": 59.85,
-     "value": "F"
-    },
-    {
-     "start": 59.85,
-     "end": 60.13,
-     "value": "B"
-    },
-    {
-     "start": 60.13,
-     "end": 60.41,
-     "value": "F"
-    },
-    {
-     "start": 60.41,
-     "end": 60.48,
-     "value": "B"
-    },
-    {
-     "start": 60.48,
-     "end": 60.55,
-     "value": "C"
-    },
-    {
-     "start": 60.55,
-     "end": 60.62,
-     "value": "B"
-    },
-    {
-     "start": 60.62,
-     "end": 60.76,
+     "start": 41.359,
+     "end": 41.499,
      "value": "H"
     },
     {
-     "start": 60.76,
-     "end": 60.83,
+     "start": 41.499,
+     "end": 41.569,
      "value": "C"
     },
     {
-     "start": 60.83,
-     "end": 61.39,
+     "start": 41.569,
+     "end": 41.639,
      "value": "B"
     },
     {
-     "start": 61.39,
-     "end": 61.46,
-     "value": "C"
-    },
-    {
-     "start": 61.46,
-     "end": 61.74,
-     "value": "E"
-    },
-    {
-     "start": 61.74,
-     "end": 62.23,
-     "value": "B"
-    },
-    {
-     "start": 62.23,
-     "end": 62.44,
+     "start": 41.639,
+     "end": 41.829,
      "value": "F"
     },
     {
-     "start": 62.44,
-     "end": 62.51,
+     "start": 41.829,
+     "end": 41.879,
+     "value": "E"
+    },
+    {
+     "start": 41.879,
+     "end": 42.059,
+     "value": "C"
+    },
+    {
+     "start": 42.059,
+     "end": 42.619,
      "value": "B"
     },
     {
-     "start": 62.51,
-     "end": 62.59,
+     "start": 42.619,
+     "end": 42.899,
+     "value": "E"
+    },
+    {
+     "start": 42.899,
+     "end": 43.389,
+     "value": "B"
+    },
+    {
+     "start": 43.389,
+     "end": 43.469,
      "value": "A"
     },
     {
-     "start": 62.59,
-     "end": 62.73,
-     "value": "E"
+     "start": 43.469,
+     "end": 44.109,
+     "value": "C"
     },
     {
-     "start": 62.73,
-     "end": 62.94,
-     "value": "B"
-    },
-    {
-     "start": 62.94,
-     "end": 63.01,
+     "start": 44.109,
+     "end": 44.249,
      "value": "F"
     },
     {
-     "start": 63.01,
-     "end": 63.08,
-     "value": "C"
-    },
-    {
-     "start": 63.08,
-     "end": 63.29,
+     "start": 44.249,
+     "end": 44.459,
      "value": "B"
     },
     {
-     "start": 63.29,
-     "end": 63.88,
-     "value": "X"
-    },
-    {
-     "start": 63.88,
-     "end": 64.25,
-     "value": "E"
-    },
-    {
-     "start": 64.25,
-     "end": 64.32,
-     "value": "H"
-    },
-    {
-     "start": 64.32,
-     "end": 64.46,
-     "value": "D"
-    },
-    {
-     "start": 64.46,
-     "end": 64.74,
-     "value": "B"
-    },
-    {
-     "start": 64.74,
-     "end": 64.81,
-     "value": "H"
-    },
-    {
-     "start": 64.81,
-     "end": 65.16,
-     "value": "B"
-    },
-    {
-     "start": 65.16,
-     "end": 65.23,
-     "value": "F"
-    },
-    {
-     "start": 65.23,
-     "end": 65.37,
-     "value": "C"
-    },
-    {
-     "start": 65.37,
-     "end": 65.58,
-     "value": "E"
-    },
-    {
-     "start": 65.58,
-     "end": 65.65,
-     "value": "B"
-    },
-    {
-     "start": 65.65,
-     "end": 65.72,
-     "value": "E"
-    },
-    {
-     "start": 65.72,
-     "end": 65.91,
-     "value": "C"
-    },
-    {
-     "start": 65.91,
-     "end": 65.96,
-     "value": "E"
-    },
-    {
-     "start": 65.96,
-     "end": 66.21,
-     "value": "F"
-    },
-    {
-     "start": 66.21,
-     "end": 66.28,
-     "value": "C"
-    },
-    {
-     "start": 66.28,
-     "end": 66.42,
+     "start": 44.459,
+     "end": 44.599,
      "value": "G"
     },
     {
-     "start": 66.42,
-     "end": 66.63,
-     "value": "F"
-    },
-    {
-     "start": 66.63,
-     "end": 66.98,
-     "value": "B"
-    },
-    {
-     "start": 66.98,
-     "end": 67.07,
-     "value": "A"
-    },
-    {
-     "start": 67.07,
-     "end": 67.15,
-     "value": "C"
-    },
-    {
-     "start": 67.15,
-     "end": 67.23,
-     "value": "A"
-    },
-    {
-     "start": 67.23,
-     "end": 67.49,
-     "value": "B"
-    },
-    {
-     "start": 67.49,
-     "end": 67.57,
-     "value": "A"
-    },
-    {
-     "start": 67.57,
-     "end": 67.64,
-     "value": "B"
-    },
-    {
-     "start": 67.64,
-     "end": 67.77,
-     "value": "C"
-    },
-    {
-     "start": 67.77,
-     "end": 67.84,
+     "start": 44.599,
+     "end": 44.669,
      "value": "H"
     },
     {
-     "start": 67.84,
-     "end": 68.19,
-     "value": "B"
-    },
-    {
-     "start": 68.19,
-     "end": 68.26,
-     "value": "F"
-    },
-    {
-     "start": 68.26,
-     "end": 68.54,
-     "value": "B"
-    },
-    {
-     "start": 68.54,
-     "end": 68.61,
-     "value": "G"
-    },
-    {
-     "start": 68.61,
-     "end": 68.68,
-     "value": "B"
-    },
-    {
-     "start": 68.68,
-     "end": 68.76,
-     "value": "A"
-    },
-    {
-     "start": 68.76,
-     "end": 68.94,
-     "value": "E"
-    },
-    {
-     "start": 68.94,
-     "end": 69.29,
+     "start": 44.669,
+     "end": 44.949,
      "value": "C"
     },
     {
-     "start": 69.29,
-     "end": 69.36,
-     "value": "B"
-    },
-    {
-     "start": 69.36,
-     "end": 69.57,
-     "value": "C"
-    },
-    {
-     "start": 69.57,
-     "end": 69.78,
-     "value": "B"
-    },
-    {
-     "start": 69.78,
-     "end": 69.87,
+     "start": 44.949,
+     "end": 45.029,
      "value": "A"
     },
     {
-     "start": 69.87,
-     "end": 70.05,
+     "start": 45.029,
+     "end": 45.259,
+     "value": "B"
+    },
+    {
+     "start": 45.259,
+     "end": 45.539,
      "value": "E"
     },
     {
-     "start": 70.05,
-     "end": 70.12,
-     "value": "G"
-    },
-    {
-     "start": 70.12,
-     "end": 70.26,
-     "value": "E"
-    },
-    {
-     "start": 70.26,
-     "end": 70.4,
+     "start": 45.539,
+     "end": 45.609,
      "value": "C"
     },
     {
-     "start": 70.4,
-     "end": 70.68,
-     "value": "B"
+     "start": 45.609,
+     "end": 45.679,
+     "value": "E"
     },
     {
-     "start": 70.68,
-     "end": 71.36,
-     "value": "X"
-    },
-    {
-     "start": 71.36,
-     "end": 71.44,
-     "value": "A"
-    },
-    {
-     "start": 71.44,
-     "end": 71.54,
-     "value": "D"
-    },
-    {
-     "start": 71.54,
-     "end": 71.82,
-     "value": "B"
-    },
-    {
-     "start": 71.82,
-     "end": 71.86,
+     "start": 45.679,
+     "end": 45.749,
      "value": "X"
     }
    ]
@@ -2329,99 +1609,185 @@
   {
    "id": "l011",
    "speaker": "B",
-   "text": "That's the end of our test. Thanks for watching.",
-   "start": 72.76,
-   "end": 75.353,
+   "text": "And finally, the last story of every episode is a light one, like a very good dog in Erie.",
+   "tone": "normal",
+   "start": 46.358,
+   "end": 51.519,
    "segmentIndex": 7,
    "cues": [
     {
-     "start": 72.76,
-     "end": 72.79,
+     "start": 46.358,
+     "end": 46.388,
      "value": "X"
     },
     {
-     "start": 72.79,
-     "end": 72.83,
+     "start": 46.388,
+     "end": 46.498,
      "value": "B"
     },
     {
-     "start": 72.83,
-     "end": 72.87,
-     "value": "C"
-    },
-    {
-     "start": 72.87,
-     "end": 73.15,
-     "value": "B"
-    },
-    {
-     "start": 73.15,
-     "end": 73.29,
-     "value": "C"
-    },
-    {
-     "start": 73.29,
-     "end": 73.43,
-     "value": "B"
-    },
-    {
-     "start": 73.43,
-     "end": 73.5,
+     "start": 46.498,
+     "end": 46.638,
      "value": "G"
     },
     {
-     "start": 73.5,
-     "end": 73.57,
+     "start": 46.638,
+     "end": 46.708,
      "value": "B"
     },
     {
-     "start": 73.57,
-     "end": 73.85,
+     "start": 46.708,
+     "end": 46.848,
      "value": "C"
     },
     {
-     "start": 73.85,
-     "end": 74.38,
+     "start": 46.848,
+     "end": 47.058,
      "value": "B"
     },
     {
-     "start": 74.38,
-     "end": 74.45,
+     "start": 47.058,
+     "end": 47.248,
+     "value": "X"
+    },
+    {
+     "start": 47.248,
+     "end": 47.308,
+     "value": "B"
+    },
+    {
+     "start": 47.308,
+     "end": 47.428,
+     "value": "H"
+    },
+    {
+     "start": 47.428,
+     "end": 47.568,
      "value": "C"
     },
     {
-     "start": 74.45,
-     "end": 74.59,
+     "start": 47.568,
+     "end": 47.638,
      "value": "B"
     },
     {
-     "start": 74.59,
-     "end": 74.66,
-     "value": "G"
-    },
-    {
-     "start": 74.66,
-     "end": 74.73,
+     "start": 47.638,
+     "end": 47.778,
      "value": "E"
     },
     {
-     "start": 74.73,
-     "end": 74.8,
-     "value": "F"
-    },
-    {
-     "start": 74.8,
-     "end": 74.94,
-     "value": "D"
-    },
-    {
-     "start": 74.94,
-     "end": 75.29,
+     "start": 47.778,
+     "end": 48.058,
      "value": "B"
     },
     {
-     "start": 75.29,
-     "end": 75.35,
+     "start": 48.058,
+     "end": 48.128,
+     "value": "G"
+    },
+    {
+     "start": 48.128,
+     "end": 48.268,
+     "value": "C"
+    },
+    {
+     "start": 48.268,
+     "end": 48.408,
+     "value": "B"
+    },
+    {
+     "start": 48.408,
+     "end": 48.478,
+     "value": "C"
+    },
+    {
+     "start": 48.478,
+     "end": 48.598,
+     "value": "A"
+    },
+    {
+     "start": 48.598,
+     "end": 48.758,
+     "value": "B"
+    },
+    {
+     "start": 48.758,
+     "end": 48.828,
+     "value": "E"
+    },
+    {
+     "start": 48.828,
+     "end": 49.108,
+     "value": "B"
+    },
+    {
+     "start": 49.108,
+     "end": 49.178,
+     "value": "C"
+    },
+    {
+     "start": 49.178,
+     "end": 49.248,
+     "value": "H"
+    },
+    {
+     "start": 49.248,
+     "end": 49.318,
+     "value": "C"
+    },
+    {
+     "start": 49.318,
+     "end": 49.458,
+     "value": "B"
+    },
+    {
+     "start": 49.458,
+     "end": 49.668,
+     "value": "C"
+    },
+    {
+     "start": 49.668,
+     "end": 49.808,
+     "value": "B"
+    },
+    {
+     "start": 49.808,
+     "end": 49.978,
+     "value": "X"
+    },
+    {
+     "start": 49.978,
+     "end": 50.138,
+     "value": "B"
+    },
+    {
+     "start": 50.138,
+     "end": 50.208,
+     "value": "G"
+    },
+    {
+     "start": 50.208,
+     "end": 50.348,
+     "value": "C"
+    },
+    {
+     "start": 50.348,
+     "end": 50.698,
+     "value": "B"
+    },
+    {
+     "start": 50.698,
+     "end": 50.838,
+     "value": "E"
+    },
+    {
+     "start": 50.838,
+     "end": 51.468,
+     "value": "B"
+    },
+    {
+     "start": 51.468,
+     "end": 51.518,
      "value": "X"
     }
    ]
@@ -2429,129 +1795,287 @@
   {
    "id": "l012",
    "speaker": "A",
-   "text": "Subscribe for tomorrow's edition. Have a good day.",
-   "start": 75.803,
-   "end": 79.082,
+   "text": "Breaking news. He is, in fact, a good boy.",
+   "tone": "joke",
+   "start": 51.799,
+   "end": 54.552,
    "segmentIndex": 7,
    "cues": [
     {
-     "start": 75.803,
-     "end": 75.833,
-     "value": "X"
-    },
-    {
-     "start": 75.833,
-     "end": 75.913,
-     "value": "B"
-    },
-    {
-     "start": 75.913,
-     "end": 76.033,
+     "start": 51.799,
+     "end": 51.859,
      "value": "A"
     },
     {
-     "start": 76.033,
-     "end": 76.313,
+     "start": 51.859,
+     "end": 52.069,
      "value": "B"
     },
     {
-     "start": 76.313,
-     "end": 76.383,
-     "value": "C"
-    },
-    {
-     "start": 76.383,
-     "end": 76.543,
-     "value": "A"
-    },
-    {
-     "start": 76.543,
-     "end": 76.603,
-     "value": "G"
-    },
-    {
-     "start": 76.603,
-     "end": 76.653,
-     "value": "E"
-    },
-    {
-     "start": 76.653,
-     "end": 76.793,
-     "value": "B"
-    },
-    {
-     "start": 76.793,
-     "end": 76.873,
-     "value": "A"
-    },
-    {
-     "start": 76.873,
-     "end": 77.033,
-     "value": "D"
-    },
-    {
-     "start": 77.033,
-     "end": 77.173,
-     "value": "E"
-    },
-    {
-     "start": 77.173,
-     "end": 77.243,
-     "value": "B"
-    },
-    {
-     "start": 77.243,
-     "end": 77.313,
-     "value": "C"
-    },
-    {
-     "start": 77.313,
-     "end": 77.803,
-     "value": "B"
-    },
-    {
-     "start": 77.803,
-     "end": 78.173,
-     "value": "X"
-    },
-    {
-     "start": 78.173,
-     "end": 78.253,
-     "value": "C"
-    },
-    {
-     "start": 78.253,
-     "end": 78.323,
-     "value": "G"
-    },
-    {
-     "start": 78.323,
-     "end": 78.393,
-     "value": "C"
-    },
-    {
-     "start": 78.393,
-     "end": 78.603,
+     "start": 52.069,
+     "end": 52.699,
      "value": "F"
     },
     {
-     "start": 78.603,
-     "end": 78.673,
+     "start": 52.699,
+     "end": 53.469,
      "value": "B"
     },
     {
-     "start": 78.673,
-     "end": 78.883,
+     "start": 53.469,
+     "end": 53.539,
+     "value": "G"
+    },
+    {
+     "start": 53.539,
+     "end": 53.679,
      "value": "C"
     },
     {
-     "start": 78.883,
-     "end": 79.023,
+     "start": 53.679,
+     "end": 53.749,
      "value": "B"
     },
     {
-     "start": 79.023,
-     "end": 79.073,
+     "start": 53.749,
+     "end": 53.819,
+     "value": "C"
+    },
+    {
+     "start": 53.819,
+     "end": 54.029,
+     "value": "F"
+    },
+    {
+     "start": 54.029,
+     "end": 54.109,
+     "value": "A"
+    },
+    {
+     "start": 54.109,
+     "end": 54.359,
+     "value": "E"
+    },
+    {
+     "start": 54.359,
+     "end": 54.499,
+     "value": "B"
+    },
+    {
+     "start": 54.499,
+     "end": 54.549,
+     "value": "X"
+    }
+   ]
+  },
+  {
+   "id": "l013",
+   "speaker": "B",
+   "text": "That's the show! Subscribe and drop us a comment.",
+   "tone": "normal",
+   "start": 55.502,
+   "end": 58.193,
+   "segmentIndex": 8,
+   "cues": [
+    {
+     "start": 55.502,
+     "end": 55.532,
+     "value": "X"
+    },
+    {
+     "start": 55.532,
+     "end": 55.942,
+     "value": "B"
+    },
+    {
+     "start": 55.942,
+     "end": 56.082,
+     "value": "E"
+    },
+    {
+     "start": 56.082,
+     "end": 56.222,
+     "value": "F"
+    },
+    {
+     "start": 56.222,
+     "end": 56.462,
+     "value": "X"
+    },
+    {
+     "start": 56.462,
+     "end": 56.542,
+     "value": "B"
+    },
+    {
+     "start": 56.542,
+     "end": 56.642,
+     "value": "A"
+    },
+    {
+     "start": 56.642,
+     "end": 56.882,
+     "value": "B"
+    },
+    {
+     "start": 56.882,
+     "end": 56.952,
+     "value": "C"
+    },
+    {
+     "start": 56.952,
+     "end": 57.072,
+     "value": "A"
+    },
+    {
+     "start": 57.072,
+     "end": 57.312,
+     "value": "B"
+    },
+    {
+     "start": 57.312,
+     "end": 57.382,
+     "value": "D"
+    },
+    {
+     "start": 57.382,
+     "end": 57.482,
+     "value": "A"
+    },
+    {
+     "start": 57.482,
+     "end": 57.602,
+     "value": "B"
+    },
+    {
+     "start": 57.602,
+     "end": 57.742,
+     "value": "D"
+    },
+    {
+     "start": 57.742,
+     "end": 57.812,
+     "value": "C"
+    },
+    {
+     "start": 57.812,
+     "end": 57.892,
+     "value": "A"
+    },
+    {
+     "start": 57.892,
+     "end": 57.982,
+     "value": "C"
+    },
+    {
+     "start": 57.982,
+     "end": 58.122,
+     "value": "B"
+    },
+    {
+     "start": 58.122,
+     "end": 58.192,
+     "value": "X"
+    }
+   ]
+  },
+  {
+   "id": "l014",
+   "speaker": "A",
+   "text": "New episode every morning. See you tomorrow.",
+   "tone": "normal",
+   "start": 58.473,
+   "end": 61.157,
+   "segmentIndex": 8,
+   "cues": [
+    {
+     "start": 58.473,
+     "end": 58.503,
+     "value": "X"
+    },
+    {
+     "start": 58.503,
+     "end": 58.673,
+     "value": "F"
+    },
+    {
+     "start": 58.673,
+     "end": 58.743,
+     "value": "C"
+    },
+    {
+     "start": 58.743,
+     "end": 58.873,
+     "value": "A"
+    },
+    {
+     "start": 58.873,
+     "end": 59.133,
+     "value": "B"
+    },
+    {
+     "start": 59.133,
+     "end": 59.343,
+     "value": "C"
+    },
+    {
+     "start": 59.343,
+     "end": 59.413,
+     "value": "G"
+    },
+    {
+     "start": 59.413,
+     "end": 59.483,
+     "value": "B"
+    },
+    {
+     "start": 59.483,
+     "end": 59.573,
+     "value": "A"
+    },
+    {
+     "start": 59.573,
+     "end": 59.683,
+     "value": "E"
+    },
+    {
+     "start": 59.683,
+     "end": 59.963,
+     "value": "B"
+    },
+    {
+     "start": 59.963,
+     "end": 60.223,
+     "value": "X"
+    },
+    {
+     "start": 60.223,
+     "end": 60.653,
+     "value": "B"
+    },
+    {
+     "start": 60.653,
+     "end": 60.733,
+     "value": "A"
+    },
+    {
+     "start": 60.733,
+     "end": 60.903,
+     "value": "D"
+    },
+    {
+     "start": 60.903,
+     "end": 61.043,
+     "value": "E"
+    },
+    {
+     "start": 61.043,
+     "end": 61.113,
+     "value": "F"
+    },
+    {
+     "start": 61.113,
+     "end": 61.153,
      "value": "X"
     }
    ]
