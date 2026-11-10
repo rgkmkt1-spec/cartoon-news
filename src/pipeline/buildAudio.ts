@@ -6,6 +6,29 @@ import { ChannelConfig, ROOT, env, log, prettyDate } from "../config";
 import type { Script } from "./schema";
 import type { EpisodeLine, EpisodeProps, EpisodeSegment, MouthCue } from "../../remotion/types";
 
+const ONES = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+const ONES_ORD = ["", "first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth", "eleventh", "twelfth", "thirteenth", "fourteenth", "fifteenth", "sixteenth", "seventeenth", "eighteenth", "nineteenth"];
+const TENS = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+const TENS_ORD = ["", "", "twentieth", "thirtieth", "fortieth", "fiftieth", "sixtieth", "seventieth", "eightieth", "ninetieth"];
+
+function ordinalWords(n: number): string | null {
+  if (n >= 100 && n < 1000) {
+    const h = Math.floor(n / 100);
+    const r = n % 100;
+    return r === 0 ? `${ONES[h]} hundredth` : `${ONES[h]} hundred ${ordinalWords(r)}`;
+  }
+  if (n < 1 || n > 99) return null;
+  if (n < 20) return ONES_ORD[n];
+  const t = Math.floor(n / 10);
+  const o = n % 10;
+  return o === 0 ? TENS_ORD[t] : `${TENS[t]}-${ONES_ORD[o]}`;
+}
+
+/** Text as the voice should say it: "November 4th" -> "November fourth" (the voice model reads "4th" as "four t h"). */
+export function speakable(text: string): string {
+  return text.replace(/\b(\d{1,3})(st|nd|rd|th)\b/gi, (m, num) => ordinalWords(Number(num)) ?? m);
+}
+
 export const LEAD_IN = 4.0; // seconds of logo sting before first line
 export const TAIL = 3.0;
 export const STING = 2.6; // logo sting between the cold open and the intro
@@ -115,7 +138,7 @@ export async function buildAudio(cfg: ChannelConfig, script: Script, date: strin
     tail: TAIL,
     lines: flat.map((l) => ({
       id: l.id,
-      text: l.text,
+      text: speakable(l.text),
       voice: cfg.anchors[l.speaker].voice,
       speed: cfg.anchors[l.speaker].speed * (allSegs[l.segmentIndex].type === "cold" ? 1.08 : 1),
       gapBefore: l.gapBefore,
@@ -131,7 +154,7 @@ export async function buildAudio(cfg: ChannelConfig, script: Script, date: strin
 
   log("lipsync", `running Rhubarb on ${flat.length} lines`);
   const cueSets = await mapLimit(result.timeline, Math.max(1, os.cpus().length), async (t: any, i: number) => {
-    const cues = await lipSync(t.wav, flat[i].text);
+    const cues = await lipSync(t.wav, speakable(flat[i].text));
     return cues.map((c) => ({ start: +(c.start + t.start).toFixed(3), end: +(c.end + t.start).toFixed(3), value: c.value })) as MouthCue[];
   });
 
