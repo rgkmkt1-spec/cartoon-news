@@ -100,7 +100,7 @@
     }
   ],
   "maxItemAgeHours": 30,
-  "maxItemsPerFeed": 20,
+  "maxItemsPerFeed": 14,
   "youtube": {
     "categoryId": "25",
     "defaultTags": [

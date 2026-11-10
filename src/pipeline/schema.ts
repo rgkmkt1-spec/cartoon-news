@@ -71,7 +71,6 @@ export function checkScript(
     if (s.scope === "us" && s.countryCode !== "US") problems.push(`${label}: US stories must have countryCode "US".`);
     if (s.usState && !US_STATES[s.usState.toUpperCase()]) problems.push(`${label}: usState "${s.usState}" is not a valid 2-letter US state code.`);
     if (!s.headline) problems.push(`${label}: missing headline.`);
-    if (s.keyFacts.length < 2) problems.push(`${label}: needs 2-3 keyFacts.`);
     if (s.headline.length > 55) problems.push(`${label}: headline over 55 characters.`);
     const missing = s.sourceIds.filter((id) => !byId.has(id));
     if (missing.length) problems.push(`${label}: unknown sourceIds ${missing.join(", ")}.`);
@@ -94,18 +93,33 @@ export function checkScript(
     }),
   );
 
-  if (script.coldOpen.length < 2) problems.push("coldOpen needs 3 teasers for the top 3 stories.");
-  script.coldOpen.forEach((c, i) => {
-    if (c.story > stories.length) problems.push(`coldOpen ${i + 1}: story ${c.story} does not exist.`);
-    if (c.text.split(/\s+/).length > 18) problems.push(`coldOpen ${i + 1}: teaser over 18 words — make it punchier.`);
-  });
-
-  const intro = segs.find((s) => s.type === "intro");
-  const introWords = intro ? intro.lines.reduce((n, l) => n + l.text.split(/\s+/).length, 0) : 0;
-  if (introWords > 40) problems.push(`Intro is ${introWords} words — keep it to 2 short lines (under 35 words), no headline preview.`);
-
   const speakers = new Set(segs.flatMap((s) => s.lines.map((l) => l.speaker)));
   if (speakers.size < 2) problems.push("Both anchors (A and B) must speak.");
 
   return problems;
+}
+
+/** Nice-to-haves: logged and auto-fixed, never a reason to reject a script. */
+export function softFix(script: Script): string[] {
+  const notes: string[] = [];
+  const stories = script.segments.filter((s) => s.type === "story");
+  script.coldOpen = (script.coldOpen ?? []).filter((c) => c.story >= 1 && c.story <= stories.length);
+  script.coldOpen.forEach((c) => {
+    const words = c.text.split(/\s+/);
+    if (words.length > 18) {
+      c.text = stories[c.story - 1].headline.replace(/[.!?]*$/, ".");
+      notes.push(`teaser ${c.story} too long — using its headline`);
+    }
+  });
+  if (script.coldOpen.length < 3) {
+    const have = new Set(script.coldOpen.map((c) => c.story));
+    for (let i = 1; i <= Math.min(3, stories.length) && script.coldOpen.length < 3; i++) {
+      if (!have.has(i)) script.coldOpen.push({ story: i, text: stories[i - 1].headline.replace(/[.!?]*$/, ".") });
+    }
+    script.coldOpen.sort((x, y) => x.story - y.story);
+    notes.push("cold open filled in from headlines");
+  }
+  const missing = stories.filter((s) => (s.keyFacts ?? []).length === 0).length;
+  if (missing) notes.push(`${missing} stories without key facts (panel skipped)`);
+  return notes;
 }

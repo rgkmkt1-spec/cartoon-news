@@ -1,7 +1,7 @@
 import { spawn } from "node:child_process";
 import { ChannelConfig, env, log, prettyDate } from "../config";
 import type { NewsItem } from "./fetchNews";
-import { checkScript, Script, ScriptSchema } from "./schema";
+import { checkScript, Script, ScriptSchema, softFix } from "./schema";
 import countries from "i18n-iso-countries";
 import { US_STATES } from "../../remotion/usStates";
 
@@ -76,7 +76,7 @@ async function sleep(ms: number) {
   return new Promise((r) => setTimeout(r, ms));
 }
 
-async function callGemini(prompt: string): Promise<string> {
+async function callGemini(prompt: string, secondPass = false): Promise<string> {
   const key = env("GEMINI_API_KEY");
   if (!key) throw new Error("GEMINI_API_KEY is not set");
   const models = (env("GEMINI_MODEL", "gemini-flash-latest,gemini-flash-lite-latest") as string)
@@ -123,11 +123,10 @@ async function callGemini(prompt: string): Promise<string> {
     }
   }
   // Every model busy: wait a minute and try the whole list once more (free tier spikes are usually short)
-  if (!(globalThis as any).__geminiSecondPass) {
-    (globalThis as any).__geminiSecondPass = true;
-    log("script", "all Gemini models busy — waiting 60s and trying again");
-    await sleep(60000);
-    return callGemini(prompt);
+  if (!secondPass) {
+    log("script", "all Gemini models busy — waiting 90s and trying again");
+    await sleep(90000);
+    return callGemini(prompt, true);
   }
   throw new Error(`Gemini failed: ${lastErr}`);
 }
@@ -205,6 +204,7 @@ function salvage(cfg: ChannelConfig, script: Script, items: NewsItem[]): { scrip
   const ordered = [segments[0], ...stories.filter((s) => s.scope === "us"), ...stories.filter((s) => s.scope !== "us"), segments[segments.length - 1]];
   // teaser numbering no longer matches if stories were dropped or reordered
   const fixed: Script = { ...script, segments: ordered, coldOpen: dropped.length ? [] : script.coldOpen };
+  softFix(fixed);
 
   const words = ordered.flatMap((s) => s.lines).reduce((n, l) => n + l.text.split(/\s+/).length, 0);
   const okStructure = ordered[0]?.type === "intro" && ordered[ordered.length - 1]?.type === "outro";
@@ -224,7 +224,15 @@ export async function writeScript(cfg: ChannelConfig, items: NewsItem[], date: s
   const candidates: Script[] = [];
   const MAX_ATTEMPTS = 4;
   for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
-    const raw = await call(prompt);
+    let raw: string;
+    try {
+      raw = await call(prompt);
+    } catch (e) {
+      lastProblems = [(e as Error).message.split("\n")[0].slice(0, 200)];
+      log("script", `AI service failed on attempt ${attempt}: ${lastProblems[0]}`);
+      if (candidates.length) break; // repair the best script we already have
+      continue;
+    }
     let problems: string[] = [];
     let script: Script | undefined;
     try {
@@ -249,6 +257,10 @@ export async function writeScript(cfg: ChannelConfig, items: NewsItem[], date: s
       problems = [`Invalid JSON: ${(e as Error).message}`];
     }
 
+    if (script) {
+      const notes = softFix(script);
+      if (notes.length) log("script", `auto-fixed: ${notes.join("; ")}`);
+    }
     if (script && problems.length === 0) {
       log("script", `script OK on attempt ${attempt}`);
       return script;
