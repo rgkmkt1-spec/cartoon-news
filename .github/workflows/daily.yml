@@ -2,8 +2,12 @@ name: Daily episode
 
 on:
   schedule:
-    # 10:00 UTC = 5:00 AM Eastern (standard time) / 6:00 AM (daylight time)
-    - cron: "0 10 * * *"
+    # GitHub drops/delays scheduled runs at busy times (especially :00), so use odd minutes
+    # and a backup trigger. Times are UTC:
+    #   09:23 UTC = 4:23 AM Eastern (standard time) / 5:23 AM (daylight time)  <- main run
+    #   10:47 UTC = 5:47 AM / 6:47 AM                                           <- backup (skips if today's episode exists)
+    - cron: "23 9 * * *"
+    - cron: "47 10 * * *"
   workflow_dispatch:
     inputs:
       mode:
@@ -16,8 +20,31 @@ concurrency:
   group: daily-episode
   cancel-in-progress: false
 
+permissions:
+  contents: read
+  actions: read
+
 jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      skip: ${{ steps.done.outputs.skip }}
+    steps:
+      - name: Skip backup run if today's episode already succeeded
+        id: done
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "${{ github.event_name }}" != "schedule" ]; then echo "skip=false" >> "$GITHUB_OUTPUT"; exit 0; fi
+          TODAY=$(date -u +%Y-%m-%d)
+          N=$(gh run list -R "${{ github.repository }}" --workflow daily.yml --status success --limit 20 --json createdAt,event \
+              --jq "[.[] | select(.createdAt >= \"$TODAY\")] | length")
+          echo "successful runs today: $N"
+          if [ "$N" -gt 0 ]; then echo "skip=true" >> "$GITHUB_OUTPUT"; else echo "skip=false" >> "$GITHUB_OUTPUT"; fi
+
   episode:
+    needs: check
+    if: needs.check.outputs.skip != 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 120
     steps:
