@@ -36,7 +36,9 @@ EDITORIAL RULES (strict)
 8. Write for the EAR: short sentences, spell out abbreviations on first use, say "percent" not "%", no URLs, no parentheses, no emoji, no stage directions.
 9. Anchors alternate stories. Hand-offs are brief and natural ("Thanks, ${B.split(" ")[0]}."). Keep banter minimal and professional.
 10. Intro: ${A} greets viewers, names the show and the date; ${B} previews the top 3 headlines. Outro: brief sign-off from both, invite viewers to subscribe for tomorrow's edition.
-11. Total spoken length about ${words} words (${cfg.targetMinutes} minutes). Give US lead stories more depth (about 150-200 words); world stories about 90-130 words. Each line under 60 words.
+11. COLD OPEN: write 3 teasers for the top 3 stories (in story order), each one punchy but factual sentence under 20 words, e.g. "A government shutdown deadline is days away as talks stall in Congress." No clickbait, no questions, no exaggeration.
+12. KEY FACTS: every story gets 2-3 "keyFacts" shown on screen: very short (under 50 characters), concrete facts taken from the wire items — numbers, names, places, dates. Example: "Vote: 52-48 in the Senate", "Damage: est. $2 billion", "Where: Maui County, Hawaii".
+13. Total spoken length about ${words} words (${cfg.targetMinutes} minutes). Give US lead stories more depth (about 150-200 words); world stories about 90-130 words. Each line under 60 words.
 
 OUTPUT
 Return ONLY a JSON object (no markdown fences) with this exact shape:
@@ -46,10 +48,11 @@ Return ONLY a JSON object (no markdown fences) with this exact shape:
   "summary": "2-3 sentence neutral summary of the episode for the YouTube description",
   "tags": ["5-12 short tags"],
   "ticker": ["8-12 short factual headlines under 70 chars each for the scrolling ticker, mostly US, drawn from the wire items"],
+  "coldOpen": [ { "story": 1, "text": "teaser for story 1" }, { "story": 2, "text": "teaser for story 2" }, { "story": 3, "text": "teaser for story 3" } ],
   "segments": [
     { "type": "intro", "lines": [ { "speaker": "A", "text": "..." }, { "speaker": "B", "text": "..." } ] },
-    { "type": "story", "scope": "us", "headline": "on-screen headline under 50 chars", "countryCode": "US", "usState": "2-letter state code if the story is about one state, else \"\"", "location": "City, State  (or Washington, D.C. / United States)", "sourceIds": ["n3", "n17"], "lines": [ { "speaker": "B", "text": "..." } ] },
-    { "type": "story", "scope": "world", "headline": "...", "countryCode": "ISO 3166-1 alpha-2 code of the main country, or \"\" if global", "usState": "", "location": "City, Country (or Region)", "sourceIds": ["n40", "n52"], "lines": [ { "speaker": "A", "text": "..." } ] },
+    { "type": "story", "scope": "us", "headline": "on-screen headline under 50 chars", "countryCode": "US", "usState": "2-letter state code if the story is about one state, else \"\"", "location": "City, State  (or Washington, D.C. / United States)", "sourceIds": ["n3", "n17"], "keyFacts": ["short fact", "short fact"], "lines": [ { "speaker": "B", "text": "..." } ] },
+    { "type": "story", "scope": "world", "headline": "...", "countryCode": "ISO 3166-1 alpha-2 code of the main country, or \"\" if global", "usState": "", "location": "City, Country (or Region)", "sourceIds": ["n40", "n52"], "keyFacts": ["short fact", "short fact"], "lines": [ { "speaker": "A", "text": "..." } ] },
     { "type": "outro", "lines": [ { "speaker": "A", "text": "..." }, { "speaker": "B", "text": "..." } ] }
   ]
 }
@@ -161,12 +164,14 @@ function tidy(obj: any): any {
   obj.youtubeTitle = clip(obj.youtubeTitle, 100);
   obj.summary = clip(obj.summary, 600);
   if (Array.isArray(obj.tags)) obj.tags = obj.tags.map((t: unknown) => clip(t, 40)).slice(0, 15);
+  if (Array.isArray(obj.coldOpen)) obj.coldOpen = obj.coldOpen.slice(0, 3).map((c: any) => ({ ...c, text: clip(c?.text, 200) }));
   if (Array.isArray(obj.ticker)) obj.ticker = obj.ticker.map((t: unknown) => clip(t, 88)).slice(0, 14);
   if (Array.isArray(obj.segments)) {
     for (const seg of obj.segments) {
       if (!seg || typeof seg !== "object") continue;
       seg.headline = clip(seg.headline, 55);
       seg.location = clip(seg.location, 60);
+      if (Array.isArray(seg.keyFacts)) seg.keyFacts = seg.keyFacts.map((f: unknown) => clip(f, 60)).slice(0, 3);
       if (typeof seg.countryCode === "string") seg.countryCode = seg.countryCode.trim().slice(0, 2);
       if (typeof seg.usState === "string") seg.usState = seg.usState.trim().slice(0, 2);
     }
@@ -198,7 +203,8 @@ function salvage(cfg: ChannelConfig, script: Script, items: NewsItem[]): { scrip
   // keep US stories before world stories
   const stories = segments.filter((s) => s.type === "story");
   const ordered = [segments[0], ...stories.filter((s) => s.scope === "us"), ...stories.filter((s) => s.scope !== "us"), segments[segments.length - 1]];
-  const fixed: Script = { ...script, segments: ordered };
+  // teaser numbering no longer matches if stories were dropped or reordered
+  const fixed: Script = { ...script, segments: ordered, coldOpen: dropped.length ? [] : script.coldOpen };
 
   const words = ordered.flatMap((s) => s.lines).reduce((n, l) => n + l.text.split(/\s+/).length, 0);
   const okStructure = ordered[0]?.type === "intro" && ordered[ordered.length - 1]?.type === "outro";

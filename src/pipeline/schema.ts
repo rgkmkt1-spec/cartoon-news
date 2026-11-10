@@ -16,6 +16,7 @@ export const SegmentSchema = z.object({
   countryCode: z.string().max(2).optional().default(""),
   location: z.string().max(60).optional().default(""),
   sourceIds: z.array(z.string()).optional().default([]),
+  keyFacts: z.array(z.string().max(80)).max(4).optional().default([]),
   lines: z.array(LineSchema).min(1),
 });
 
@@ -26,6 +27,11 @@ export const ScriptSchema = z.object({
   tags: z.array(z.string().max(40)).max(15).default([]),
   ticker: z.array(z.string().max(90)).min(3).max(14),
   segments: z.array(SegmentSchema).min(3),
+  coldOpen: z
+    .array(z.object({ story: z.number().int().min(1), text: z.string().min(3).max(220) }))
+    .max(4)
+    .optional()
+    .default([]),
 });
 
 export type Line = z.infer<typeof LineSchema>;
@@ -65,6 +71,7 @@ export function checkScript(
     if (s.scope === "us" && s.countryCode !== "US") problems.push(`${label}: US stories must have countryCode "US".`);
     if (s.usState && !US_STATES[s.usState.toUpperCase()]) problems.push(`${label}: usState "${s.usState}" is not a valid 2-letter US state code.`);
     if (!s.headline) problems.push(`${label}: missing headline.`);
+    if (s.keyFacts.length < 2) problems.push(`${label}: needs 2-3 keyFacts.`);
     if (s.headline.length > 55) problems.push(`${label}: headline over 55 characters.`);
     const missing = s.sourceIds.filter((id) => !byId.has(id));
     if (missing.length) problems.push(`${label}: unknown sourceIds ${missing.join(", ")}.`);
@@ -86,6 +93,12 @@ export function checkScript(
       if (l.text.split(/\s+/).length > 75) problems.push(`A line is over 75 words — split it: "${l.text.slice(0, 50)}..."`);
     }),
   );
+
+  if (script.coldOpen.length < 2) problems.push("coldOpen needs 3 teasers for the top 3 stories.");
+  script.coldOpen.forEach((c, i) => {
+    if (c.story > stories.length) problems.push(`coldOpen ${i + 1}: story ${c.story} does not exist.`);
+    if (c.text.split(/\s+/).length > 25) problems.push(`coldOpen ${i + 1}: teaser over 25 words.`);
+  });
 
   const speakers = new Set(segs.flatMap((s) => s.lines.map((l) => l.speaker)));
   if (speakers.size < 2) problems.push("Both anchors (A and B) must speak.");

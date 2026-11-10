@@ -40,7 +40,8 @@ export function segmentAt(p: EpisodeProps, t: number) {
 export type Shot =
   | { kind: "wide" }
   | { kind: "close"; speaker: Speaker }
-  | { kind: "map" };
+  | { kind: "map" }
+  | { kind: "cold" };
 
 /**
  * Directing rules (all deterministic):
@@ -52,6 +53,7 @@ export function shotAt(p: EpisodeProps, t: number): { shot: Shot; shotStart: num
   const l = lastLineBefore(p, t);
   if (!l) return { shot: { kind: "wide" }, shotStart: 0 };
   const seg = p.segments[l.segmentIndex];
+  if (seg.type === "cold") return { shot: { kind: "cold" }, shotStart: seg.start };
   if (seg.type !== "story") return { shot: { kind: "wide" }, shotStart: l.start };
 
   const firstInSeg = p.lines.find((x) => x.segmentIndex === l.segmentIndex)!;

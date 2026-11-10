@@ -38,6 +38,10 @@
           "speaker": "B",
           "text": "First, a national story. For news that affects the whole country, the map shows all fifty states."
         }
+      ],
+      "keyFacts": [
+        "Map: all 50 states",
+        "Used for: national stories"
       ]
     },
     {
@@ -57,7 +61,12 @@
         }
       ],
       "scope": "us",
-      "usState": "PA"
+      "usState": "PA",
+      "keyFacts": [
+        "State: Pennsylvania",
+        "Capital: Harrisburg",
+        "Zoom: state highlighted in gold"
+      ]
     },
     {
       "type": "story",
@@ -76,7 +85,12 @@
         }
       ],
       "scope": "world",
-      "usState": ""
+      "usState": "",
+      "keyFacts": [
+        "Country: Japan",
+        "Capital: Tokyo",
+        "Flag: shown top left"
+      ]
     },
     {
       "type": "outro",
@@ -90,6 +104,20 @@
           "text": "Subscribe for tomorrow's edition. Have a good day."
         }
       ]
+    }
+  ],
+  "coldOpen": [
+    {
+      "story": 1,
+      "text": "Our national map shows all fifty states for stories that affect the whole country."
+    },
+    {
+      "story": 2,
+      "text": "State stories zoom right in, starting today with Pennsylvania."
+    },
+    {
+      "story": 3,
+      "text": "And our world roundup flies to Japan to test the world map."
     }
   ]
 }

@@ -4,6 +4,7 @@ import { Anchor } from "./Anchor";
 import { UsMap, WorldMap } from "./WorldMap";
 import { COLORS, FONT_BODY, FONT_HEAD, Flag, Globe, Logo, LowerThird, NameStrap, Ticker } from "./Graphics";
 import { firstLineOf, lineAt, mouthFor, segmentAt, shotAt } from "./timeline";
+import { ColdOpen, KeyFacts } from "./Segments";
 import type { EpisodeProps, EpisodeSegment, Speaker } from "./types";
 
 // ---- stage geometry (1920x1080) ----
@@ -137,9 +138,9 @@ const Desk: React.FC = () => (
   </svg>
 );
 
-const IntroSting: React.FC<{ props: EpisodeProps; frame: number; fps: number }> = ({ props, frame, fps }) => {
+const IntroSting: React.FC<{ props: EpisodeProps; frame: number; fps: number; length: number }> = ({ props, frame, fps, length }) => {
   const t = frame / fps;
-  const lead = props.leadIn;
+  const lead = length;
   const logoIn = interpolate(t, [0.2, 1.0], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: (x) => 1 - Math.pow(1 - x, 3) });
   const dateIn = interpolate(t, [1.0, 1.6], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const wipe = interpolate(t, [lead - 0.6, lead], [0, 2200], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
@@ -182,7 +183,14 @@ export const NewsShow: React.FC<EpisodeProps> = (props) => {
   const { seg } = segmentAt(props, t);
   const { shot, shotStart } = shotAt(props, t);
   const push = Math.min(1, (t - shotStart) / 8);
-  const cam = shot.kind === "map" ? cameraFor("wide", undefined, 0) : cameraFor(shot.kind, shot.kind === "close" ? shot.speaker : undefined, push);
+  const cam =
+    shot.kind === "map" || shot.kind === "cold"
+      ? cameraFor("wide", undefined, 0)
+      : cameraFor(shot.kind, shot.kind === "close" ? shot.speaker : undefined, push);
+  const stingStart = props.stingStart ?? 0;
+  const stingEnd = props.stingEnd ?? props.leadIn;
+  const inSting = t >= stingStart && t < stingEnd;
+  const inCold = t < stingStart;
 
   const lastEnd = props.lines[props.lines.length - 1]?.end ?? props.durationSec;
   const endOpacity = interpolate(t, [lastEnd + 0.5, lastEnd + 1.1], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
@@ -251,7 +259,12 @@ export const NewsShow: React.FC<EpisodeProps> = (props) => {
       {overlay}
       <Ticker items={props.ticker} frame={frame} label={props.channelName.split(" ").slice(0, 2).join(" ")} date={props.shortDate} />
 
-      {t < props.leadIn && <IntroSting props={props} frame={frame} fps={fps} />}
+      {seg.type === "story" && (shot.kind === "close" || shot.kind === "map") && (
+        <KeyFacts seg={seg} t={t} side={shot.kind === "close" && shot.speaker === "B" ? "left" : "right"} />
+      )}
+
+      {inCold && <ColdOpen props={props} t={t} frame={frame} fps={fps} />}
+      {inSting && <IntroSting props={props} frame={frame - Math.round(stingStart * fps)} fps={fps} length={stingEnd - stingStart} />}
       {endOpacity > 0 && <EndCard props={props} frame={frame} opacity={endOpacity} />}
       {/* final fade */}
       <AbsoluteFill style={{ background: "#000", opacity: interpolate(frame, [durationInFrames - 15, durationInFrames - 1], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) }} />

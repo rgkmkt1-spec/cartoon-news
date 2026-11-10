@@ -12,6 +12,8 @@ import numpy as np
 import soundfile as sf
 from kokoro_onnx import Kokoro
 
+TARGET_RMS = 0.12  # about -18 dBFS before limiting: loud and clear on phones, like broadcast speech
+
 
 def main():
     job = json.load(open(sys.argv[1], encoding="utf-8"))
@@ -32,9 +34,12 @@ def main():
         idx = np.where(np.abs(samples) > 0.01)[0]
         if len(idx):
             samples = samples[max(0, idx[0] - int(0.03 * sr)): min(len(samples), idx[-1] + int(0.08 * sr))]
-        # normalize each line to the same loudness so both anchors match
-        peak = float(np.max(np.abs(samples))) or 1.0
-        samples = samples * (0.85 / peak)
+        # Loudness-match every line (RMS, not peak) so both anchors sound equally loud,
+        # then a gentle soft-limiter so nothing clips.
+        rms = float(np.sqrt(np.mean(samples ** 2))) or 1e-4
+        samples = samples * (TARGET_RMS / rms)
+        samples = (np.tanh(samples * 1.15) / np.tanh(1.15)).astype(np.float32)
+        samples = np.clip(samples, -0.98, 0.98)
 
         gap = float(line.get("gapBefore", 0.3)) if i > 0 else 0.0
         if gap > 0:

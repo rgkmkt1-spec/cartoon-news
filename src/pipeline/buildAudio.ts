@@ -8,6 +8,8 @@ import type { EpisodeLine, EpisodeProps, EpisodeSegment, MouthCue } from "../../
 
 export const LEAD_IN = 4.0; // seconds of logo sting before first line
 export const TAIL = 3.0;
+export const STING = 4.0; // logo sting between the cold open and the intro
+export const COLD_LEAD = 1.8; // "TOP STORIES" title before the first teaser
 
 function run(cmd: string, args: string[], opts: { input?: string } = {}): Promise<string> {
   return new Promise((resolve, reject) => {
@@ -72,12 +74,33 @@ export async function buildAudio(cfg: ChannelConfig, script: Script, date: strin
   const audioDir = path.join(workDir, "audio");
   fs.mkdirSync(audioDir, { recursive: true });
 
-  // Flatten lines; longer pause between segments than within a segment.
+  // Build the running order: cold-open teasers (if any), then the script's segments.
+  type Seg = Omit<Script["segments"][number], "type"> & { type: "cold" | "intro" | "story" | "outro"; storyNumber: number };
+  const stories = script.segments.filter((s) => s.type === "story");
+  const cold: Seg[] = (script.coldOpen ?? [])
+    .filter((c) => stories[c.story - 1])
+    .slice(0, 3)
+    .map((c, i) => ({
+      ...stories[c.story - 1],
+      type: "cold" as const,
+      storyNumber: c.story,
+      lines: [{ speaker: (i % 2 === 0 ? "B" : "A") as "A" | "B", text: c.text }],
+    }));
+  let storyNo = 0;
+  const allSegs: Seg[] = [
+    ...cold,
+    ...script.segments.map((s) => ({ ...s, storyNumber: s.type === "story" ? ++storyNo : 0 }) as Seg),
+  ];
+  const hasCold = cold.length > 0;
+
+  // Flatten lines; longer pause between segments than within a segment, and room for the logo sting.
   const flat: { id: string; speaker: "A" | "B"; text: string; segmentIndex: number; gapBefore: number }[] = [];
-  script.segments.forEach((seg, si) => {
+  allSegs.forEach((seg, si) => {
     seg.lines.forEach((l, li) => {
       const prev = flat[flat.length - 1];
-      const gap = li === 0 ? 0.9 : prev && prev.speaker !== l.speaker ? 0.45 : 0.3;
+      let gap = li === 0 ? 0.9 : prev && prev.speaker !== l.speaker ? 0.45 : 0.3;
+      if (seg.type === "cold" && li === 0) gap = 0.7;
+      if (seg.type === "intro" && li === 0 && hasCold) gap = STING + 0.4;
       flat.push({ id: `l${String(flat.length + 1).padStart(3, "0")}`, speaker: l.speaker, text: l.text, segmentIndex: si, gapBefore: gap });
     });
   });
@@ -87,7 +110,7 @@ export async function buildAudio(cfg: ChannelConfig, script: Script, date: strin
     model: env("KOKORO_MODEL", path.join(models, "kokoro-v1.0.int8.onnx")),
     voices: env("KOKORO_VOICES", path.join(models, "voices-v1.0.bin")),
     outDir: audioDir,
-    leadIn: LEAD_IN,
+    leadIn: hasCold ? COLD_LEAD : LEAD_IN,
     tail: TAIL,
     lines: flat.map((l) => ({
       id: l.id,
@@ -121,7 +144,7 @@ export async function buildAudio(cfg: ChannelConfig, script: Script, date: strin
     cues: cueSets[i],
   }));
 
-  const segments: EpisodeSegment[] = script.segments.map((s, si) => {
+  const segments: EpisodeSegment[] = allSegs.map((s, si) => {
     const ls = lines.filter((l) => l.segmentIndex === si);
     return {
       type: s.type,
@@ -134,10 +157,17 @@ export async function buildAudio(cfg: ChannelConfig, script: Script, date: strin
           ? s.countryCode.toUpperCase()
           : "",
       location: s.location ?? "",
-      start: si === 0 ? 0 : ls[0].start - 0.4,
-      end: ls[ls.length - 1].end + 0.4,
+      keyFacts: s.keyFacts ?? [],
+      storyNumber: s.storyNumber,
+      start: si === 0 && s.type !== "cold" ? 0 : ls[0].start - (s.type === "cold" ? 0.35 : 0.4),
+      end: ls[ls.length - 1].end + (s.type === "cold" ? 0.35 : 0.4),
     };
   });
+
+  const lastCold = [...lines].reverse().find((l) => allSegs[l.segmentIndex].type === "cold");
+  const firstIntro = lines.find((l) => allSegs[l.segmentIndex].type === "intro");
+  const stingStart = hasCold && lastCold ? lastCold.end + 0.35 : 0;
+  const stingEnd = hasCold && firstIntro ? firstIntro.start - 0.2 : LEAD_IN;
 
   // Copy audio into Remotion's public folder so the renderer can serve it.
   const publicDir = path.join(ROOT, "public", "current");
@@ -158,6 +188,9 @@ export async function buildAudio(cfg: ChannelConfig, script: Script, date: strin
     audioFile: "current/episode.wav",
     durationSec: result.duration,
     leadIn: LEAD_IN,
+    stingStart,
+    stingEnd,
+    storyCount: stories.length,
     segments,
     lines,
     ticker: script.ticker,
