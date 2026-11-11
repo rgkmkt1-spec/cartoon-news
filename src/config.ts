@@ -13,6 +13,7 @@ export interface ChannelConfig {
   focus: { usShare: number; minWorldStories: number };
   anchors: Record<Speaker, { name: string; voice: string; speed: number }>;
   feeds: { outlet: string; url: string; region: "us" | "world" }[];
+  studio?: "custom" | "drawn";
   maxItemAgeHours: number;
   maxItemsPerFeed: number;
   youtube: { categoryId: string; defaultTags: string[]; language: string };

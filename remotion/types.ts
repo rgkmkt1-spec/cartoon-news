@@ -49,6 +49,34 @@ export interface EpisodeProps {
   segments: EpisodeSegment[];
   lines: EpisodeLine[];
   ticker: string[];
+  studio?: StudioMeta;
+}
+
+export interface StudioAnchor {
+  body: string;
+  head: string;
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+  pivot: [number, number];
+  mouth: { x: number; y: number; w: number; h: number; slight: string; mid: string; wide: string; laugh?: string };
+  blink: { src: string; x: number; y: number; w: number; h: number };
+  talkHead?: string;
+  laughHead?: string;
+  lower?: { x: number; y: number; w: number; h: number; ah: string; closed: string };
+  /** AI lip sync: reference face + where the redrawn mouth patch sits */
+  lip?: { ref: string; box: number[]; patch: number[]; size: [number, number]; x: number; y: number; w: number; h: number };
+  /** set per episode when the AI lip-sync video was made */
+  lipVideo?: string;
+}
+
+/** A real studio built from the user's own artwork (background plate + image anchors). */
+export interface StudioMeta {
+  plate: string;
+  screen: { x: number; y: number; w: number; h: number };
+  anchors: Record<Speaker, StudioAnchor>;
+  close: Record<Speaker, { fx: number; fy: number; cx: number; cy: number; s: number }>;
 }
 
 export const FPS = 30;

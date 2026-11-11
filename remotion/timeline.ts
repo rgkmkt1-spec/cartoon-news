@@ -76,3 +76,48 @@ export function shotAt(p: EpisodeProps, t: number): { shot: Shot; shotStart: num
 export function firstLineOf(p: EpisodeProps, s: Speaker) {
   return p.lines.find((l) => l.speaker === s);
 }
+
+/** How open each Rhubarb shape is (0 = closed .. 1 = wide). */
+const OPEN: Record<MouthShape, number> = { X: 0, A: 0, B: 0.3, F: 0.25, G: 0.3, C: 0.65, E: 0.55, H: 0.55, D: 1 };
+
+function cueAt(p: EpisodeProps, s: Speaker, t: number): { open: number; closed: number } {
+  const l = lineAt(p, t);
+  if (!l || l.speaker !== s) return { open: 0, closed: 0 };
+  for (const c of l.cues) if (t >= c.start && t < c.end) return { open: OPEN[c.value] ?? 0, closed: c.value === "A" ? 1 : 0 };
+  return { open: 0, closed: 0 };
+}
+
+const TAPS: [number, number][] = [[1, 0.25], [0, 0.5], [-1, 0.25]];
+
+/** Smoothed jaw openness (0..1) — light smoothing so it stays snappy. */
+export function mouthOpenness(p: EpisodeProps, s: Speaker, t: number, fps = 30): number {
+  let v = 0;
+  for (const [k, w] of TAPS) v += w * cueAt(p, s, t + k / fps).open;
+  return v;
+}
+
+/** Smoothed "lips pressed" amount for M/B/P sounds. */
+export function lipsClosed(p: EpisodeProps, s: Speaker, t: number, fps = 30): number {
+  let v = 0;
+  for (const [k, w] of TAPS) v += w * cueAt(p, s, t + k / fps).closed;
+  return v;
+}
+
+/** 0..1: fades the "talking face" in just before a line and out just after it. */
+export function talkAmount(p: EpisodeProps, s: Speaker, t: number): number {
+  let best = 0;
+  for (const l of p.lines) {
+    if (l.speaker !== s) continue;
+    if (l.start - 0.3 > t) break;
+    const a = Math.min(1, Math.max(0, (t - (l.start - 0.15)) / 0.12));
+    const b = Math.min(1, Math.max(0, (l.end + 0.2 - t) / 0.15));
+    best = Math.max(best, Math.min(a, b));
+  }
+  return best;
+}
+
+/** Seconds since this speaker's current line started, or -1 when they aren't talking. */
+export function lineBeat(p: EpisodeProps, s: Speaker, t: number): number {
+  const l = lineAt(p, t);
+  return l && l.speaker === s ? t - l.start : -1;
+}

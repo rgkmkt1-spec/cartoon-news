@@ -1,0 +1,151 @@
+{
+ "plate": "studio/plate.jpg",
+ "screen": {
+  "x": 802,
+  "y": 348,
+  "w": 443,
+  "h": 222
+ },
+ "anchors": {
+  "A": {
+   "body": "studio/man_body.png",
+   "head": "studio/man_head.png",
+   "x": 1085.5,
+   "y": 179.1,
+   "w": 434.9,
+   "h": 435.9,
+   "pivot": [
+    1303.0,
+    431.1
+   ],
+   "mouth": {
+    "x": 1260.3,
+    "y": 364.5,
+    "w": 79.0,
+    "h": 62.0,
+    "slight": "studio/man_mouth_slight.png",
+    "mid": "studio/man_mouth_mid.png",
+    "wide": "studio/man_mouth_wide.png",
+    "laugh": "studio/man_mouth_laugh.png"
+   },
+   "talkHead": "studio/man_head_talk.png",
+   "lip": {
+    "ref": "studio/man_lipref.png",
+    "box": [
+     0,
+     0,
+     440,
+     440
+    ],
+    "patch": [
+     0.15,
+     0.47,
+     0.85,
+     0.97
+    ],
+    "size": [
+     228,
+     162
+    ],
+    "x": 1245.2,
+    "y": 357.3,
+    "w": 95.5,
+    "h": 68.2
+   },
+   "laughHead": "studio/man_head_laugh.png",
+   "lower": {
+    "x": 1218.5,
+    "y": 355.2,
+    "w": 155.0,
+    "h": 80.6,
+    "ah": "studio/man_lower_ah.png",
+    "closed": "studio/man_lower_closed.png"
+   },
+   "blink": {
+    "src": "studio/man_blink.png",
+    "x": 1224.7,
+    "y": 290.1,
+    "w": 142.6,
+    "h": 55.8
+   }
+  },
+  "B": {
+   "body": "studio/woman_body.png",
+   "head": "studio/woman_head.png",
+   "x": 543.0,
+   "y": 236.8,
+   "w": 324.0,
+   "h": 378.2,
+   "pivot": [
+    705.0,
+    470.0
+   ],
+   "mouth": {
+    "x": 677.0,
+    "y": 393.8,
+    "w": 60.0,
+    "h": 42.5,
+    "slight": "studio/woman_mouth_slight.png",
+    "mid": "studio/woman_mouth_mid.png",
+    "wide": "studio/woman_mouth_wide.png",
+    "laugh": "studio/woman_mouth_laugh.png"
+   },
+   "talkHead": "studio/woman_head_talk.png",
+   "lip": {
+    "ref": "studio/woman_lipref.png",
+    "box": [
+     0,
+     0,
+     490,
+     490
+    ],
+    "patch": [
+     0.15,
+     0.47,
+     0.85,
+     0.97
+    ],
+    "size": [
+     204,
+     146
+    ],
+    "x": 661.6,
+    "y": 380.1,
+    "w": 85.8,
+    "h": 61.2
+   },
+   "laughHead": "studio/woman_head_laugh.png",
+   "lower": {
+    "x": 658.2,
+    "y": 386.2,
+    "w": 92.5,
+    "h": 56.2,
+    "ah": "studio/woman_lower_ah.png",
+    "closed": "studio/woman_lower_closed.png"
+   },
+   "blink": {
+    "src": "studio/woman_blink.png",
+    "x": 650.8,
+    "y": 340.0,
+    "w": 107.5,
+    "h": 38.8
+   }
+  }
+ },
+ "close": {
+  "A": {
+   "fx": 1296,
+   "fy": 362,
+   "cx": 860,
+   "cy": 520,
+   "s": 1.9
+  },
+  "B": {
+   "fx": 704,
+   "fy": 399,
+   "cx": 980,
+   "cy": 520,
+   "s": 2.2
+  }
+ }
+}

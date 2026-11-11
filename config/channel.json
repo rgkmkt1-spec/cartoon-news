@@ -1,6 +1,6 @@
 {
-  "channelName": "World Desk Daily",
-  "tagline": "The news you need, with a smile \u2014 every morning",
+  "channelName": "BuzzBytes News",
+  "tagline": "The news you need, with a smile, every morning",
   "targetMinutes": 8,
   "storyCount": {
     "min": 7,
@@ -112,5 +112,6 @@
       "top stories"
     ],
     "language": "en"
-  }
+  },
+  "studio": "custom"
 }

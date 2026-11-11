@@ -58,8 +58,8 @@ export const Logo: React.FC<{ name: string; frame: number; scale?: number }> = (
     <div style={{ display: "flex", alignItems: "center", gap: 18 * scale }}>
       <Globe size={96 * scale} rotate={frame * 0.8} />
       <div style={{ fontFamily: FONT_HEAD, color: COLORS.white, lineHeight: 0.95 }}>
-        <div style={{ fontSize: 30 * scale, fontWeight: 500, letterSpacing: 6 * scale, color: COLORS.gold }}>{words.slice(0, -1).join(" ")}</div>
-        <div style={{ fontSize: 58 * scale, fontWeight: 700, letterSpacing: 2 * scale }}>{words[words.length - 1]}</div>
+        <div style={{ fontSize: 58 * scale, fontWeight: 700, letterSpacing: 2 * scale }}>{words[0]}</div>
+        {words.length > 1 && <div style={{ fontSize: 30 * scale, fontWeight: 500, letterSpacing: 8 * scale, color: COLORS.gold }}>{words.slice(1).join(" ")}</div>}
       </div>
     </div>
   );

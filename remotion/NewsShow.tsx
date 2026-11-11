@@ -3,8 +3,9 @@ import { AbsoluteFill, Audio, interpolate, staticFile, useCurrentFrame, useVideo
 import { Anchor } from "./Anchor";
 import { UsMap, WorldMap } from "./WorldMap";
 import { COLORS, FONT_BODY, FONT_HEAD, Flag, Globe, Logo, LowerThird, NameStrap, Ticker } from "./Graphics";
-import { firstLineOf, lineAt, mouthFor, segmentAt, shotAt } from "./timeline";
+import { firstLineOf, lineAt, lineBeat, lipsClosed, mouthFor, mouthOpenness, segmentAt, shotAt, talkAmount } from "./timeline";
 import { ColdOpen, KeyFacts } from "./Segments";
+import { ImageStudio } from "./ImageStudio";
 import type { EpisodeProps, EpisodeSegment, Speaker } from "./types";
 
 // ---- stage geometry (1920x1080) ----
@@ -65,10 +66,11 @@ const StudioBackground: React.FC<{ frame: number }> = ({ frame }) => (
 );
 
 const ScreenContent: React.FC<{ seg: EpisodeSegment; t: number; frame: number; props: EpisodeProps; full?: boolean }> = ({ seg, t, frame, props, full }) => {
-  const w = full ? 1920 : SCREEN.w;
-  const h = full ? 1080 : SCREEN.h;
-  const k = full ? 1920 / SCREEN.w : 1;
-  const tk = full ? 1.7 : 1; // text/flag scale (keep labels readable, not huge)
+  const scr = props.studio?.screen ?? SCREEN;
+  const w = full ? 1920 : scr.w;
+  const h = full ? 1080 : scr.h;
+  const k = full ? 1920 / scr.w : scr.w / SCREEN.w;
+  const tk = full ? 1.7 : Math.min(1, k); // text/flag scale (keep labels readable, not huge)
   if (seg.type !== "story") {
     return (
       <AbsoluteFill style={{ background: "linear-gradient(135deg,#0E3570,#071a3a)", alignItems: "center", justifyContent: "center" }}>
@@ -84,7 +86,7 @@ const ScreenContent: React.FC<{ seg: EpisodeSegment; t: number; frame: number; p
       ) : (
         <WorldMap width={w} height={h} countryCode={seg.countryCode} progress={progress} pulse={frame} />
       )}
-      <div style={{ position: "absolute", left: full ? 110 : 16, top: full ? 60 : 14 }}>
+      <div style={{ position: "absolute", left: full ? 110 : 16 * tk, top: full ? 60 : 14 * tk }}>
         {seg.flagCode ? <Flag code={seg.flagCode} height={46 * tk} /> : <Globe size={52 * tk} rotate={frame} />}
       </div>
       {seg.location && (
@@ -184,10 +186,17 @@ export const NewsShow: React.FC<EpisodeProps> = (props) => {
   const { seg } = segmentAt(props, t);
   const { shot, shotStart } = shotAt(props, t);
   const push = Math.min(1, (t - shotStart) / 8);
-  const cam =
+  let cam =
     shot.kind === "map" || shot.kind === "cold"
       ? cameraFor("wide", undefined, 0)
       : cameraFor(shot.kind, shot.kind === "close" ? shot.speaker : undefined, push);
+  if (props.studio && shot.kind === "close") {
+    const c = props.studio.close[shot.speaker];
+    const s = c.s + push * 0.05;
+    cam = { s, tx: Math.min(0, Math.max(1920 - 1920 * s, c.cx - c.fx * s)), ty: Math.min(0, Math.max(1080 - 1080 * s, c.cy - c.fy * s)) };
+  }
+  // where the speaking anchor sits on screen in a close-up -> key facts go on the other side
+  const closeX = shot.kind === "close" ? (props.studio ? props.studio.close[shot.speaker].cx : shot.speaker === "A" ? 690 : 1230) : 0;
   const stingStart = props.stingStart ?? 0;
   const stingEnd = props.stingEnd ?? props.leadIn;
   const inSting = t >= stingStart && t < stingEnd;
@@ -244,16 +253,33 @@ export const NewsShow: React.FC<EpisodeProps> = (props) => {
 
       {/* studio world, moved by the virtual camera */}
       <AbsoluteFill style={{ transformOrigin: "0 0", transform: `translate(${cam.tx}px, ${cam.ty}px) scale(${cam.s})` }}>
-        <StudioBackground frame={frame} />
-        <div style={{ position: "absolute", left: SCREEN.x, top: SCREEN.y, width: SCREEN.w, height: SCREEN.h, borderRadius: 8, overflow: "hidden" }}>
-          <ScreenContent seg={seg} t={t} frame={frame} props={props} />
-        </div>
-        {(["A", "B"] as Speaker[]).map((s) => (
-          <div key={s} style={{ position: "absolute", left: POS[s] - ANCHOR_W / 2, top: ANCHOR_TOP, width: ANCHOR_W, height: ANCHOR_H }}>
-            <Anchor variant={s === "A" ? "male" : "female"} mouth={mouthFor(props, s, t)} talking={speakingNow === s} look={lookFor(s)} seed={s === "A" ? 1 : 7} laugh={laughFor(s)} />
-          </div>
-        ))}
-        <Desk />
+        {props.studio ? (
+          <ImageStudio
+            studio={props.studio}
+            screen={<ScreenContent seg={seg} t={t} frame={frame} props={props} />}
+            mouthFor={(s) => ({
+              talk: talkAmount(props, s, t),
+              open: mouthOpenness(props, s, t, fps),
+              closed: lipsClosed(props, s, t, fps),
+              listen: talkAmount(props, s === "A" ? "B" : "A", t),
+              beat: lineBeat(props, s, t),
+            })}
+            laughFor={laughFor}
+          />
+        ) : (
+          <>
+            <StudioBackground frame={frame} />
+            <div style={{ position: "absolute", left: SCREEN.x, top: SCREEN.y, width: SCREEN.w, height: SCREEN.h, borderRadius: 8, overflow: "hidden" }}>
+              <ScreenContent seg={seg} t={t} frame={frame} props={props} />
+            </div>
+            {(["A", "B"] as Speaker[]).map((s) => (
+              <div key={s} style={{ position: "absolute", left: POS[s] - ANCHOR_W / 2, top: ANCHOR_TOP, width: ANCHOR_W, height: ANCHOR_H }}>
+                <Anchor variant={s === "A" ? "male" : "female"} mouth={mouthFor(props, s, t)} talking={speakingNow === s} look={lookFor(s)} seed={s === "A" ? 1 : 7} laugh={laughFor(s)} />
+              </div>
+            ))}
+            <Desk />
+          </>
+        )}
       </AbsoluteFill>
 
       {shot.kind === "map" && (
@@ -275,7 +301,7 @@ export const NewsShow: React.FC<EpisodeProps> = (props) => {
       <Ticker items={props.ticker} frame={frame} label={props.channelName.split(" ").slice(0, 2).join(" ")} date={props.shortDate} />
 
       {seg.type === "story" && (shot.kind === "close" || shot.kind === "map") && (
-        <KeyFacts seg={seg} t={t} side={shot.kind === "close" && shot.speaker === "B" ? "left" : "right"} />
+        <KeyFacts seg={seg} t={t} side={shot.kind === "close" && closeX > 960 ? "left" : "right"} />
       )}
 
       {inCold && <ColdOpen props={props} t={t} frame={frame} fps={fps} />}

@@ -76,7 +76,7 @@ function rand(n: number) {
 }
 
 /** 0 = open, 1 = closed. Blinks every ~2.5–5.5 s. */
-function blinkAmount(frame: number, seed: number) {
+export function blinkAmount(frame: number, seed: number) {
   let t = 0;
   for (let i = 0; t <= frame; i++) {
     const next = t + 75 + Math.floor(rand(seed * 31 + i) * 90);

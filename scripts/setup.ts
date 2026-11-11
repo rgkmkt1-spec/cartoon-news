@@ -83,6 +83,11 @@ async function main() {
   fs.mkdirSync(BIN, { recursive: true });
   await download(`${KOKORO_BASE}/kokoro-v1.0.int8.onnx`, path.join(MODELS, "kokoro-v1.0.int8.onnx"));
   await download(`${KOKORO_BASE}/voices-v1.0.bin`, path.join(MODELS, "voices-v1.0.bin"));
+  // AI lip-sync model (Wav2Lip GAN, ONNX build hosted by the FaceFusion project)
+  await download(
+    "https://github.com/facefusion/facefusion-assets/releases/download/models-3.0.0/wav2lip_gan_96.onnx",
+    path.join(MODELS, "wav2lip_gan_96.onnx"),
+  );
   await setupRhubarb();
   copyAssets();
   console.log("\nSetup complete.");

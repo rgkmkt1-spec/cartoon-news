@@ -1,8 +1,8 @@
 {
- "channelName": "World Desk Daily",
- "tagline": "The news you need, with a smile — every morning",
- "dateLabel": "Tuesday, November 10, 2026",
- "shortDate": "NOV 10",
+ "channelName": "BuzzBytes News",
+ "tagline": "The news you need, with a smile, every morning",
+ "dateLabel": "Wednesday, November 11, 2026",
+ "shortDate": "NOV 11",
  "anchors": {
   "A": {
    "name": "Mark Ellis"
@@ -2086,5 +2086,90 @@
   "U.S. stories first, then a world roundup",
   "Every story is cross-checked against at least two outlets",
   "U.S. stories get a state map, world stories a world map"
- ]
+ ],
+ "studio": {
+  "plate": "studio/plate.jpg",
+  "screen": {
+   "x": 802,
+   "y": 348,
+   "w": 443,
+   "h": 222
+  },
+  "anchors": {
+   "A": {
+    "body": "studio/man_body.png",
+    "head": "studio/man_head.png",
+    "x": 1085.5,
+    "y": 179.1,
+    "w": 434.9,
+    "h": 435.9,
+    "pivot": [
+     1303,
+     431.1
+    ],
+    "mouth": {
+     "x": 1260.3,
+     "y": 364.5,
+     "w": 79,
+     "h": 62,
+     "slight": "studio/man_mouth_slight.png",
+     "mid": "studio/man_mouth_mid.png",
+     "wide": "studio/man_mouth_wide.png",
+     "laugh": "studio/man_mouth_laugh.png"
+    },
+    "blink": {
+     "src": "studio/man_blink.png",
+     "x": 1224.7,
+     "y": 290.1,
+     "w": 142.6,
+     "h": 55.8
+    }
+   },
+   "B": {
+    "body": "studio/woman_body.png",
+    "head": "studio/woman_head.png",
+    "x": 543,
+    "y": 236.8,
+    "w": 324,
+    "h": 378.2,
+    "pivot": [
+     705,
+     470
+    ],
+    "mouth": {
+     "x": 677,
+     "y": 393.8,
+     "w": 60,
+     "h": 42.5,
+     "slight": "studio/woman_mouth_slight.png",
+     "mid": "studio/woman_mouth_mid.png",
+     "wide": "studio/woman_mouth_wide.png",
+     "laugh": "studio/woman_mouth_laugh.png"
+    },
+    "blink": {
+     "src": "studio/woman_blink.png",
+     "x": 650.8,
+     "y": 340,
+     "w": 107.5,
+     "h": 38.8
+    }
+   }
+  },
+  "close": {
+   "A": {
+    "fx": 1296,
+    "fy": 362,
+    "cx": 860,
+    "cy": 520,
+    "s": 1.9
+   },
+   "B": {
+    "fx": 704,
+    "fy": 399,
+    "cx": 980,
+    "cy": 520,
+    "s": 2.2
+   }
+  }
+ }
 }
