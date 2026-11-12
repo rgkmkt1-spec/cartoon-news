@@ -26,7 +26,8 @@ export const ScriptSchema = z.object({
   episodeTitle: z.string().min(3).max(120),
   youtubeTitle: z.string().min(3).max(100),
   summary: z.string().min(10).max(600),
-  tags: z.array(z.string().max(40)).max(15).default([]),
+  tags: z.array(z.string().max(40)).max(25).default([]),
+  hashtags: z.array(z.string().max(40)).max(5).optional().default([]),
   ticker: z.array(z.string().max(90)).min(3).max(14),
   segments: z.array(SegmentSchema).min(3),
   coldOpen: z

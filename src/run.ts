@@ -49,7 +49,7 @@ async function main() {
   save("script.json", script);
   const scriptText = scriptAsText(cfg, script);
   save("script.txt", scriptText);
-  const description = buildDescription(cfg, script, items, date);
+  let description = buildDescription(cfg, script, items, date);
   save("description.txt", description);
 
   if (args.has("--script-only")) {
@@ -64,6 +64,8 @@ async function main() {
   // 3. Voices + lip sync
   const props = await buildAudio(cfg, script, date, outDir);
   save("props.json", props);
+  description = buildDescription(cfg, script, items, date, props); // now with chapter timestamps
+  save("description.txt", description);
 
   // 4. Video + thumbnail
   const { videoPath, thumbPath } = await renderEpisode(props, outDir);

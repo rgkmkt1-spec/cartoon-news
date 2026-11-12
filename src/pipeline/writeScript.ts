@@ -58,9 +58,10 @@ OUTPUT
 Return ONLY a JSON object (no markdown fences) with this exact shape:
 {
   "episodeTitle": "short episode title",
-  "youtubeTitle": "catchy but accurate YouTube title under 90 chars, names the top story, includes the date like 'Nov 9'",
-  "summary": "2-3 sentence summary of the episode for the YouTube description",
-  "tags": ["5-12 short tags"],
+  "youtubeTitle": "SEO YouTube title, 55-70 chars: lead with the biggest searchable keyword (the top story's main name/place/topic people would type into search), then a second story, then the date like 'Nov 9'. Accurate, no ALL CAPS words, no fake urgency. Example: 'Senate Passes Funding Bill, Tokyo Quake Update & More | Nov 9'",
+  "summary": "2-3 sentence YouTube description opener. The first sentence must work as the search snippet: name the top 2-3 stories with their key names and places. Natural, no keyword stuffing.",
+  "tags": ["15-20 search tags: the specific people, places, organizations and topics from today's stories (e.g. 'senate funding bill', 'tokyo earthquake'), plus a few broader ones like 'news today'. Lowercase, each under 30 chars"],
+  "hashtags": ["3 hashtags without spaces, most searchable first, e.g. '#news', '#senate', '#tokyo'"],
   "ticker": ["8-12 short factual headlines under 70 chars for the scrolling ticker, mostly US, from the wire items"],
   "coldOpen": [ { "story": 1, "text": "teaser for story 1" }, { "story": 2, "text": "teaser for story 2" }, { "story": 3, "text": "teaser for story 3" } ],
   "segments": [
@@ -177,7 +178,8 @@ function tidy(obj: any): any {
   obj.episodeTitle = clip(obj.episodeTitle, 120);
   obj.youtubeTitle = clip(obj.youtubeTitle, 100);
   obj.summary = clip(obj.summary, 600);
-  if (Array.isArray(obj.tags)) obj.tags = obj.tags.map((t: unknown) => clip(t, 40)).slice(0, 15);
+  if (Array.isArray(obj.tags)) obj.tags = obj.tags.map((t: unknown) => clip(t, 40)).slice(0, 25);
+  if (Array.isArray(obj.hashtags)) obj.hashtags = obj.hashtags.map((t: unknown) => String(t).replace(/[^#\w]/g, "")).filter((t: string) => t.length > 1).map((t: string) => (t.startsWith("#") ? t : `#${t}`)).slice(0, 5);
   if (Array.isArray(obj.coldOpen)) obj.coldOpen = obj.coldOpen.slice(0, 3).map((c: any) => ({ ...c, text: clip(c?.text, 200) }));
   if (Array.isArray(obj.ticker)) obj.ticker = obj.ticker.map((t: unknown) => clip(t, 88)).slice(0, 14);
   if (Array.isArray(obj.segments)) {
