@@ -60,7 +60,7 @@ export async function renderEpisode(props: EpisodeProps, outDir: string) {
     });
   };
 
-  const usesAiLips = !!props.studio && Object.values(props.studio.anchors).some((a) => a.lipVideo);
+  const usesAiLips = !!props.studio && Object.values(props.studio.anchors).some((a) => a.lipAtlas);
   try {
     await renderWith(props);
   } catch (e) {
@@ -68,7 +68,7 @@ export async function renderEpisode(props: EpisodeProps, outDir: string) {
     // Safety net: never lose an episode over the AI mouths — render again with the picture mouths.
     log("render", `AI lip-sync video could not be read (${String((e as Error).message).split("\n")[0].slice(0, 160)}) — rendering again with picture mouths`);
     const anchors = Object.fromEntries(
-      Object.entries(props.studio!.anchors).map(([k, a]) => [k, { ...a, lipVideo: undefined }]),
+      Object.entries(props.studio!.anchors).map(([k, a]) => [k, { ...a, lipAtlas: undefined }]),
     ) as NonNullable<EpisodeProps["studio"]>["anchors"];
     await renderWith({ ...props, studio: { ...props.studio!, anchors } });
   }

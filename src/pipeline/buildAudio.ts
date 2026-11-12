@@ -79,61 +79,6 @@ async function lipSync(wav: string, text: string): Promise<{ start: number; end:
   return JSON.parse(raw).mouthCues;
 }
 
-/** Number of video frames in a file (via Remotion's bundled ffprobe), or null if it can't tell. */
-async function countFrames(file: string): Promise<number | null> {
-  try {
-    const win = process.platform === "win32";
-    const out = await new Promise<string>((resolve, reject) => {
-      const p = spawn(win ? "npx.cmd" : "npx",
-        ["remotion", "ffprobe", "-v", "error", "-select_streams", "v:0", "-count_packets", "-show_entries", "stream=nb_read_packets", "-of", "csv=p=0", file],
-        { stdio: ["ignore", "pipe", "pipe"], shell: win, cwd: ROOT });
-      let o = "";
-      p.stdout.on("data", (d) => (o += d));
-      p.on("close", (c) => (c === 0 ? resolve(o) : reject(new Error(`ffprobe ${c}`))));
-      p.on("error", reject);
-    });
-    const n = parseInt(out.trim(), 10);
-    return Number.isFinite(n) ? n : null;
-  } catch {
-    return null;
-  }
-}
-
-/** Run the Python lip-sync step and pipe its PNG frames straight into Remotion's bundled ffmpeg. */
-function pipeVideo(python: string, args: string[], size: [number, number], outFile: string): Promise<void> {
-  return new Promise((resolve, reject) => {
-    const win = process.platform === "win32";
-    const ff = spawn(
-      win ? "npx.cmd" : "npx",
-      ["remotion", "ffmpeg", "-y", "-loglevel", "error", "-f", "image2pipe", "-c:v", "png",
-        "-framerate", String(FPS), "-i", "-", "-r", String(FPS), "-fps_mode", "cfr", "-c:v", "libx264", "-preset", "veryfast", "-crf", "16",
-        "-bf", "0", "-g", "15", "-pix_fmt", "yuv420p", "-video_track_timescale", "15360", "-movflags", "+faststart", outFile],
-      { stdio: ["pipe", "inherit", "inherit"], shell: win, cwd: ROOT },
-    );
-    const py = spawn(python, args, { stdio: ["ignore", "pipe", "pipe"] });
-    ff.stdin.on("error", () => {}); // reported via exit codes below
-    py.stdout.pipe(ff.stdin);
-    let err = "";
-    let last = 0;
-    py.stderr.on("data", (d) => {
-      err += d.toString();
-      if (Date.now() - last > 30000) {
-        last = Date.now();
-        const m = d.toString().trim().split("\n").pop();
-        if (m) process.stdout.write(`    ${m.trim()}\n`);
-      }
-    });
-    const done = (p: ReturnType<typeof spawn>) => new Promise<number | null>((r) => p.on("close", r));
-    Promise.all([done(py), done(ff)]).then(([pc, fc]) => {
-      if (pc !== 0) return reject(new Error(`lipsync.py failed: ${err.slice(-2000)}`));
-      if (fc !== 0) return reject(new Error(`ffmpeg failed (${fc}) while encoding ${outFile}`));
-      resolve();
-    });
-    py.on("error", reject);
-    ff.on("error", reject);
-  });
-}
-
 async function mapLimit<T, R>(arr: T[], limit: number, fn: (t: T, i: number) => Promise<R>): Promise<R[]> {
   const out: R[] = new Array(arr.length);
   let next = 0;
@@ -302,18 +247,24 @@ export async function buildAudio(cfg: ChannelConfig, script: Script, date: strin
         size: a.lip.size,
         lines: mine.map((x) => ({ start: x.l.start, end: x.l.end, wav: x.wav })),
       };
+      const dirName = `lip_${s}`;
+      const outDir = path.join(publicDir, dirName);
+      fs.rmSync(outDir, { recursive: true, force: true });
       const jobFile = path.join(audioDir, `lipsync-${s}.json`);
-      fs.writeFileSync(jobFile, JSON.stringify(job));
-      const outFile = path.join(publicDir, `lip_${s}.mp4`);
+      fs.writeFileSync(jobFile, JSON.stringify({ ...job, outDir }));
       log("lipsync", `AI lip sync for ${cfg.anchors[s].name} (${mine.length} lines)`);
-      await pipeVideo(python, [path.join(ROOT, "src", "pipeline", "lipsync.py"), jobFile], a.lip.size, outFile);
-      const want = Math.ceil(result.duration * FPS);
-      const got = await countFrames(outFile);
-      if (got !== null && got < want - 2) {
-        log("lipsync", `mouth video for ${cfg.anchors[s].name} is short (${got}/${want} frames) - using picture mouths`);
-        continue;
+      try {
+        const out = await run(python, [path.join(ROOT, "src", "pipeline", "lipsync.py"), jobFile]);
+        const idx = JSON.parse(out.trim().split("\n").pop()!);
+        const missing = Array.from({ length: idx.sheets }, (_, k) => `s${String(k).padStart(3, "0")}.jpg`).filter(
+          (f) => !fs.existsSync(path.join(outDir, f)),
+        );
+        if (!idx.slots || missing.length) throw new Error(`sprite sheets incomplete (${missing.length} missing)`);
+        a.lipAtlas = { dir: `current/${dirName}`, cols: idx.cols, rows: idx.rows, pad: idx.pad, size: a.lip.size, runs: idx.runs };
+        log("lipsync", `mouth frames ready for ${cfg.anchors[s].name} (${idx.slots} frames, ${idx.sheets} sheets)`);
+      } catch (e) {
+        log("lipsync", `AI lip sync failed for ${cfg.anchors[s].name} - using picture mouths (${String((e as Error).message).slice(0, 200)})`);
       }
-      a.lipVideo = `current/lip_${s}.mp4`;
     }
   } else if (studio && env("LIPSYNC", "ai") !== "off") {
     log("lipsync", "AI lip-sync model not found (run npm run setup) - using picture mouths");

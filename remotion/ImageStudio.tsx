@@ -1,5 +1,5 @@
 import React from "react";
-import { Img, OffthreadVideo, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { Img, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { blinkAmount } from "./Anchor";
 import type { Speaker, StudioAnchor, StudioMeta } from "./types";
 
@@ -16,6 +16,20 @@ export interface MouthState {
 
 const Layer: React.FC<{ src?: string; box: { x: number; y: number; w: number; h: number }; opacity: number }> = ({ src, box, opacity }) =>
   src && opacity > 0.02 ? <Img src={staticFile(src)} style={{ ...abs(box.x, box.y, box.w, box.h), opacity: Math.min(1, opacity) }} /> : null;
+
+/** Which sprite-sheet cell holds the AI mouth for this frame (null = not talking). */
+function atlasCell(at: NonNullable<StudioAnchor["lipAtlas"]>, frame: number) {
+  for (const [f0, s0, n] of at.runs) {
+    if (frame >= f0 && frame < f0 + n) {
+      const slot = s0 + (frame - f0);
+      const per = at.cols * at.rows;
+      const k = slot % per;
+      const [w, h] = at.size;
+      return { sheet: Math.floor(slot / per), row: Math.floor(k / at.cols), col: k % at.cols, w, h, cw: w + 2 * at.pad, ch: h + 2 * at.pad, pad: at.pad };
+    }
+  }
+  return null;
+}
 
 const ImageAnchor: React.FC<{ a: StudioAnchor; m: MouthState; laugh: number; seed: number; side: 1 | -1 }> = ({ a, m, laugh, seed, side }) => {
   const frame = useCurrentFrame();
@@ -48,7 +62,8 @@ const ImageAnchor: React.FC<{ a: StudioAnchor; m: MouthState; laugh: number; see
   const lg = clamp01((laugh - 0.15) / 0.45) * (1 - talk);
   const full = { x: a.x, y: a.y, w: a.w, h: a.h };
   const lower = a.lower;
-  const lip = a.lip && a.lipVideo ? a.lip : undefined;
+  const lip = a.lip && a.lipAtlas ? a.lip : undefined;
+  const cell = lip ? atlasCell(a.lipAtlas!, frame) : null;
   const base = `${a.pivot[0]}px ${a.y + a.h}px`;
 
   return (
@@ -61,8 +76,20 @@ const ImageAnchor: React.FC<{ a: StudioAnchor; m: MouthState; laugh: number; see
           <>
             {/* talking face + AI-redrawn mouth (frame-locked video) */}
             <Layer src={a.talkHead} box={full} opacity={talk} />
-            {talk > 0.02 && (
-              <OffthreadVideo src={staticFile(a.lipVideo!)} muted style={{ ...abs(lip.x, lip.y, lip.w, lip.h), opacity: Math.min(1, talk) }} />
+            {talk > 0.02 && cell && (
+              <div style={{ ...abs(lip.x, lip.y, lip.w, lip.h), overflow: "hidden", opacity: Math.min(1, talk) }}>
+                <Img
+                  src={staticFile(`${a.lipAtlas!.dir}/s${String(cell.sheet).padStart(3, "0")}.jpg`)}
+                  style={{
+                    position: "absolute",
+                    left: -(cell.col * cell.cw + cell.pad) * (lip.w / cell.w),
+                    top: -(cell.row * cell.ch + cell.pad) * (lip.h / cell.h),
+                    width: a.lipAtlas!.cols * cell.cw * (lip.w / cell.w),
+                    height: a.lipAtlas!.rows * cell.ch * (lip.h / cell.h),
+                    maxWidth: "none",
+                  }}
+                />
+              </div>
             )}
           </>
         ) : lower && a.talkHead ? (

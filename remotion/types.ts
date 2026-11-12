@@ -67,8 +67,8 @@ export interface StudioAnchor {
   lower?: { x: number; y: number; w: number; h: number; ah: string; closed: string };
   /** AI lip sync: reference face + where the redrawn mouth patch sits */
   lip?: { ref: string; box: number[]; patch: number[]; size: [number, number]; x: number; y: number; w: number; h: number };
-  /** set per episode when the AI lip-sync video was made */
-  lipVideo?: string;
+  /** set per episode when the AI lip-sync frames were made: sprite sheets + frame index */
+  lipAtlas?: { dir: string; cols: number; rows: number; pad: number; size: [number, number]; runs: number[][] };
 }
 
 /** A real studio built from the user's own artwork (background plate + image anchors). */

@@ -1,14 +1,15 @@
 """AI lip sync (Wav2Lip, free/open model) for one anchor.
 
 Redraws the anchor's mouth for every video frame from the voice audio, using the anchor's
-"talking face" as the reference picture. Writes PNG frames (patch size from the job) to
-stdout for the whole episode, so frame N of the output = frame N of the show.
+"talking face" as the reference picture. Writes the redrawn mouth patches into JPEG sprite sheets (job["outDir"]) and prints
+a JSON index mapping show frames to sheet cells.
 
 Input (argv[1]): JSON {"model", "fps", "duration", "ref", "box":[x0,y0,x1,y1] (face square in ref),
                        "patch":[x0,y0,x1,y1] (relative 0..1 of the face square), "size":[w,h],
                        "lines":[{"start","end","wav"}]}
 """
 import json
+import os
 import sys
 import wave
 
@@ -72,15 +73,39 @@ def melspec(a):
     return np.clip(8 * ((S + 100) / 100) - 4, -4, 4).astype(np.float32)
 
 
-def png(img):
-    return cv2.imencode(".png", img, [cv2.IMWRITE_PNG_COMPRESSION, 1])[1].tobytes()
-
-
 def main():
     job = json.load(open(sys.argv[1], encoding="utf-8"))
     fps = job["fps"]
     nframes = int(np.ceil(job["duration"] * fps))
-    out = sys.stdout.buffer
+    W, H = job["size"]
+    # Mouth frames go into sprite sheets (JPEG grids), only for frames where this anchor talks.
+    out_dir = job["outDir"]
+    os.makedirs(out_dir, exist_ok=True)
+    COLS, ROWS, PAD = job.get("cols", 10), job.get("rows", 10), 2
+    CW, CH = W + 2 * PAD, H + 2 * PAD
+    sheet = np.zeros((ROWS * CH, COLS * CW, 3), np.uint8)
+    slot = 0
+    sheets = 0
+    runs = []  # [firstFrame, firstSlot, count]
+
+    def save_sheet():
+        nonlocal sheet, sheets
+        cv2.imwrite(os.path.join(out_dir, f"s{sheets:03d}.jpg"), sheet, [cv2.IMWRITE_JPEG_QUALITY, 94])
+        sheets += 1
+        sheet = np.zeros_like(sheet)
+
+    def emit_talk(i, img):
+        nonlocal slot
+        k = slot % (COLS * ROWS)
+        r, c = divmod(k, COLS)
+        sheet[r * CH:(r + 1) * CH, c * CW:(c + 1) * CW] = cv2.copyMakeBorder(img, PAD, PAD, PAD, PAD, cv2.BORDER_REPLICATE)
+        if runs and runs[-1][0] + runs[-1][2] == i and runs[-1][1] + runs[-1][2] == slot:
+            runs[-1][2] += 1
+        else:
+            runs.append([i, slot, 1])
+        slot += 1
+        if slot % (COLS * ROWS) == 0:
+            save_sheet()
 
     # this anchor's voice only, placed on the episode timeline
     track = np.zeros(int(job["duration"] * 16000) + 16000, dtype=np.float32)
@@ -89,7 +114,7 @@ def main():
         a = load_wav16k(ln["wav"])
         s = int(ln["start"] * 16000)
         track[s:s + len(a)] += a[: max(0, len(track) - s)]
-        talk[max(0, int(ln["start"] * fps) - 3): min(nframes, int(np.ceil(ln["end"] * fps)) + 4)] = True
+        talk[max(0, int(ln["start"] * fps) - 6): min(nframes, int(np.ceil(ln["end"] * fps)) + 8)] = True
     mel = melspec(track)
 
     ref = cv2.imread(job["ref"])
@@ -107,9 +132,7 @@ def main():
     mask = cv2.GaussianBlur(mask, (0, 0), S * 0.035)[..., None]
 
     px0, py0, px1, py1 = [int(round(v * S)) for v in job["patch"]]
-    W, H = job["size"]
-    still = cv2.resize(face[py0:py1, px0:px1], (W, H), interpolation=cv2.INTER_AREA).clip(0, 255).astype(np.uint8)
-    still_bytes = png(still)
+
 
     opts = ort.SessionOptions()
     sess = ort.InferenceSession(job["model"], opts, providers=["CPUExecutionProvider"])
@@ -123,12 +146,12 @@ def main():
             return
         src = np.stack([c for _, c in batch])[:, None]
         res = sess.run(None, {"source": src, "target": np.repeat(target, len(batch), 0)})[0]
-        for r in res:
+        for (fi, _), r in zip(batch, res):
             up = cv2.resize(r.transpose(1, 2, 0) * 255.0, (S, S), interpolation=cv2.INTER_CUBIC)
             up = cv2.addWeighted(up, 1.5, cv2.GaussianBlur(up, (0, 0), 2), -0.5, 0)
             fr = face * (1 - mask) + up * mask
             patch = cv2.resize(fr[py0:py1, px0:px1], (W, H), interpolation=cv2.INTER_AREA)
-            out.write(png(patch.clip(0, 255).astype(np.uint8)))
+            emit_talk(fi, patch.clip(0, 255).astype(np.uint8))
         done += len(batch)
         batch.clear()
 
@@ -136,7 +159,6 @@ def main():
     for i in range(nframes):
         if not talk[i]:
             flush()
-            out.write(still_bytes)
             continue
         s = int(i * 80.0 / fps)
         c = mel[:, s:s + 16]
@@ -147,7 +169,9 @@ def main():
             flush()
             print(f"  lipsync {done}/{total_talk}", file=sys.stderr, flush=True)
     flush()
-    out.flush()
+    if slot % (COLS * ROWS):
+        save_sheet()
+    print(json.dumps({"slots": slot, "sheets": sheets, "cols": COLS, "rows": ROWS, "pad": PAD, "runs": runs}), flush=True)
 
 
 if __name__ == "__main__":
