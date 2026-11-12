@@ -51,7 +51,8 @@ STRUCTURE
 14. INTRO: EXACTLY 2 very short, upbeat lines, no headline preview. ${Af}: "Good morning! I'm ${A}, and this is ${cfg.channelName} for <weekday, month day>." ${Bf}: a quick playful line plus "Let's get into it."
 15. KEY FACTS: every story gets 2-3 "keyFacts" for the screen: under 50 characters, concrete facts from the wire items (numbers, names, places, dates). Example: "Vote: 52-48 in the Senate".
 16. OUTRO: fun sign-off with a bit of banter. Clearly ask viewers to subscribe and comment, and say there's a new episode every morning.
-17. Total spoken length about ${words} words (${cfg.targetMinutes} minutes).
+17. WRITE FOR THE EAR: lines are read aloud by a voice that pauses at every comma. Use commas only where a newscaster would really take a breath. Prefer short sentences over comma chains, no comma after short openers ("So", "Now", "Meanwhile"), no Oxford commas, and write numbers without thousands separators.
+18. Total spoken length about ${words} words (${cfg.targetMinutes} minutes).
 
 OUTPUT
 Return ONLY a JSON object (no markdown fences) with this exact shape:

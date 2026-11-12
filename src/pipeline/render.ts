@@ -62,7 +62,13 @@ export async function renderEpisode(props: EpisodeProps, outDir: string) {
 
   const usesAiLips = !!props.studio && Object.values(props.studio.anchors).some((a) => a.lipAtlas);
   try {
-    await renderWith(props);
+    try {
+      await renderWith(props);
+    } catch (e) {
+      if (!usesAiLips) throw e;
+      log("render", `render hiccup (${String((e as Error).message).split("\n")[0].slice(0, 120)}) — trying once more`);
+      await renderWith(props);
+    }
   } catch (e) {
     if (!usesAiLips) throw e;
     // Safety net: never lose an episode over the AI mouths — render again with the picture mouths.

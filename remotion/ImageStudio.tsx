@@ -1,5 +1,8 @@
 import React from "react";
-import { Img, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { Img as RImg, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+
+// extra retries: a brief network hiccup on the PC shouldn't fail a whole render
+const Img: React.FC<React.ComponentProps<typeof RImg>> = (p) => <RImg maxRetries={8} {...p} />;
 import { blinkAmount } from "./Anchor";
 import type { Speaker, StudioAnchor, StudioMeta } from "./types";
 

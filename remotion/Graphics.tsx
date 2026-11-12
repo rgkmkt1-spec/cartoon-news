@@ -45,7 +45,7 @@ export const Globe: React.FC<{ size: number; rotate: number }> = ({ size, rotate
 export const Flag: React.FC<{ code: string; height: number }> = ({ code, height }) => {
   if (!code) return null;
   return (
-    <Img
+    <Img maxRetries={8}
       src={staticFile(`flags/${code.toLowerCase()}.svg`)}
       style={{ height, width: (height * 4) / 3, borderRadius: 6, boxShadow: "0 4px 14px rgba(0,0,0,0.45)", border: "3px solid white" }}
     />

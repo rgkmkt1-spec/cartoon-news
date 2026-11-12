@@ -26,8 +26,22 @@ function ordinalWords(n: number): string | null {
 }
 
 /** Text as the voice should say it: "November 4th" -> "November fourth" (the voice model reads "4th" as "four t h"). */
+const MONTHS = "January|February|March|April|May|June|July|August|September|October|November|December";
+const OPENERS =
+  "So|Well|Now|Meanwhile|Plus|Also|Still|Yes|No|Okay|OK|Oh|And|But|Today|Tonight|Overall|Instead|Again|First|Finally|Next|Sadly|Luckily|Honestly|Basically|Anyway|Of course|In fact|Right now|This morning|Last night|For now|Over in [A-Z][a-z]+";
+
+/** Clean up text before it goes to the voice: words for ordinals, and no pauses at commas a newscaster wouldn't pause at. */
 export function speakable(text: string): string {
-  return text.replace(/\b(\d{1,3})(st|nd|rd|th)\b/gi, (m, num) => ordinalWords(Number(num)) ?? m);
+  let t = text.replace(/\b(\d{1,3})(st|nd|rd|th)\b/gi, (m, num) => ordinalWords(Number(num)) ?? m);
+  t = t.replace(/(\d),(?=\d{3}\b)/g, "$1"); // 1,200 -> 1200
+  t = t.replace(new RegExp(`\\b(${MONTHS}) (\\d{1,2}), (\\d{4})`, "g"), "$1 $2 $3"); // November 12, 2026
+  t = t.replace(new RegExp(`(^|[.!?]\\s+)(${OPENERS}),\\s+`, "g"), "$1$2 "); // "So, the..." -> "So the..."
+  t = t.replace(/,\s+(however|too|though|of course|in fact|apparently|reportedly)\s*,/gi, " $1"); // ", however," mid-sentence
+  t = t.replace(/,\s+(too|though|apparently|reportedly)([.!?])/gi, " $1$2"); // "..., too."
+  t = t.replace(/,\s+(and|or)\s+/g, " $1 "); // list commas before and/or
+  t = t.replace(/\b(says|said|adds|added|notes|noted|warns|warned|told reporters)\s*,\s*/g, "$1 "); // "said, ..."
+  t = t.replace(/\bWashington,\s*D\.?C\.?/g, "Washington D.C.");
+  return t;
 }
 
 export const LEAD_IN = 4.0; // seconds of logo sting before first line
